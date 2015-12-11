@@ -1,0 +1,303 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title>Initiation à Canvas</title>
+    <script type="text/javascript">
+
+  var canvas;
+  var context;
+  var input;
+
+  window.onload = function initCanvas() {
+    console.log("initCanvas()...");
+    input = document.getElementById("input");
+    feuille = document.getElementById("canvas");
+    context = feuille.getContext("2d");
+    quadrillage();
+  }
+
+  function quadrillage() {
+    context.setLineDash([4, 20]);
+    context.beginPath();
+    context.moveTo(50,0);
+    context.lineTo(50, 300);
+    context.moveTo(100,0);
+    context.lineTo(100, 300);
+    context.moveTo(150,0);
+    context.lineTo(150, 300);
+    context.moveTo(200,0);
+    context.lineTo(200, 300);
+    context.moveTo(250,0);
+    context.lineTo(250, 300);
+    context.moveTo(300,0);
+    context.lineTo(300, 300);
+    context.moveTo(350,0);
+    context.lineTo(350, 300);
+    context.moveTo(400,0);
+    context.lineTo(400, 300);
+    context.moveTo(450,0);
+    context.lineTo(450, 300);
+    context.moveTo(500,0);
+    context.lineTo(500, 300);
+    context.moveTo(550,0);
+    context.lineTo(550, 300);
+    context.moveTo(0,50);
+    context.lineTo(600, 50);
+    context.moveTo(0,100);
+    context.lineTo(600, 100);
+    context.moveTo(0,150);
+    context.lineTo(600, 150);
+    context.moveTo(0,200);
+    context.lineTo(600, 200);
+    context.moveTo(0,250);
+    context.lineTo(600, 250);
+    context.strokeStyle = "grey";
+    context.stroke();
+  }
+
+// On créer des fonctions permettant de dessiner, fonctions de bases du canvas
+  function rectVide(ax, ay, bx, by, color) {
+    console.log('rect() ', ax, ay, bx, by);
+    context.strokeStyle = color;
+    return context.strokeRect(ax,ay,bx,by);
+  }
+
+  function rectPlein(ax, ay, bx, by, color) {
+    console.log('rect() ', ax, ay, bx, by);
+    context.fillStyle = color;
+    context.fillRect(ax,ay,bx,by);
+  }
+
+  function trait(ax,ay,bx,by, color) {
+    console.log('trait() ',ax ,ay ,bx ,by);
+    context.strokeStyle = "black";
+    context.strokeStyle = color;
+    context.beginPath();      // Début du chemin
+    context.moveTo(ax,ay);    // Le tracé part du point aux coordonnées ax,ay
+    context.lineTo(bx,by);  // Un segment est ajouté vers les coordonnées bx,by
+    context.closePath();
+    context.stroke();
+  }
+
+  function efface(ax,ay,bx,by) {
+    console.log('efface() ',ax ,ay ,bx ,by);
+    return context.clearRect(ax,ay,bx,by);
+  }
+
+  function cerclePlein(ax, ay, rayon, color){
+    console.log('cerclePlein() ',ax ,ay ,rayon, color);
+    context.beginPath();
+    context.arc(ax,ay,rayon,0,Math.PI*2,true);
+    context.fillStyle = color;
+    context.fill();
+  }
+
+  function cercleVide(ax, ay, rayon, color){
+    console.log('cercleVide() ',ax ,ay ,rayon, color);
+    context.beginPath();
+    context.arc(ax,ay,rayon,0,Math.PI*2,true);
+    context.strokeStyle = color;
+    context.stroke();
+  }
+
+  function dessineImage(ax, ay, lien) {
+    var image = new Image();
+    image.src = lien;
+    image.onload = function() {
+      context.drawImage(this,ax,ay);
+      };
+  }
+
+  function razStyles() {
+    context.fillStyle = "black";
+    context.strokeStyle = "black";
+    context.setLineDash(0);
+    context.lineWidth = 1;
+    console.log('fillStyle ' + context.fillStyle, 'strokeStyle ' + context.strokeStyle, 'lineWidth ' + context.lineWidth);
+  }
+
+  function texte( ax, ay, content) {
+    context.font = "20px Arial";
+    context.textAlign = "center";
+    context.fillStyle = "black";
+    context.fillText(content, ax, ay);
+    console.log(ax, ay, content, context.font, context.fillStyle);
+  }
+
+  function degrade(color1, color2, color3){
+    var linear = context.createLinearGradient(0,0,600,0);
+    linear.addColorStop(0, color1);
+    linear.addColorStop(0.5, color2);
+    linear.addColorStop(1, color3);
+    context.fillStyle = linear;
+    context.fillRect(0,0,600,300);
+  }
+
+  function deplaceOrigine(x, y) {
+    context.translate(x, y);
+  }
+
+  function rotationOrigine(angle){
+    context.rotate(angle*(Math.PI/180));
+  }
+
+
+// Facultatif, fonction pour vider l'input après chaque saisie
+  function clearInput() {
+    input.value.replace(/\n/g, '');
+    input.value = "";
+    console.log("clearInput ,", input.value);
+  }
+
+  function execute(command) {
+    try {
+      eval(command);
+    }
+    catch (e) {
+      console.log("Erreur ",e);
+      // showError("l'instruction semble fausse : " + e);
+      return;
+    }
+    // showError(' ');
+    clearInput();
+  }
+
+  function onKeyPressed(e) {
+    var keycode = e.keyCode;
+    console.log('onKeyPressed...', keycode);
+    if (keycode === 13){
+      execute(input.value);
+    }
+  }
+
+  function save(){
+    context.save();
+  }
+
+  function restore(){
+    context.restore();
+  }
+
+
+
+    </script>
+  </head>
+  <body>
+    <div id="canvas_box">
+      <div id="x">0</div> <div id="xSuite">100<span>200</span><span>300</span><span>400</span><span>500</span><span>600</span></div>
+      <p id="y100">100<p id="y200">200</p><p id="y300">300</p></p>
+      <canvas id="canvas" width="600" height="300"></canvas>
+      <input id="input" autofocus onkeyup="onKeyPressed(event)" placeholder="Saisissez commande, entrée pour exécuter..." />
+      <div id="instructions">
+        <b><u>Les fonctions:</u></b>
+        <p><b>trait</b>(débutX, débutY, finX, finY, couleur)</p>
+        <p><b>rectVide</b>(débutX, débutY, finX, finY, couleur)</p>
+        <p><b>rectPlein</b>(débutX, débutY, finX, finY, couleur)</p>
+        <p><b>cercleVide</b>(centreX, centreY, rayon, couleur)</p>
+        <p><b>cerclePlein</b>(centreX, centreY, rayon, couleur)</p>
+        <p><b>efface</b>(débutX, débutY, finX, finY)</p>
+        <p><b>dessineImage</b>(débutX, débutY, lien)</p>
+        <p><b>texte</b>( débutX, débutY, phrase)</p>
+        <p><b>degrade</b>(couleur1, couleur2, couleur3)</p>
+        <p><b>deplaceOrigine</b>(nouvelle origine X, nouvelle origine Y)</p>
+        <p><b>rotationOrigine</b>(angle de rotation de l'origine)</p>
+        <button type="button" onclick="save()">Sauvegarder les styles</button>
+        <button type="button" onclick="restore()">Restaurer à la dernière sauvegarde</button>
+      </div>
+    </div>
+    <div id="btnRaz">
+      <button type="button" onclick="efface(0,0,600,300)">Réinitialiser le canvas</button>
+      <button type="button" onclick="razStyles()">Réinitialiser les styles</button>
+    </div>
+    <h1>IN CODE WE TRUST #REVOLUTION</h1>
+  </body>
+  <style>
+
+* {
+  margin: 0;
+  padding: 0;
+}
+body {
+  background: lightgrey;
+}
+u {
+  font-size: 1.5em;
+}
+
+#canvas_box {
+  height: 450px;
+  background-color: lightgrey;
+}
+
+#x {
+  position: absolute;
+  top: 20px;
+  left: 20px;
+  width:50px;
+}
+#xSuite {
+  position: absolute;
+  top:20px;
+  left: 140px;
+  width:500px;
+}
+
+#y100 {
+  position:relative;
+  top:145px;
+  left:5px;
+}
+#y200 {
+  position:relative;
+  top:225px;
+  left:5px;
+}
+#y300 {
+  position:relative;
+  top:305px;
+  left:5px;
+}
+
+span {
+  margin-left: 75px;
+}
+
+canvas {
+  border: 1px solid black;
+  background: white;
+  margin-top: 0;
+  margin-left: 50px;
+}
+
+input {
+  width: 600px;
+  height: 75px;
+  margin-left: 50px;
+}
+
+h1 {
+  margin: 70px 60px;
+  font: 2.2em Sans-Serif;
+}
+
+#instructions {
+  width:400px;
+  position:absolute;
+  top: 5px;
+  left: 720px;
+  line-height: 50px;
+}
+
+button{
+  padding: 5px;
+  border-radius: 5px;
+  background:rgb(158, 204, 237);
+}
+
+#btnRaz {
+  margin-left: 225px;
+}
+  </style>
+
+</html>
