@@ -75,10 +75,8 @@
         </ul>
     </div>
     <div class="image">
-      <img src="images/strokeRect.png"/>
-      <img src="images/strokeRect1.png"/>
-      <img src="images/fillRect.png"/>
-      <img src="images/fillRect1.png"/>
+      <img src="images/rect.png"/>
+      <img src="images/rect1.png"/>
       <!-- <img src="../images/rectRendu.png"/> -->
     </div>
   </div>
@@ -120,8 +118,9 @@ les spécificités se situent au niveau des paramètres à renseigner pour notre
 
     </div>
     <div class="image">
-      <img src="images/trait.png"/>
-      <img src="images/trait1.png"/>
+      <img src="images/cercle.png"/>
+      <img src="images/cercle1.png"/>
+      <img src="images/cercle2.png"/>
     </div>
 
   </div>
@@ -141,10 +140,8 @@ Le couple (x, y) fait référence aux coordonnées du coin supérieur gauche où
         </ul>
     </div>
     <div class="image">
-      <img src="images/strokeRect.png"/>
-      <img src="images/strokeRect1.png"/>
-      <img src="images/fillRect.png"/>
-      <img src="images/fillRect1.png"/>
+      <img src="images/image.png"/>
+      <img src="images/image1.png"/>
       <!-- <img src="../images/rectRendu.png"/> -->
     </div>
   </div>
@@ -167,10 +164,9 @@ Le couple (x, y) fait référence aux coordonnées du coin supérieur gauche où
       </ul>
   </div>
   <div class="image">
-    <img src="images/strokeRect.png"/>
-    <img src="images/strokeRect1.png"/>
-    <img src="images/fillRect.png"/>
-    <img src="images/fillRect1.png"/>
+    <img src="images/texte.png"/>
+    <img src="images/texte1.png"/>
+    <img src="images/texte2.png"/>
     <!-- <img src="../images/rectRendu.png"/> -->
   </div>
 </div>
@@ -190,10 +186,8 @@ Ainsi (0, 0, 300, 300) donnerait un dégradé en diagonale et (0, 0, 300, 0) don
       </ul>
   </div>
   <div class="image">
-    <img src="images/strokeRect.png"/>
-    <img src="images/strokeRect1.png"/>
-    <img src="images/fillRect.png"/>
-    <img src="images/fillRect1.png"/>
+    <img src="images/degrade.png"/>
+    <img src="images/degrade1.png"/>
     <!-- <img src="../images/rectRendu.png"/> -->
   </div>
 </div>
@@ -203,6 +197,7 @@ Ainsi (0, 0, 300, 300) donnerait un dégradé en diagonale et (0, 0, 300, 0) don
 <p>Pour ce faire, il est important d’étudier en premier lieu, les fonctions save() et restore().</p>
 <div class="article">
   <div class="text">
+    <h4>Sauvegarde et restauration du point d'origine</h4>
       <ul>
         <li>La méthode save() a pour intérêt de sauvegarder les styles et le context que nous avons définit dans notre canvas.</li>
         <li>restore() permet ainsi de revenir à la dernière sauvegarde effectuée</li>
@@ -211,41 +206,32 @@ Ainsi (0, 0, 300, 300) donnerait un dégradé en diagonale et (0, 0, 300, 0) don
       <br><p> Entrons maintenant dans le vif du sujet.</p>
   </div>
   <div class="image">
-    <img src="images/strokeRect.png"/>
-    <img src="images/strokeRect1.png"/>
-    <img src="images/fillRect.png"/>
-    <img src="images/fillRect1.png"/>
+    <img src="images/save_restore.png"/>
     <!-- <img src="../images/rectRendu.png"/> -->
   </div>
 </div>
 <!-- ____________________________________________________ -->
-<h4>La méthode translate</h4>
 <div class="article">
   <div class="text">
+    <h4>La méthode translate</h4>
     <p>translate() permet de modifier les coordonnées x et y par défaut de notre canvas. Ainsi, notre point d’origine ne sera plus le point (0,0) mais celui choisi par nos soins.</p>
     <br><p>Rappel: Pour plus de simplicité, n’oublier pas d’utiliser save() et ainsi conserver une sauvegarde de votre canvas d’origine ;).</p>
   </div>
   <div class="image">
-    <img src="images/strokeRect.png"/>
-    <img src="images/strokeRect1.png"/>
-    <img src="images/fillRect.png"/>
-    <img src="images/fillRect1.png"/>
+    <img src="images/translate.png"/>
     <!-- <img src="../images/rectRendu.png"/> -->
   </div>
 </div>
 <!-- _________________________________________________ -->
-<h4>La méthode rotate</h4>
 <div class="article">
   <div class="text">
+    <h4>La méthode rotate</h4>
     <p>rotate(), quant à elle, permet de modifier l’angle par défaut des axes de notre canvas. L’angle est indiqué par défaut en radiant, mais la conversion est possible avec un simple calcul: (angle * (Math.PI / 180)).</p>
     <p>On utilise donc context.rotate(angle *(Math.PI/180) pour définir nos nouveaux axes de tracé.</p>
     <br><p>Rappel: Pour plus de simplicité, n’oublier pas d’utiliser save() et ainsi conserver une sauvegarde de votre canvas d’origine ;).</p>
   </div>
   <div class="image">
-    <img src="images/strokeRect.png"/>
-    <img src="images/strokeRect1.png"/>
-    <img src="images/fillRect.png"/>
-    <img src="images/fillRect1.png"/>
+    <img src="images/rotate.png"/>
     <!-- <img src="../images/rectRendu.png"/> -->
   </div>
 </div>
