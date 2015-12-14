@@ -96,8 +96,8 @@
         </ul>
     </div>
     <div class="image">
-      <img src="../images/trait.png"/>
-      <img src="../images/trait1.png"/>
+      <img src="images/trait.png"/>
+      <img src="images/trait1.png"/>
     </div>
 
   </div>
@@ -125,6 +125,133 @@ les spécificités se situent au niveau des paramètres à renseigner pour notre
     </div>
 
   </div>
+  <!-- ___________________________________________ -->
+  <h3>Aller plus loin(vers l'infini et l'au-delà!)</h3>
+  <p>Canvas est capable de gérer plus que de simples tracés de formes, il gère également les images, le texte, des effets comme le dégradé et est capable de modifier son point d’origine 0.</p>
+  <h4>Les images</h4>
+  <div class="article">
+    <div class="text">
+      <p>Avant de dessiner une image, il est tout d’abord nécessaire de la récupérer. Une fois celle-ci  chargée par canvas, on pourra alors lui demander de l’afficher sur notre feuille.</p>
+        <ul>
+          <li>new Image() indique à JavaScript que nous créons un nouvel objet de type image.</li>
+          <li>image.src nous permet de récupérer une image à l’aide de son url.</li>
+          <li>image.onload correspond à la fonction a effectuer une fois l’image chargée.</li>
+          <li>context.drawImage() est la fonction permettant de dessiner ou afficher l’image dans canvas.
+Le couple (x, y) fait référence aux coordonnées du coin supérieur gauche où l’on souhaite dessiner l’image.</li>
+        </ul>
+    </div>
+    <div class="image">
+      <img src="images/strokeRect.png"/>
+      <img src="images/strokeRect1.png"/>
+      <img src="images/fillRect.png"/>
+      <img src="images/fillRect1.png"/>
+      <!-- <img src="../images/rectRendu.png"/> -->
+    </div>
+  </div>
+<!-- _____________________________________________ -->
+<h4>Le texte</h4>
+<div class="article">
+  <div class="text">
+    <p>Pour faire du texte avec canvas, il n’est pas nécessaire de tracer soit même ses lettres, trait par trait, lettre par lettre…</p>
+    <br><p>Heureusement, canvas a tout prévu et il existe deux fonctions capables de dessiner du texte:</p>
+      <ul>
+        <li>fillText produira des lettres pleines (dont la couleur sera celle de fillStyle)</li>
+        <li>strokeText produira uniquement le contour des lettres (dont la couleur sera celle définie au préalable par strokeStyle.</li>
+Le couple (x, y) fait référence aux coordonnées du coin supérieur gauche où l’on souhaite dessiner l’image.</li>
+      </ul>
+      <br><p>Il existe également plusieurs propriétés (très proches du CSS) permettant de choisir sa police, la taille de police, l’alignement...</p>
+      <ul>
+        <li>font : police, avec une syntaxe semblable à celle rencontrée en CSS</li>
+        <li>textAlign : alignement horizontal</li>
+        <li>baseline : ligne de base (alignement vertical)</li>
+      </ul>
+  </div>
+  <div class="image">
+    <img src="images/strokeRect.png"/>
+    <img src="images/strokeRect1.png"/>
+    <img src="images/fillRect.png"/>
+    <img src="images/fillRect1.png"/>
+    <!-- <img src="../images/rectRendu.png"/> -->
+  </div>
+</div>
+<!-- ________________________________________________________ -->
+<h4>Le dégradé</h4>
+<div class="article">
+  <div class="text">
+    <p>Il est possible de réaliser 2 types de dégradés, en ligne ou en cercle. Nous nous intéresserons principalement au dégradé linéaire dans cette partie.</p>
+    <br><p>Pour ce faire, il est essentiel de définir une couleur de départ et une d’arrivée. L’instruction ne fonctionnera pas avec moins de 2 couleurs. Pour cela, nous utilisons la méthode addColorStop(p, couleur), p étant la position de la couleur dans le dégradé. </p>
+    <p>A noter que la position se situe entre 0(début) à 1(fin). Notre p devra donc être inclut dans cette tranche.
+Il est bien évidemment possible d’ajouter autant de couleur que souhaité.</p>
+      <ul>
+        <li>Avec createLinearGradient(ax, ay, bx, by) on définit l’origine et la fin du dégradé et donc son axe.
+Ainsi (0, 0, 300, 300) donnerait un dégradé en diagonale et (0, 0, 300, 0) donnerait un dégradé horizontal, tout deux, sur la moitié de notre canvas de 600px par 300px.</li>
+        <li>On utilise ensuite context.fillStyle = linear pour définir le style des formes pleines(fill) en y affectant le dégradé crée dans les instructions précédentes.</li>
+        <li>Enfin, context.fillRect dessine notre rectangle aux couleurs de notre dégradé.</li>
+      </ul>
+  </div>
+  <div class="image">
+    <img src="images/strokeRect.png"/>
+    <img src="images/strokeRect1.png"/>
+    <img src="images/fillRect.png"/>
+    <img src="images/fillRect1.png"/>
+    <!-- <img src="../images/rectRendu.png"/> -->
+  </div>
+</div>
+<!-- _____________________________________________________ -->
+<h3>Modifier le point d'origine (0, 0)</h3>
+<p>En canvas, il est possible de changer le point d’origine (x = 0 et y = 0 par défaut) à l’aide des fonctions translate() et rotate().</p>
+<p>Pour ce faire, il est important d’étudier en premier lieu, les fonctions save() et restore().</p>
+<div class="article">
+  <div class="text">
+      <ul>
+        <li>La méthode save() a pour intérêt de sauvegarder les styles et le context que nous avons définit dans notre canvas.</li>
+        <li>restore() permet ainsi de revenir à la dernière sauvegarde effectuée</li>
+      </ul>
+      <br><p>Par exemple, si vous décidez de modifier votre point d’origine (0, 0), avec la commande translate(), sans avoir sauvegarder (save()) au préalable, vous devrez réutiliser translate() pour le remettre à l’origine. Cela peut devenir très embêtant, notamment lorsque l’on a effectué de nombreux déplacements et rotations.</p>
+      <br><p> Entrons maintenant dans le vif du sujet.</p>
+  </div>
+  <div class="image">
+    <img src="images/strokeRect.png"/>
+    <img src="images/strokeRect1.png"/>
+    <img src="images/fillRect.png"/>
+    <img src="images/fillRect1.png"/>
+    <!-- <img src="../images/rectRendu.png"/> -->
+  </div>
+</div>
+<!-- ____________________________________________________ -->
+<h4>La méthode translate</h4>
+<div class="article">
+  <div class="text">
+    <p>translate() permet de modifier les coordonnées x et y par défaut de notre canvas. Ainsi, notre point d’origine ne sera plus le point (0,0) mais celui choisi par nos soins.</p>
+    <br><p>Rappel: Pour plus de simplicité, n’oublier pas d’utiliser save() et ainsi conserver une sauvegarde de votre canvas d’origine ;).</p>
+  </div>
+  <div class="image">
+    <img src="images/strokeRect.png"/>
+    <img src="images/strokeRect1.png"/>
+    <img src="images/fillRect.png"/>
+    <img src="images/fillRect1.png"/>
+    <!-- <img src="../images/rectRendu.png"/> -->
+  </div>
+</div>
+<!-- _________________________________________________ -->
+<h4>La méthode rotate</h4>
+<div class="article">
+  <div class="text">
+    <p>rotate(), quant à elle, permet de modifier l’angle par défaut des axes de notre canvas. L’angle est indiqué par défaut en radiant, mais la conversion est possible avec un simple calcul: (angle * (Math.PI / 180)).</p>
+    <p>On utilise donc context.rotate(angle *(Math.PI/180) pour définir nos nouveaux axes de tracé.</p>
+    <br><p>Rappel: Pour plus de simplicité, n’oublier pas d’utiliser save() et ainsi conserver une sauvegarde de votre canvas d’origine ;).</p>
+  </div>
+  <div class="image">
+    <img src="images/strokeRect.png"/>
+    <img src="images/strokeRect1.png"/>
+    <img src="images/fillRect.png"/>
+    <img src="images/fillRect1.png"/>
+    <!-- <img src="../images/rectRendu.png"/> -->
+  </div>
+</div>
+
+
+
   <!-- ___________________SCRIPT -->
   <script type="text/javascript" src="tuto.js"></script>
 </body>
