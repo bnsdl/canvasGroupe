@@ -72,11 +72,12 @@ article h2{
   font-size: 2em;
   margin-top: 70px;
   color: #454647;
-  text-decoration: underline;
+  /*text-decoration: underline;*/
+  font-weight: 400;
 }
 
 article p{
-  margin-top: 40px;
+  margin-top: 100px;
   text-align: justify;
   color: white;
   margin-left: 30px;
@@ -156,11 +157,11 @@ article p{
 }
 .divTitre:hover{
   background-color:#ED1450;
-  border:5px solid black;
+  border:3px solid black;
 }
 .divTitre:hover a{
   color: white;
-  font-weight: 900;
+  font-weight: 400;
 }
 
 .listeTuto{
