@@ -60,11 +60,11 @@
     </div>
   </div>
   <!-- _________________________ -->
-  <h3>Les bases du dessins en canvas</h3>
   <p>Il existe plusieurs formes géométriques proposées de bases par canvas, le trait, le rectangle et l’arc de cercle. Elles possèdent chacune leurs propres fonctions, méthodes et paramètres à renseigner et doivent être systématiquement appelées à partir de la variable « context » que nous avons définit au préalable.</p>
-  <h4>Le rectangle</h4>
+  <h3>Les bases du dessins en canvas</h3>
   <div class="article">
     <div class="text">
+      <h4>Le rectangle</h4>
       <p>C’est la forme la plus simple d’utilisation. On distingue 2 méthodes: stroke ou fill soit respectivement l’intérieur vide ou l’intérieur plein.</p>
       <br><p> Chaque forme possède ses propres méthodes autour de stroke et fill. Ici nous nous intéresserons principalement à « style » pour donner une couleur à nos traits puis « rect » pour dessiner notre rectangle.</p>
         <ul>
@@ -81,9 +81,9 @@
     </div>
   </div>
   <!-- _______________________ -->
-  <h4>Le trait</h4>
   <div class="article">
     <div class="text">
+      <h4>Le trait</h4>
       <p>Un trait / tracé se déroule en plusieurs étapes: </p>
       <br><p> initialisation, point de départ, point d'arrivée, clôture et affichage du contour et/ou du remplissage.</p>
         <ul>
@@ -100,9 +100,9 @@
 
   </div>
   <!-- ____________________________ -->
-  <h4>Le cercle et l'arc de cercle</h4>
   <div class="article">
     <div class="text">
+      <h4>Le cercle et l'arc de cercle</h4>
       <p>Il n’existe pas vraiment de fonction directement prévue pour faire un cercle mais une fonction arc().</p>
       <br><p> Comme pour nos traits, il faut initialiser le début du dessin avec context.beginPath(), néanmoins, il n’est pas nécessaire de clôturer ce dernier avec context.closePath().
 les spécificités se situent au niveau des paramètres à renseigner pour notre fonction context.arc():
@@ -125,11 +125,11 @@ les spécificités se situent au niveau des paramètres à renseigner pour notre
 
   </div>
   <!-- ___________________________________________ -->
-  <h3>Aller plus loin(vers l'infini et l'au-delà!)</h3>
+  <h3>Aller plus loin(vers l'infini et au-delà!)</h3>
   <p>Canvas est capable de gérer plus que de simples tracés de formes, il gère également les images, le texte, des effets comme le dégradé et est capable de modifier son point d’origine 0.</p>
-  <h4>Les images</h4>
   <div class="article">
     <div class="text">
+      <h4>Les images</h4>
       <p>Avant de dessiner une image, il est tout d’abord nécessaire de la récupérer. Une fois celle-ci  chargée par canvas, on pourra alors lui demander de l’afficher sur notre feuille.</p>
         <ul>
           <li>new Image() indique à JavaScript que nous créons un nouvel objet de type image.</li>
@@ -146,9 +146,9 @@ Le couple (x, y) fait référence aux coordonnées du coin supérieur gauche où
     </div>
   </div>
 <!-- _____________________________________________ -->
-<h4>Le texte</h4>
 <div class="article">
   <div class="text">
+    <h4>Le texte</h4>
     <p>Pour faire du texte avec canvas, il n’est pas nécessaire de tracer soit même ses lettres, trait par trait, lettre par lettre…</p>
     <br><p>Heureusement, canvas a tout prévu et il existe deux fonctions capables de dessiner du texte:</p>
       <ul>
@@ -171,9 +171,9 @@ Le couple (x, y) fait référence aux coordonnées du coin supérieur gauche où
   </div>
 </div>
 <!-- ________________________________________________________ -->
-<h4>Le dégradé</h4>
 <div class="article">
   <div class="text">
+    <h4>Le dégradé</h4>
     <p>Il est possible de réaliser 2 types de dégradés, en ligne ou en cercle. Nous nous intéresserons principalement au dégradé linéaire dans cette partie.</p>
     <br><p>Pour ce faire, il est essentiel de définir une couleur de départ et une d’arrivée. L’instruction ne fonctionnera pas avec moins de 2 couleurs. Pour cela, nous utilisons la méthode addColorStop(p, couleur), p étant la position de la couleur dans le dégradé. </p>
     <p>A noter que la position se situe entre 0(début) à 1(fin). Notre p devra donc être inclut dans cette tranche.
@@ -193,8 +193,7 @@ Ainsi (0, 0, 300, 300) donnerait un dégradé en diagonale et (0, 0, 300, 0) don
 </div>
 <!-- _____________________________________________________ -->
 <h3>Modifier le point d'origine (0, 0)</h3>
-<p>En canvas, il est possible de changer le point d’origine (x = 0 et y = 0 par défaut) à l’aide des fonctions translate() et rotate().</p>
-<p>Pour ce faire, il est important d’étudier en premier lieu, les fonctions save() et restore().</p>
+<p>En canvas, il est possible de changer le point d’origine (x = 0 et y = 0 par défaut) à l’aide des fonctions translate() et rotate().<br>Pour ce faire, il est important d’étudier en premier lieu, les fonctions save() et restore().</p>
 <div class="article">
   <div class="text">
     <h4>Sauvegarde et restauration du point d'origine</h4>
