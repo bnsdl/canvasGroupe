@@ -1,0 +1,150 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title>Tutoriel Canvas</title>
+    <link rel="stylesheet" href="tuto.css" type="text/css" />
+    <link href='https://fonts.googleapis.com/css?family=Montserrat:400,700|Raleway:400,900,300' rel='stylesheet' type='text/css'>
+  </head>
+
+  <body>
+
+
+    <header>
+      <ul id="navbar">
+        <li onmouseover="info(1)">TUTORIEL</li>
+        <li onmouseover="info(2)">FONCTION</li>
+        <li id="EnCours">ATELIER</li>
+        <li onmouseover="info(4)">BLABLA</li>
+        <li onmouseover="info(5)">RESSOURCES</li>
+      </ul>
+      <ul id="hiddenUl">
+        <li id="hiddenLi1">Les 1ers pas, les bases</li>
+        <li id="hiddenLi2">Testons ensemble les 1ers acquis</li>
+        <li id="hiddenLi4">D'autres exemples d'applications par les simploniens</li>
+        <li id="hiddenLi5">Plus de documentation, plus de tutos, plus de waouh</li>
+      </ul>
+    </header>
+
+    <article id="pre_requis">Avant toute chose, créons ensemble un dossier donc lequel on trouvera :
+      <ul>
+        <li>Un fichier html</li>
+        <li>Un fichier JS que l'on rattachera au précedent</li>
+        <li>Nos images = le fond, le héro et le monstre (<a href="#">Click !</a>)</li>
+      </ul>
+    </article>
+    <article>
+      <div class="explanations">
+        <p>Contenu du fichier HTML qui ne bougera plus ensuite, un poil de style avec du CSS,
+        on finit en attachant notre fichier Javascript</p>
+      </div>
+      <div class="code">
+        <img src="html_atelier.png" alt="html" />
+      </div>
+
+    </article>
+    <article>
+      <div class="explanations">
+        <p>Récupération du canvas via le DOM</p>
+        <p>Contextualisation en 2d.</p>
+      </div>
+      <div class="code">
+        <img src="1recupcanva_ctx.png" alt="Récupération Canvas" />
+      </div>
+    </article>
+    <article>
+      <div class="explanations">
+        <p>Variable bgReady de manière à ne charger l'image que lorsque le reste de la page est prête.</p>
+        <p>Définition du fond d'écran comme étant une nouvelle Image() pour qu'il en récupère toutes les propriétés.</p>
+        <p>Attribution de l'image choisie via la propriété .src</p>
+        <p>De même pour le héro et le monstre.</p>
+      </div>
+      <div class="code">
+        <img src="2definition_img.png" alt="" />
+      </div>
+    </article>
+    <article>
+      <div class="explanations">
+        <p>Après avoir attribuer les images, il faut les dessiner dans le canvas grâce à la propriété drawImage()
+          qui prend en paramètre : </br>
+          la variable image définit précédemment </br>
+          une position x sur le canvas </br>
+          une position y sur le canvas </p>
+        <p> if (bgReady) correspond à if (bgReady === true) </p>
+        <p></p>
+      </div>
+      <div class="code">
+        <img src="3dessin.png" alt="" />
+      </div>
+    </article>
+    <article>
+      <div class="explanations">
+        <p>Création d'un objet par personnage dans lequel on définit : </br>
+        une position x par défaut </br>
+        une position y par défaut </br>
+        une vitesse en pixels par secondes (uniquement pour les éléments qui bougeront)</p>
+      </div>
+      <div class="code">
+        <img src="4var_personnages.png" alt="" />
+      </div>
+    </article>
+    <article>
+      <div class="explanations">
+        <p>Ajout des écouteurs d'évènements sur les touches du clavier.</p>
+        <p>Quand une touche est appuyée, son keyCode est enregistré dans l'objet KeysDown définit précédemment.</p>
+        <p>Une fois la touche lâchée (keyup), le nouvel objet est supprimé</p>
+        <p>Ca permet un déplacement fluide du personnage ainsi qu'un facilité d'utilisation.
+          Le joueur n'a pas besoin d'appuyer x fois sur une touche pour faire avancer le héro.</p>
+      </div>
+      <div class="code">
+        <img src="5ecouteurEvent.png" alt="" />
+      </div>
+    </article>
+    <article>Il est bon de rappeler ici que les images des personnages font 32 pixels par 32 pixels, c'est important pour la suite de cet atelier.</article>
+    <article>
+      <div class="explanations">
+        <p>Fonction reset pour replacer les personnages dans le canvas après qu'un monstre soit touché</p>
+        <p>Le héros retourne au centre du canvas.</p>
+        <p>Le monstre a une position aléatoire grâce à Math.random(). </br>
+          On enlève 64 pixels à la hauteur et la largeur du canvas pour éviter qu'il n'apparaisse en dehors du champs.</p>
+      </div>
+      <div class="code">
+        <img src="6fonctionReset.png" alt="" />
+      </div>
+    </article>
+    <article>
+      <div class="explanations">
+        <p>Fonction pour définir ce qu'il se passe à chaque update de la page</p>
+        <p>Toutes les touches du clavier sont définies par des nombres :
+          <a href="http://www.cambiaresearch.com/articles/15/javascript-char-codes-key-codes" target="_blank">Click !</a> </p>
+        <p>Flèche du haut = 38. </br>
+          Si 38 est dans notre objet keysDown et que la position y de notre héros
+          est supérieure à 0 (il est toujours dans le canvas) alors la position y diminue de la vitesse par le temps que la touche a été appuyée (paramètre
+          modifier que l'on verra dans la fonction globale.) </br>
+        Répéter l'opération pour toutes les touches utilisées en fonction de la direction qu'on veut leur donner.</p>
+        <p>Pour gérer si le héros a touché un monstre, il faut prendre en compte la taille des images de manière à
+          ce qu'un monstre soit considéré comme "touché" lorsque le héro est à côté.</br>
+          Appelle de la fonction reset() pour faire apparaitre le monstre à un autre endroit.</p>
+      </div>
+      <div class="code">
+        <img src="7fonction_update.png" alt="" />
+      </div>
+    </article>
+    <article>
+      <div class="explanations">
+        <p>Fonction main qui va faire tourner le jeu.</p>
+        <p>La variable now = le temps T quand la fonction est appelée (en millisecondes). </br>
+          La variable then = le temps T enregistré lors du dernier update. </br>
+          Le paramètre de update (modifier) devient delta/1000 (le temps entre 2 update divisé par 1000 pour obtenir des secondes).</p>
+        <p>La fonction requestAnimationFrame est un équivalent de setTimeout mais moins énergie-phage et surtout, étant intégré au nvigateur pour
+          soulager le processeur (pour approfondir :
+          <a href= "http://creativejs.com/resources/requestanimationframe/">Click !</a>)</p>
+      </div>
+      <div class="code">
+        <img src="8fonctionPrincipale.png" alt="" />
+      </div>
+    </article>
+    <p>Un peu plus de challenge ? Ajoute un compteur de monstre, démultiplie les à chaque fois que tu le touches, ce n'est que le début !</p>
+    <script type="text/javascript" src="tuto.js"></script>
+  </body>
+</html>
