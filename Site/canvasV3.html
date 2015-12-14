@@ -32,11 +32,11 @@
     </div>
 
     <div id="containerDroite">
-                  <div class="divTitre" id="titre1">
+                  <div class="divTitre" id="titre1" onclick= "toggleListeTuto()">
                       <h2><a href="#">T U T O R I E L</a></h2>
-                      <div "onclick">
-                        <div class="listeTuto" id="premiersPas"><h2><a href="#">Premiers pas..</a></h2></div>
-                        <div class="listeTuto" id="testerLesFonctions"><h2><a href="#">Tester les fonctions</a></h2></div>
+                      <div id="listeTuto">
+                        <div class="listeTutos" id="premiersPas"><h2><a href="#">Premiers pas..</a></h2></div>
+                        <div class="listeTutos" id="testerLesFonctions"><h2><a href="#">Tester les fonctions</a></h2></div>
                       </div>
                   </div>
 
@@ -130,6 +130,27 @@
         },20);
       }
     },80);
+  }
+
+  function toggleListeTuto(){
+    var e = document.getElementById('listeTuto');
+    var titre2 = document.getElementById('titre2');
+    var titre3 = document.getElementById('titre3');
+    var titre4 = document.getElementById('titre4');
+
+
+    if (e.style.display == "block"){
+      e.style.display = "none";
+      titre2.style.display = "block";
+      titre3.style.display = "block";
+      titre4.style.display = "block";
+    }
+    else{
+      e.style.display = "block";
+      titre2.style.display = "none";
+      titre3.style.display = "none";
+      titre4.style.display = "none";
+    }
   }
 
 
