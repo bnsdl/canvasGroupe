@@ -1,0 +1,58 @@
+*{
+  margin:0;
+  padding:0;
+}
+html {
+  box-sizing: border-box;
+}
+*, *:before, *:after {
+  box-sizing: inherit;
+}
+
+/*NAVBAR -------------------------------------------*/
+
+header {
+  font-size: 2em;
+  position: fixed;
+  width: 100%;
+  /*margin-bottom: 500px;*/
+}
+#navbar, #hiddenUl  {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  text-align: center;
+  background-color: lightgrey;
+}
+#navbar li, #hiddenUl li{
+  list-style-type: none;
+  width: 25%;
+  border: 1px solid rgba(237, 22, 81, 0.2);
+}
+#EnCours {
+background-color: #ED1651;
+color: white;
+}
+
+/*PARTIE CACHEE -----------------------------------------*/
+
+#hiddenUl{
+background-color: rgba(255, 255, 255, 0);
+}
+#hiddenUl li {
+  width: 100%;
+  background-color: rgba(237, 22, 81, 0.2);
+  justify-content: center;
+}
+#hiddenLi1 {
+  display: none;
+}
+#hiddenLi2{
+  display: none;
+}
+#hiddenLi4 {
+  display: none;
+}
+#hiddenLi5 {
+  display: none;
+}
