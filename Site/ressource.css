@@ -19,7 +19,7 @@ a{
 /*NAVBAR -------------------------------------------*/
 
 header {
-  font-size: 2em;
+  font-size: 1.7em;
   position: fixed;
   width: 100%;
   /*margin-bottom: 500px;*/
@@ -36,6 +36,7 @@ header {
   width: 25%;
   border: 1px solid rgba(237, 22, 81, 0.2);
   color: white;
+  padding: 10px;
 }
 #hiddenUl li{
   color: #1A1717;
@@ -58,15 +59,23 @@ color: white;
 }
 #hiddenLi1 {
   display: none;
+  font-size: 0.6em;
+  padding: 8px;
 }
 #hiddenLi2{
   display: none;
+  font-size: 0.6em;
+  padding: 8px;
 }
 #hiddenLi4 {
   display: none;
+  font-size: 0.6em;
+  padding: 8px;
 }
 #hiddenLi3 {
   display: none;
+  font-size: 0.6em;
+  padding: 8px;
 }
 
 #containerPrincipal{
@@ -85,7 +94,7 @@ color: white;
 }
 div p{
   color: white;
-  padding-top: 100px;
+  padding-top: 150px;
   margin-left: 50px;
   margin-right: 50px;
   text-align: justify;
@@ -120,4 +129,9 @@ div p{
   width: 60%;
   background-color: blue;
   display: inline-block;
+}
+
+h5{
+  /*margin-left: 500px;*/
+  margin-top: 150px;
 }
