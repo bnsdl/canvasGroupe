@@ -1,0 +1,131 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <title>Tutoriel Canvas</title>
+  <link rel="stylesheet" href="tuto.css" type="text/css" />
+</head>
+
+<body>
+
+
+  <header>
+    <ul id="navbar">
+      <li id="EnCours" onmouseover="info(1)">TUTORIEL</li>
+      <li onmouseover="info(2)">FONCTION</li>
+      <li onmouseover="info(3)">ATELIER</li>
+      <li onmouseover="info(4)">BLABLA</li>
+      <li onmouseover="info(5)">RESSOURCES</li>
+    </ul>
+    <ul id="hiddenUl">
+      <li id="hiddenLi1">Les 1ers pas, les bases</li>
+      <li id="hiddenLi2">Testons ensemble les 1ers acquis</li>
+      <li id="hiddenLi3">Atelier pour s'essayer à canvas</li>
+      <li id="hiddenLi4">D'autres exemples d'applications par les simploniens</li>
+      <li id="hiddenLi5">Plus de documentation, plus de tutos, plus de waouh</li>
+    </ul>
+  </header>
+  <h1>Bienvenu sur le tutoriel canvas</h1>
+  <p> Bloubliblablou</p>
+  <!-- _______________________ -->
+  <h3> Initialisation du canvas dans la page HTML</h3>
+  <div class="article">
+    <div class="text">
+      <p>Avant toute chose il est nécessaire de créer un espace pour le canvas grace à la balise "canvas" dans notre HTML, et plus précisément, dans la balise "body", à laquelle on attribue une hauteur et une largeur:</p>
+      <br><p>Il nous faut ensuite charger notre canvas ainsi que les différentes variables nécessaires à son exécution:</p>
+        <ul>
+          <li>La variable feuille correspond à notre canvas, c’est la « feuille » sur laquelle nous allons dessiner.</li>
+          <li>La variable context nous permet de définir le context dans lequel nous allons dessiner sur notre feuille: 2d ou 3d. Ici nous travaillerons exclusivement en 2d. Selon le context choisi, canvas aura accès à différentes fonctions et méthodes.</li>
+          <li>La variable input est facultative, elle nous permet d’avoir un espace pour écrire nos fonctions qui seront à interpréter par canvas. Elle doit être liée à une balise "input".</li>
+        </ul>
+
+        <br><p>Une fois le canvas initié, nous pouvons plonger dans les méthodes de dessin 2d.</p>
+    </div>
+    <div class="image">
+      <img src="images/declare.png"/>
+      <img src="images/init.png"/>
+    </div>
+  </div>
+  <!-- ________________________________ -->
+  <h3> Se repérer dans l'espace canvas</h3>
+  <div class="article">
+    <div class="text">
+      <p>L’espace de dessin de canvas se définit comme un graphique en 2 dimensions ou 2 axes (X et Y), ou encore comme une grille de pixels, quadrillée, dont le point d’origine 0 se situe en haut à gauche et X étant toujours définit en premier lorsque l’on indique des coordonnées. </p>
+      <br><p>(exemple: (x = 100, y = 200) donc  x = 100 pixels sur la droite et y = 200 pixels vers le bas)</p>
+
+      <br><p>Passons maintenant aux formes de dessin basiques de canvas.</p>
+    </div>
+    <div class="image">
+      <img src="images/echelle.png"/>
+    </div>
+  </div>
+  <!-- _________________________ -->
+  <h3>Les bases du dessins en canvas</h3>
+  <p>Il existe plusieurs formes géométriques proposées de bases par canvas, le trait, le rectangle et l’arc de cercle. Elles possèdent chacune leurs propres fonctions, méthodes et paramètres à renseigner et doivent être systématiquement appelées à partir de la variable « context » que nous avons définit au préalable.</p>
+  <h4>Le rectangle</h4>
+  <div class="article">
+    <div class="text">
+      <p>C’est la forme la plus simple d’utilisation. On distingue 2 méthodes: stroke ou fill soit respectivement l’intérieur vide ou l’intérieur plein.</p>
+      <br><p> Chaque forme possède ses propres méthodes autour de stroke et fill. Ici nous nous intéresserons principalement à « style » pour donner une couleur à nos traits puis « rect » pour dessiner notre rectangle.</p>
+        <ul>
+          <li>context.strokeStyle ou context.fillStyle, peuvent s’apparenter à une modification des propriétés CSS de notre rectangle, ici la couleur (NB: par défaut la valeur est « black »),</li>
+          <li>context.strokeRect ou context.fillRect, est la fonction qui effectue le tracé,</li>
+          <li>le couple (ax, ay) correspond aux coordonnées d’origine du tracé,</li>
+          <li>le couple (bx, by) correspond aux dimensions du tracé à partir du point d’origine.</li>
+        </ul>
+    </div>
+    <div class="image">
+      <img src="images/strokeRect.png"/>
+      <img src="images/strokeRect1.png"/>
+      <img src="images/fillRect.png"/>
+      <img src="images/fillRect1.png"/>
+      <!-- <img src="../images/rectRendu.png"/> -->
+    </div>
+  </div>
+  <!-- _______________________ -->
+  <h4>Le trait</h4>
+  <div class="article">
+    <div class="text">
+      <p>Un trait / tracé se déroule en plusieurs étapes: </p>
+      <br><p> initialisation, point de départ, point d'arrivée, clôture et affichage du contour et/ou du remplissage.</p>
+        <ul>
+          <li>context.beginPath() et context.closePath() sont obligatoires dans le cas d’un trait, ils annoncent à canvas que nous démarrons puis arrêtons un tracé.</li>
+          <li>context.moveTo(ax,ay) indique le point de départ du trait aux coordonnées (x,y) renseignées en paramètre.</li>
+          <li>context.lineTo(bx,by) indique le point d’arrivée du tracé aux coordonnées (x,y) renseignées</li>
+          <li>context.stroke() est essentiel pour que le tracé ait lieu: c’est en quelque sorte l’encre nécessaire pour dessiner.</li>
+        </ul>
+    </div>
+    <div class="image">
+      <img src="../images/trait.png"/>
+      <img src="../images/trait1.png"/>
+    </div>
+
+  </div>
+  <!-- ____________________________ -->
+  <h4>Le cercle et l'arc de cercle</h4>
+  <div class="article">
+    <div class="text">
+      <p>Il n’existe pas vraiment de fonction directement prévue pour faire un cercle mais une fonction arc().</p>
+      <br><p> Comme pour nos traits, il faut initialiser le début du dessin avec context.beginPath(), néanmoins, il n’est pas nécessaire de clôturer ce dernier avec context.closePath().
+les spécificités se situent au niveau des paramètres à renseigner pour notre fonction context.arc():
+        <ul>
+          <li>le couple (ax,ay) correspond aux coordonnées (x,y) du centre du cercle que nous voulons tracer</li>
+          <li>ayon correspond au rayon de notre cercle</li>
+          <li>les angles de début et de fin vont nous permettre de tracer de 1/8ième de cercle jusqu’à un cercle complet et sont exprimés en radians (on multiplie une valeur comprise entre 0 et 2 par Math.PI)</li>
+          <li>angleDébut définit le point de départ et angleFin, le point final du tracé. Ainsi, un cercle complet aurait pour angleDébut Math.PI*0 (soit 0) et pour angleFin Math.PI*2. Pour un demi cercle, on pourrait également faire, Math.PI*0,5 en début et Math.PI*1,5 en fin.</li>
+          <li>sensDuTracé nous permet de choisir le sens du tracé à l’aide d’un booléen. True représentant le sens inverse des aiguilles d’une montre et False le sens des aiguilles d’une montre.</li>
+        </ul>
+        <br><p>A noter que dans le cas d’un cercle complet, true ou false n’ont pas d’importance.
+Également, il est possible de réaliser un cercle plein en indiquant à la place des méthodes stroke() et strokeStyle(), fill() et fillStyle()</p>
+
+    </div>
+    <div class="image">
+      <img src="images/trait.png"/>
+      <img src="images/trait1.png"/>
+    </div>
+
+  </div>
+  <!-- ___________________SCRIPT -->
+  <script type="text/javascript" src="tuto.js"></script>
+</body>
+</html>
