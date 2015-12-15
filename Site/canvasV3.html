@@ -4,7 +4,7 @@
 
 <head>
   <meta charset="utf-8">
-  <title>Canvas et les beaux goss</title>
+  <title>Simplon vous présente Canvas</title>
   <link type="text/css" rel="stylesheet" href="canvasV3.css"/>
   <link href='https://fonts.googleapis.com/css?family=Questrial' rel='stylesheet' type='text/css'>
   <link rel="stylesheet" href="animate.min.css">
@@ -58,80 +58,74 @@
     </div>
     <script type="text/javascript">
 
-  var canvas;
-  var context;
-  var input;
+    var context;
+    var intervalCercle;
+    var intervalRect;
 
   window.onload = function initCanvas() {
-    console.log("initCanvas()...");
-    input = document.getElementById("input");
-    feuille = document.getElementById("canvas");
+    var feuille = document.getElementById("canvas");
     context = feuille.getContext("2d");
-    simplon();
+    cercle(60,"#ED1450");
   }
 
-  function trait(ax,ay,bx,by, color) {
-    context.strokeStyle = "black";
-    context.strokeStyle = color;
-    context.beginPath();
-    context.moveTo(ax,ay);
-    context.lineTo(bx,by);
-    context.closePath();
-    context.stroke();
-  }
-
-  function simplon(){
     var angle = 0;
     var angle2 = 0.1;
-    var intervalCercle = window.setInterval(function(){
-      context.beginPath();
-      context.setLineDash([4, 20]);
-      context.arc(300,300,260,angle,Math.PI*angle2, false);
-      angle = angle + 0.1;
-      angle2 = angle2 + 0.1;
+    var x = 260;
+
+    function trait(ax, ay, bx, by){
       context.strokeStyle = "#ED1450";
-      context.lineWidth = 60;
-      context.stroke();
+      context.beginPath();
+      context.moveTo(ax, ay);
+      context.lineTo(bx, by);
       context.closePath();
-      if (angle >= 5){
-        var x = 260;
-        window.clearInterval(intervalCercle);
-        angle = 0;
-        angle2 = 0;
-        var intervalRect1 = window.setInterval(function(){
-          context.setLineDash[0];
-          context.lineWidth = 80;
-          trait(x,220,x+1,220,"#ED1450");
-          x++;
-          if (x > 340){
-            window.clearInterval(intervalRect1);
-            x = 260;
-            var intervalRect2 = window.setInterval(function(){
-              trait(x,380,x+1,380,"#ED1450");
-              x++;
-              if (x > 340){
-                window.clearInterval(intervalRect2);
-                var intervalCleaner = window.setInterval(function(){
-                  context.beginPath();
-                  context.arc(300,300,260,angle,Math.PI*angle2, false);
-                  angle = angle + 0.1;
-                  angle2 = angle2 + 0.1;
-                  context.strokeStyle = "white";
-                  context.lineWidth = 500;
-                  context.stroke();
-                  context.closePath();
-                  if (angle >= 5){
-                    window.clearInterval(intervalCleaner);
-                    simplon();
-                  }
-                },100);
-              }
-            },20);
+      context.stroke();
+    }
+
+    function rectangle(y){
+      intervalRect = window.setInterval(function(){
+        context.setLineDash[0];
+        context.lineWidth = 80;
+        trait(x,y,x+1,y);
+        x++;
+        if (x > 340){
+          window.clearInterval(intervalRect);
+          x = 260;
+          if (y == 220){
+            rectangle(380);
           }
-        },20);
-      }
-    },80);
-  }
+          else if (y == 380){
+            window.setTimeout(function() {
+              cercle(500,"white");
+            }, 2000);
+          }
+        }
+      },20);
+    }
+
+    function cercle(taille, color){
+      intervalCercle = window.setInterval(function(){
+        context.beginPath();
+        context.setLineDash([4, 20]);
+        context.arc(300,300,260,angle,Math.PI*angle2, false);
+        angle = angle + 0.1;
+        angle2 = angle2 + 0.1;
+        context.strokeStyle = color;
+        context.lineWidth = taille;
+        context.stroke();
+        context.closePath();
+        if (angle >= 4){
+          window.clearInterval(intervalCercle);
+          angle = 0;
+          angle2 = 0.1;
+          if (taille == 60) {
+            rectangle(220);
+          }
+          else if (taille == 500){
+            cercle(60,"#ED1450");
+          }
+        }
+      },100)
+    }
 
   function toggleListeTuto(){
     var e = document.getElementById('listeTuto');
