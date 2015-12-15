@@ -5,10 +5,7 @@
   <title>Tutoriel Canvas</title>
   <link rel="stylesheet" href="tuto.css" type="text/css" />
 </head>
-
 <body>
-
-
   <header>
     <ul id="navbar">
       <li id="EnCours" onmouseover="info(1)">TUTORIEL</li>
@@ -25,8 +22,9 @@
       <li id="hiddenLi5">Plus de documentation, plus de tutos, plus de waouh</li>
     </ul>
   </header>
-  <h1>Bienvenu sur le tutoriel canvas</h1>
-  <p> Bloubliblablou</p>
+  <h1>Bienvenue sur le tutoriel canvas made in Simplon.co !</h1>
+  <p>Vous trouverez dans cette section comment initialiser son canvas, comment s'y repérer, et également, les fonctions primaires nécessaires à une bonne utilisation de ce puissant outil.
+  <br>À chaque étape, un module de test vous est proposé afin que vous puissiez tester vous même votre compréhension ainsi que le rendu des fonctions. Enjoy ! </p>
   <!-- _______________________ -->
   <h3> Initialisation du canvas dans la page HTML</h3>
   <div class="article">
@@ -38,7 +36,6 @@
           <li>La variable context nous permet de définir le context dans lequel nous allons dessiner sur notre feuille: 2d ou 3d. Ici nous travaillerons exclusivement en 2d. Selon le context choisi, canvas aura accès à différentes fonctions et méthodes.</li>
           <li>La variable input est facultative, elle nous permet d’avoir un espace pour écrire nos fonctions qui seront à interpréter par canvas. Elle doit être liée à une balise "input".</li>
         </ul>
-
         <br><p>Une fois le canvas initié, nous pouvons plonger dans les méthodes de dessin 2d.</p>
     </div>
     <div class="image">
@@ -46,19 +43,20 @@
       <img src="images/init.png"/>
     </div>
   </div>
+  <div class="trait"></div>
   <!-- ________________________________ -->
   <h3> Se repérer dans l'espace canvas</h3>
   <div class="article">
     <div class="text">
       <p>L’espace de dessin de canvas se définit comme un graphique en 2 dimensions ou 2 axes (X et Y), ou encore comme une grille de pixels, quadrillée, dont le point d’origine 0 se situe en haut à gauche et X étant toujours définit en premier lorsque l’on indique des coordonnées. </p>
       <br><p>(exemple: (x = 100, y = 200) donc  x = 100 pixels sur la droite et y = 200 pixels vers le bas)</p>
-
       <br><p>Passons maintenant aux formes de dessin basiques de canvas.</p>
     </div>
     <div class="image">
       <img src="images/echelle.png"/>
     </div>
   </div>
+  <div class="trait"></div>
   <!-- _________________________ -->
   <p>Il existe plusieurs formes géométriques proposées de bases par canvas, le trait, le rectangle et l’arc de cercle. Elles possèdent chacune leurs propres fonctions, méthodes et paramètres à renseigner et doivent être systématiquement appelées à partir de la variable « context » que nous avons définit au préalable.</p>
   <h3>Les bases du dessins en canvas</h3>
@@ -77,8 +75,26 @@
     <div class="image">
       <img src="images/rect.png"/>
       <img src="images/rect1.png"/>
-      <!-- <img src="../images/rectRendu.png"/> -->
     </div>
+  </div>
+  <div class="canvasBox">
+    <textarea id="tryRect" name="name" rows="15" cols="40">
+
+      rectVide(0,0,50,50);
+      rectPlein(350,0,400,50,"green");
+
+      <!-- version hors fonction, amusez vous ;) -->
+
+      function rect() {
+        context2.fillStyle = "pink";
+        context2.fillRect(200,150,400,200);
+      }
+
+      rect();
+
+    </textarea>
+    <button type="button" name="button" onclick="recupRect()">Try it !</button>
+    <canvas id="canvas2" height="200" width="400"></canvas>
   </div>
   <!-- _______________________ -->
   <div class="article">
@@ -97,7 +113,31 @@
       <img src="images/trait.png"/>
       <img src="images/trait1.png"/>
     </div>
+  </div>
+  <div class="canvasBox">
+    <textarea id="tryTrait" name="name" rows="15" cols="40">
 
+      trait(0, 0, 50, 50,"red");
+      trait(0,100,200,100,"green");
+      trait(400,0,50,150,"blue");
+
+      <!-- version hors fonction, amusez vous ;) -->
+
+    function trait2() {
+      context.strokeStyle = "pink";
+      context.lineWidth = 60;
+      context.beginPath();
+      context.moveTo(340, 150);
+      context.lineTo(400, 150);
+      context.closePath();
+      context.stroke();
+    }
+
+    trait2();
+
+    </textarea>
+    <button type="button" name="button" onclick="recupTrait()">Try it !</button>
+    <canvas id="canvas" height="200" width="400"></canvas>
   </div>
   <!-- ____________________________ -->
   <div class="article">
@@ -113,17 +153,36 @@ les spécificités se situent au niveau des paramètres à renseigner pour notre
           <li>angleDébut définit le point de départ et angleFin, le point final du tracé. Ainsi, un cercle complet aurait pour angleDébut Math.PI*0 (soit 0) et pour angleFin Math.PI*2. Pour un demi cercle, on pourrait également faire, Math.PI*0,5 en début et Math.PI*1,5 en fin.</li>
           <li>sensDuTracé nous permet de choisir le sens du tracé à l’aide d’un booléen. True représentant le sens inverse des aiguilles d’une montre et False le sens des aiguilles d’une montre.</li>
         </ul>
-        <br><p>A noter que dans le cas d’un cercle complet, true ou false n’ont pas d’importance.
-Également, il est possible de réaliser un cercle plein en indiquant à la place des méthodes stroke() et strokeStyle(), fill() et fillStyle()</p>
-
+        <br><p>A noter que dans le cas d’un cercle complet, true ou false n’ont pas d’importance. Également, il est possible de réaliser un cercle plein en indiquant à la place des méthodes stroke() et strokeStyle(), fill() et fillStyle()</p>
     </div>
     <div class="image">
       <img src="images/cercle.png"/>
       <img src="images/cercle1.png"/>
       <img src="images/cercle2.png"/>
     </div>
-
   </div>
+  <div class="canvasBox">
+    <textarea id="tryCercle" name="name" rows="15" cols="40">
+
+      cerclePlein(100,100,50,"blue");
+      cercleVide(200,100,50,"purple");
+
+      <!-- version hors fonction, amusez vous ;) -->
+
+      function cercle() {
+        context3.beginPath();
+        context3.arc(300, 100, 50, 0, Math.PI*1, false);
+        context3.fillStyle = "pink";
+        context3.fill();
+      }
+
+      cercle();
+
+    </textarea>
+    <button type="button" name="button" onclick="recupCercle()">Try it !</button>
+    <canvas id="canvas3" height="200" width="400"></canvas>
+  </div>
+  <div class="trait"></div>
   <!-- ___________________________________________ -->
   <h3>Aller plus loin(vers l'infini et au-delà!)</h3>
   <p>Canvas est capable de gérer plus que de simples tracés de formes, il gère également les images, le texte, des effets comme le dégradé et est capable de modifier son point d’origine 0.</p>
@@ -142,8 +201,30 @@ Le couple (x, y) fait référence aux coordonnées du coin supérieur gauche où
     <div class="image">
       <img src="images/image.png"/>
       <img src="images/image1.png"/>
-      <!-- <img src="../images/rectRendu.png"/> -->
     </div>
+  </div>
+  <div class="canvasBox">
+    <textarea id="tryImage" name="name" rows="15" cols="40">
+
+      dessineImage(0,0, "images/vache.jpg");
+
+      <!-- version hors fonction, amusez vous ;) -->
+
+      function dessineImage2(ax, ay, lien) {
+        var image = new Image();
+        image.src = lien;
+        image.onload = function() {
+          context4.drawImage(this, ax, ay);
+          };
+      }
+
+      dessineImage2();
+
+
+
+    </textarea>
+    <button type="button" name="button" onclick="recupImage()">Try it !</button>
+    <canvas id="canvas4" height="200" width="400"></canvas>
   </div>
 <!-- _____________________________________________ -->
 <div class="article">
@@ -167,8 +248,30 @@ Le couple (x, y) fait référence aux coordonnées du coin supérieur gauche où
     <img src="images/texte.png"/>
     <img src="images/texte1.png"/>
     <img src="images/texte2.png"/>
-    <!-- <img src="../images/rectRendu.png"/> -->
   </div>
+</div>
+<div class="canvasBox">
+  <textarea id="tryTexte" name="name" rows="15" cols="40">
+
+    texte(200,100, "Hello Simplon !");
+
+    <!-- version hors fonction, amusez vous ;) -->
+
+    function texte2( ax, ay, content, font) {
+      context5.font = "20px Arial";
+      context5.font = font;
+      context5.textAlign = "center";
+      context5.fillStyle = "black";
+      context5.fillText(content, ax, ay);
+    }
+
+    texte2();
+
+
+
+  </textarea>
+  <button type="button" name="button" onclick="recupTexte()">Try it !</button>
+  <canvas id="canvas5" height="200" width="400"></canvas>
 </div>
 <!-- ________________________________________________________ -->
 <div class="article">
@@ -188,9 +291,33 @@ Ainsi (0, 0, 300, 300) donnerait un dégradé en diagonale et (0, 0, 300, 0) don
   <div class="image">
     <img src="images/degrade.png"/>
     <img src="images/degrade1.png"/>
-    <!-- <img src="../images/rectRendu.png"/> -->
   </div>
 </div>
+<div class="canvasBox">
+  <textarea id="tryDegrade" name="name" rows="15" cols="40">
+
+    degrade("orange","yellow", "red");
+
+    <!-- version hors fonction, amusez vous ;) -->
+
+    function degrade2(color1, color2, color3){
+      var linear = context6.createLinearGradient(0,0,400,0);
+      linear.addColorStop(0, color1);
+      linear.addColorStop(0.5, color2);
+      linear.addColorStop(1, color3);
+      context6.fillStyle = linear;
+      context6.fillRect(0,0,400,200);
+    }
+
+    degrade2();
+
+
+
+  </textarea>
+  <button type="button" name="button" onclick="recupDegrade()">Try it !</button>
+  <canvas id="canvas6" height="200" width="400"></canvas>
+</div>
+<div class="trait"></div>
 <!-- _____________________________________________________ -->
 <h3>Modifier le point d'origine (0, 0)</h3>
 <p>En canvas, il est possible de changer le point d’origine (x = 0 et y = 0 par défaut) à l’aide des fonctions translate() et rotate().<br>Pour ce faire, il est important d’étudier en premier lieu, les fonctions save() et restore().</p>
@@ -206,7 +333,6 @@ Ainsi (0, 0, 300, 300) donnerait un dégradé en diagonale et (0, 0, 300, 0) don
   </div>
   <div class="image">
     <img src="images/save_restore.png"/>
-    <!-- <img src="../images/rectRendu.png"/> -->
   </div>
 </div>
 <!-- ____________________________________________________ -->
@@ -218,7 +344,6 @@ Ainsi (0, 0, 300, 300) donnerait un dégradé en diagonale et (0, 0, 300, 0) don
   </div>
   <div class="image">
     <img src="images/translate.png"/>
-    <!-- <img src="../images/rectRendu.png"/> -->
   </div>
 </div>
 <!-- _________________________________________________ -->
@@ -231,9 +356,10 @@ Ainsi (0, 0, 300, 300) donnerait un dégradé en diagonale et (0, 0, 300, 0) don
   </div>
   <div class="image">
     <img src="images/rotate.png"/>
-    <!-- <img src="../images/rectRendu.png"/> -->
   </div>
 </div>
+<div class="trait"></div>
+<p>A présent vous êtes fin prêt pour pratiquer d'avantage sur le canvas !</p>
 
 
 
