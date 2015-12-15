@@ -164,15 +164,20 @@ article p{
   font-weight: 400;
 }
 
-.listeTuto{
+.listeTutos{
   height: 90px;
   width:  500px;
   background-color: red;
   margin-top: 3px;
   border-radius: 5px;
   text-align: center;
+  /*display: none;*/
+}
+#listeTuto{
   display: none;
 }
+
+
 #premiersPas{
   margin-top: 43px;
 }
