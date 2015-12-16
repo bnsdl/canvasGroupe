@@ -12,6 +12,10 @@ body{
     font-family: 'Raleway';
 }
 
+li{
+  list-style-type: none;
+}
+
 /*NAVBAR -------------------------------------------*/
 
 header {
