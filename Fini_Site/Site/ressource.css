@@ -30,30 +30,35 @@ a {
   text-align: center;
   background-color: #1A1717;
 }
-#navbar li, #hiddenUl li{
+#navbar .cellules, #hiddenUl .cellules{
   list-style-type: none;
   width: 25%;
   border: 1px solid rgba(237, 22, 81, 0.2);
-  color: white;
   padding: 10px;
-}
-#hiddenUl li{
-  color: #1A1717;
 }
 #EnCours {
 background-color: #ED1651;
 color: white;
 }
+#logoHome{
+  width: 10%;
+  border: 1px solid rgba(237, 22, 81, 0.2);
+}
+
+#homeRose{
+  padding-top: 4px;
+  height: 50px;
+  width: 50px;
+}
 
 /*PARTIE CACHEE -----------------------------------------*/
 
-#hiddenUl li {
+#hiddenUl .cellules {
   width: 100%;
   background-color: white;
   justify-content: center;
   color: #1A1717;
   font-size: 0.6em;
-  padding: 8px;
 }
 #hiddenLi1 {
   display: none;
@@ -61,10 +66,10 @@ color: white;
 #hiddenLi2{
   display: none;
 }
-#hiddenLi4 {
+#hiddenLi3 {
   display: none;
 }
-#hiddenLi3 {
+#hiddenLi4 {
   display: none;
 }
 
@@ -115,15 +120,12 @@ div p{
 /*Container Droite--------------------------/*/
 
 #containerDroite{
-  /*position: absolute;*/
   float: right;
   height: 100vh;
   width: 60%;
-  background-color: blue;
   display: inline-block;
 }
 
 h5{
-  /*margin-left: 500px;*/
   margin-top: 150px;
 }
