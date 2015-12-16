@@ -3,6 +3,8 @@
   <head>
     <meta charset="utf-8">
     <title>Initiation à Canvas</title>
+    <link type="text/css" rel="stylesheet" href="testeur2.css">
+    <link href='https://fonts.googleapis.com/css?family=Montserrat:400,700|Raleway:400,900,300' rel='stylesheet' type='text/css'>
     <script type="text/javascript">
 
   var context;
@@ -181,8 +183,27 @@
   }
 
     </script>
+
+
   </head>
   <body>
+    <header>
+      <ul id="navbar">
+        <li onmouseover="info(1)"><a href="tuto.html">TUTORIEL</a></li>
+        <li id="EnCours"><a href="testeur.html">APPLICATION  </a></li>
+        <li onmouseover="info(3)"><a href="atelier.html">ATELIER</a></li>
+        <li onmouseover="info(4)"><a href="#">BLABLA</a></li>
+        <li  onmouseover="info(5)">RESSOURCES</li>
+      </ul>
+      <ul id="hiddenUl">
+        <li id="hiddenLi1">Les 1ers pas, les bases</li>
+        <li id="hiddenLi2">Testons ensemble les 1ers acquis</li>
+        <li id="hiddenLi3">Créons ensemble, un mini-jeu Canvas!</li>
+        <li id="hiddenLi4">D'autres exemples d'applications par les simploniens</li>
+        <li id="hiddenLi5">Plus de documentation, plus de tutos, plus de waouh !</li>
+      </ul>
+    </header>
+
     <div id="canvas_box">
       <div id="x">0</div> <div id="xSuite">100<span>200</span><span>300</span><span>400</span><span>500</span><span>600</span></div>
       <p id="y100">100<p id="y200">200</p><p id="y300">300</p></p>
@@ -210,93 +231,7 @@
       <button type="button" onclick="razStyles()">Réinitialiser les styles</button>
     </div>
     <h1>IN CODE WE TRUST #REVOLUTION</h1>
+    <script type="text/javascript" src="testeur2.js"></script>
   </body>
-  <style>
-
-* {
-  margin: 0;
-  padding: 0;
-}
-body {
-  background: lightgrey;
-}
-u {
-  font-size: 1.5em;
-}
-
-#canvas_box {
-  height: 450px;
-  background-color: lightgrey;
-}
-
-#x {
-  position: absolute;
-  top: 20px;
-  left: 20px;
-  width:50px;
-}
-#xSuite {
-  position: absolute;
-  top:20px;
-  left: 140px;
-  width:500px;
-}
-
-#y100 {
-  position:relative;
-  top:145px;
-  left:5px;
-}
-#y200 {
-  position:relative;
-  top:225px;
-  left:5px;
-}
-#y300 {
-  position:relative;
-  top:305px;
-  left:5px;
-}
-
-span {
-  margin-left: 75px;
-}
-
-canvas {
-  border: 1px solid black;
-  background: white;
-  margin-top: 0;
-  margin-left: 50px;
-}
-
-input {
-  width: 600px;
-  height: 75px;
-  margin-left: 50px;
-}
-
-h1 {
-  margin: 70px 60px;
-  font: 2.2em Sans-Serif;
-}
-
-#instructions {
-  width:400px;
-  position:absolute;
-  top: 5px;
-  left: 720px;
-  line-height: 50px;
-}
-
-button{
-  padding: 5px;
-  border-radius: 5px;
-  background:rgb(158, 204, 237);
-}
-
-#btnRaz {
-  margin-left: 225px;
-}
-  </style>
 
 </html>
