@@ -165,35 +165,85 @@ article p{
 }
 
 .listeTutos{
-  height: 90px;
-  width:  500px;
+  height: 60px;
+  width:  350px;
   background-color: red;
-  margin-top: 3px;
+  margin-top: 25px;
   border-radius: 5px;
   text-align: center;
-  /*display: none;*/
-}
-#listeTuto{
-  display: none;
 }
 
+
+@keyframes fadeIn {
+  to {
+    opacity: 1;
+  }
+}
+
+.fade-in {
+  opacity: 0;
+  animation: fadeIn 1s ease-in 1 forwards;
+}
+
+#listeTuto{
+  display: none;
+  position: relative;
+  top: 25%;
+  left: 30%;
+}
 
 #premiersPas{
   margin-top: 43px;
-}
-#premiersPas h2 a{
-  font-size: 25px;
-  font-weight: bold;
-  color: white;
-  padding-top: 30px;
-}
-#testerLesFonctions h2 a{
-  font-size: 25px;
-  font-weight: bold;
-  color: white;
-  padding-top: 30px;
+  border-radius: 5px;
+  border: 2px solid #1A1717;
+  background-color: rgba(255, 255, 255, 0.6);
 }
 
+#premiersPas h2{
+  padding-top: 15px;
+}
+
+#premiersPas h2 a{
+  /*font-size: 25px;*/
+  color: black;
+  padding-top: 30px;
+  font-weight: 400;
+}
+
+#testerLesFonctions h2{
+  padding-top: 15px;
+}
+
+#testerLesFonctions h2 a{
+  /*font-size: 1em;*/
+  color: black;
+  /*padding-top: 30px;*/
+  font-weight: 400;
+}
+
+#testerLesFonctions{
+  border-radius: 5px;
+  border: 2px solid #1A1717;
+  background-color: rgba(255, 255, 255, 0.6);
+}
+
+#premiersPas:hover{
+  background-color:#ED1450;
+  border:2px solid black;
+}
+#premiersPas:hover a{
+  color: white;
+  font-weight: 400;
+}
+
+#testerLesFonctions:hover{
+  background-color:#ED1450;
+  border:2px solid black;
+}
+#testerLesFonctions:hover a{
+  color: white;
+  font-weight: 400;
+}
 
 footer{
   background-color: rgba(255, 0, 0, 0.5);

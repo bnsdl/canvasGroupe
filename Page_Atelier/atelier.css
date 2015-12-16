@@ -15,7 +15,7 @@ body {
 /*NAVBAR -------------------------------------------*/
 
 header {
-  font-size: 2em;
+  font-size: 1.7em;
   position: fixed;
   width: 100%;
   /*margin-bottom: 500px;*/
@@ -25,12 +25,17 @@ header {
   flex-direction: row;
   justify-content: center;
   text-align: center;
-  background-color: lightgrey;
+  background-color: #1A1717;
 }
 #navbar li, #hiddenUl li{
   list-style-type: none;
   width: 25%;
   border: 1px solid rgba(237, 22, 81, 0.2);
+  color: white;
+  padding: 10px;
+}
+#hiddenUl li{
+  color: #1A1717;
 }
 #EnCours {
 background-color: #ED1651;
@@ -40,30 +45,47 @@ color: white;
 /*PARTIE CACHEE -----------------------------------------*/
 
 #hiddenUl{
-background-color: rgba(255, 255, 255, 0);
+/*background-color: #ED1450;*/
+
 }
 #hiddenUl li {
   width: 100%;
-  background-color: rgba(237, 22, 81, 0.2);
+  background-color: white;
   justify-content: center;
 }
 #hiddenLi1 {
   display: none;
+  font-size: 0.6em;
+  padding: 8px;
 }
 #hiddenLi2{
   display: none;
+  font-size: 0.6em;
+  padding: 8px;
 }
 #hiddenLi4 {
   display: none;
+  font-size: 0.6em;
+  padding: 8px;
+}
+#hiddenLi3 {
+  display: none;
+  font-size: 0.6em;
+  padding: 8px;
 }
 #hiddenLi5 {
   display: none;
+  font-size: 0.6em;
+  padding: 8px;
 }
 
+span{
+  font-weight: bold;
+}
 /* BLOCS ATELIER*/
 
 article {
-  padding-top: 100px;
+  padding-top: 120px;
   display: flex;
   justify-content: space-around;
   /*background-color: #c4c0c1;*/
@@ -78,6 +100,7 @@ article {
   border: 1px solid black;
   flex-direction: column;
   vertical-align: middle;
+  background-color: red;
   /*align-items: center;*/
 }
 p {
