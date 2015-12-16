@@ -1,0 +1,146 @@
+* {
+  margin: 0;
+  padding: 0;
+}
+body {
+  background: lightgrey;
+  font-family: 'Raleway'
+}
+u {
+  font-size: 1.5em;
+}
+
+/*NAVBAR -------------------------------------------*/
+
+header {
+  z-index: 1;
+  font-size: 1.7em;
+  position: fixed;
+  width: 100%;
+}
+a {
+  text-decoration: none;
+  color: white;
+}
+#navbar, #hiddenUl  {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  text-align: center;
+  background-color: #1A1717;
+}
+#navbar li, #hiddenUl li{
+  list-style-type: none;
+  width: 25%;
+  border: 1px solid rgba(237, 22, 81, 0.2);
+  color: white;
+  padding: 10px;
+}
+#hiddenUl li{
+  color: #1A1717;
+}
+#EnCours {
+background-color: #ED1651;
+color: white;
+}
+
+/*PARTIE CACHEE -----------------------------------------*/
+
+#hiddenUl li {
+  width: 100%;
+  background-color: white;
+  justify-content: center;
+  color: #1A1717;
+  font-size: 0.6em;
+  padding: 8px;
+}
+#hiddenLi1 {
+  display: none;
+}
+#hiddenLi2{
+  display: none;
+}
+#hiddenLi4 {
+  display: none;
+}
+#hiddenLi3 {
+  display: none;
+}
+
+
+#canvas_box {
+  padding-top: 100px;
+  height: 450px;
+  background-color: lightgrey;
+}
+
+#x {
+  position: absolute;
+  top: 120px;
+  left: 20px;
+  width:50px;
+}
+#xSuite {
+  position: absolute;
+  top:120px;
+  left: 140px;
+  width:500px;
+}
+
+#y100 {
+  position:relative;
+  top:145px;
+  left:5px;
+}
+#y200 {
+  position:relative;
+  top:225px;
+  left:5px;
+}
+#y300 {
+  position:relative;
+  top:305px;
+  left:5px;
+}
+
+span {
+  margin-left: 75px;
+}
+
+canvas {
+  border: 1px solid black;
+  background: white;
+  margin-top: 0;
+  margin-left: 50px;
+}
+
+input {
+  width: 600px;
+  height: 75px;
+  margin-left: 50px;
+}
+
+h1 {
+  margin: 70px 60px;
+  font: 2.2em Sans-Serif;
+}
+
+#instructions {
+  padding-top: 100px;
+  width:400px;
+  position:absolute;
+  top: 5px;
+  left: 720px;
+  line-height: 50px;
+}
+
+button{
+  padding: 8px;
+  border-radius: 5px;
+  background-color: #ED1651;
+  font-size: 0.9em;
+}
+
+#btnRaz {
+  margin-left: 225px;
+}
