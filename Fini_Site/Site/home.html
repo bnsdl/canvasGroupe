@@ -6,6 +6,7 @@
   <meta charset="utf-8">
   <title>Simplon vous présente Canvas</title>
   <link type="text/css" rel="stylesheet" href="home.css"/>
+  <link href='https://fonts.googleapis.com/css?family=Questrial' rel='stylesheet' type='text/css'>
   <link rel="stylesheet" href="animate.min.css">
   <link href='https://fonts.googleapis.com/css?family=Montserrat:400,700|Raleway:400,900,300' rel='stylesheet' type='text/css'>
 </head>
@@ -18,8 +19,9 @@
     <div id="containerGauche">
 
         <article>
-          <img id="logoSimplon" src="Images/SIMPLON.png" alt="logo d'intro"/>
+          <img id="logoSimplon" src="/home/vincent/Documents/Projets/Gestion_de_Projet/Canvas/canvasGroupe/Fini_Site/Site/Images/SIMPLON.png" alt="logo d'intro"/>
           <h1><span>&#60;</span> C A N V A S <span>&#62;</span></h1>
+          <!-- <h2> Avant de commencer ..</h2> -->
           <p>
               L’élément canvas est un composant de HTML5 que l’on peut rapprocher d’une feuille de dessin dans laquelle il est possible d’interagir dynamiquement à l’aide de fonctions JavaScript.
               Il s'agit d'un espace de pixels utilisé pour réaliser un bon nombre de fonctions graphiques, partant du simple tracé de courbe aux animations et jeux vidéo, en passant par les graphiques et la création d’images.
@@ -30,21 +32,127 @@
     </div>
 
     <div id="containerDroite">
-                  <div class="divTitre" id="titre1" onclick= "toggleListeTuto()">
-                      <h2><a>T U T O R I E L</a></h2>
+                  <div class="divTitre fade-inTitre" id="titre1" onclick= "toggleListeTuto()">
+                      <h2><a href="#">T U T O R I E L</a></h2>
 
                   </div>
-                  <div id="listeTuto">
-                    <div class="listeTutos" id="premiersPas"><h2><a href="tuto.html">Premiers pas..</a></h2></div>
-                    <div class="listeTutos" id="testerLesFonctions"><h2><a href="testeur.html">Tester les fonctions</a></h2></div>
+                  <div id="listeTuto" class="fade-in">
+                    <div class="listeTutos" id="premiersPas"><h2><a href="#">Premiers pas</a></h2></div>
+                    <div class="listeTutos" id="testerLesFonctions"><h2><a href="#">Tester les fonctions</a></h2></div>
                   </div>
 
-                  <div class="divTitre" id="titre2"><h2><a href="atelier.html">A T E L I E R</a></h2></div>
-                  <div class="divTitre" id="titre3"><h2><a href="ressource.html">R E S S O U R C E S</a></h2></div>
-                  <div class="divTitre" id="titre4"><h2><a href="#">?</a></h2></div>
+                  <div class="divTitre fade-inTitre" id="titre2"><h2><a href="#">A T E L I E R</a></h2></div>
+                  <div class="divTitre fade-inTitre" id="titre3"><h2><a href="#">R E S S O U R C E S</a></h2></div>
+                  <div class="divTitre fade-inTitre" id="titre4"><h2><a href="#">?</a></h2></div>
 
     </div>
+
+
+      <!-- <footer><p>Crédit: Sur une idée originale d'Erick Ghaumez, développée par Adeline, Amel, Benoit, Jimmy, Vincent et Yohan</p></footer>
+ -->
+
+
+
+
+
     </div>
-    <script type="text/javascript" src="home.js"></script>
+    <script type="text/javascript">
+
+    var context;
+    var intervalCercle;
+    var intervalRect;
+
+  window.onload = function initCanvas() {
+    var feuille = document.getElementById("canvas");
+    context = feuille.getContext("2d");
+    cercle(60,"#ED1450");
+  }
+
+    var angle = 0;
+    var angle2 = 0.1;
+    var x = 260;
+
+    function trait(ax, ay, bx, by){
+      context.strokeStyle = "#ED1450";
+      context.beginPath();
+      context.moveTo(ax, ay);
+      context.lineTo(bx, by);
+      context.closePath();
+      context.stroke();
+    }
+
+    function rectangle(y){
+      intervalRect = window.setInterval(function(){
+        context.setLineDash[0];
+        context.lineWidth = 80;
+        trait(x,y,x+1,y);
+        x++;
+        if (x > 340){
+          window.clearInterval(intervalRect);
+          x = 260;
+          if (y == 220){
+            rectangle(380);
+          }
+          else if (y == 380){
+            window.setTimeout(function() {
+              cercle(500,"white");
+            }, 2000);
+          }
+        }
+      },20);
+    }
+
+    function cercle(taille, color){
+      intervalCercle = window.setInterval(function(){
+        context.beginPath();
+        context.setLineDash([4, 20]);
+        context.arc(300,300,260,angle,Math.PI*angle2, false);
+        angle = angle + 0.1;
+        angle2 = angle2 + 0.1;
+        context.strokeStyle = color;
+        context.lineWidth = taille;
+        context.stroke();
+        context.closePath();
+        if (angle >= 5){
+          window.clearInterval(intervalCercle);
+          angle = 0;
+          angle2 = 0.1;
+          if (taille == 60) {
+            rectangle(220);
+          }
+          else if (taille == 500){
+            cercle(60,"#ED1450");
+          }
+        }
+      },80)
+    }
+
+  function toggleListeTuto(){
+    var e = document.getElementById('listeTuto');
+    var titre2 = document.getElementById('titre2');
+    var titre3 = document.getElementById('titre3');
+    var titre4 = document.getElementById('titre4');
+
+
+    if (e.style.display == "block"){
+        e.style.display = "none";
+        titre2.style.display = "block";
+        titre2.classList.add('fade-in');
+        titre3.style.display = "block";
+        titre3.classList.add('fade-in');
+        titre4.style.display = "block";
+        titre4.classList.add('fade-in');
+      }
+
+    else{
+      e.style.display = "block";
+      titre2.style.display = "none";
+      titre3.style.display = "none";
+      titre4.style.display = "none";
+    }
+  }
+
+
+    </script>
   </body>
   </html>
