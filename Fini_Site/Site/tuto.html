@@ -139,6 +139,8 @@
     <button type="button" name="button" onclick="recupTrait()">Try it !</button>
     <canvas id="canvas" height="200" width="400"></canvas>
   </div>
+  <p> NB: Au premier passage du Try it, les traits rouge, vert et bleu sont fins, mais si vous appuyez une seconde fois sur Try it, ces derniers s'épaississent comme le "trait" rose.
+    <br> Cela est dû au fait que nous modifions context.lineWidth dans la fonction trait2() et que cela affecte l'ensemble du canvas tant que nous ne spécifions pas à nouveau que context.lineWidth = 1.</p>
   <!-- ____________________________ -->
   <article>
     <div class="text">
