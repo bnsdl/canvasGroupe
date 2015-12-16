@@ -1,0 +1,135 @@
+*{
+  margin:0;
+  padding:0;
+}
+html {
+  box-sizing: border-box;
+}
+*, *:before, *:after {
+  box-sizing: inherit;
+}
+body{
+    font-family: 'Raleway';
+}
+
+/*NAVBAR -------------------------------------------*/
+
+header {
+  font-size: 1.7em;
+  position: fixed;
+  width: 100%;
+}
+a {
+  text-decoration: none;
+  color: white;
+}
+#navbar, #hiddenUl  {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  text-align: center;
+  background-color: #1A1717;
+}
+#navbar li, #hiddenUl li{
+  list-style-type: none;
+  width: 25%;
+  border: 1px solid rgba(237, 22, 81, 0.2);
+  color: white;
+  padding: 10px;
+}
+#hiddenUl li{
+  color: #1A1717;
+}
+#EnCours {
+background-color: #ED1651;
+color: white;
+}
+
+/*PARTIE CACHEE -----------------------------------------*/
+
+#hiddenUl li {
+  width: 100%;
+  background-color: white;
+  justify-content: center;
+  color: #1A1717;
+  font-size: 0.6em;
+  padding: 8px;
+}
+#hiddenLi1 {
+  display: none;
+}
+#hiddenLi2{
+  display: none;
+}
+#hiddenLi5 {
+  display: none;
+}
+#hiddenLi3 {
+  display: none;
+}
+
+/*Contenu ----------------------------------------------*/
+
+#containerPrincipal{
+  height: 100vh;
+  width: 100%;
+  display: inline-block;
+}
+
+/*Container Gauche------------------------------------*/
+
+#containerGauche{
+  background-color:#1A1717 ;
+  height: 100vh;
+  width: 40%  ;
+  display: inline-block;
+}
+div p{
+  color: white;
+  padding-top: 150px;
+  margin-left: 50px;
+  margin-right: 50px;
+  text-align: justify;
+}
+.partieTitre{
+  margin-left: 50px;
+  color: white;
+  margin-top: 40px;
+  color: #ED1450
+}
+
+.ref{
+  margin-left: 50px;
+  list-style: none;
+  margin-top: 5px;
+}
+
+ .ref:first-child{
+   margin-top: 18px;
+ }
+
+#clique{
+  font-weight: bold;
+}
+
+/*Container Droite--------------------------/*/
+
+#containerDroite{
+  /*position: absolute;*/
+  float: right;
+  height: 100vh;
+  width: 60%;
+  /*background-color: blue;*/
+  display: inline-block;
+}
+
+iframe {
+  width:100%;
+  height:100%;
+  /*height:600px;*/
+}
+
+h5{
+  /*margin-left: 500px;*/
+  margin-top: 150px;
+}
