@@ -140,7 +140,7 @@ article p{
 }
 .divTitre:hover{
   background-color:#ED1450;
-  border:3px solid black;
+  border:2px solid black;
 }
 .divTitre:hover a{
   color: white;
