@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title>Initiation à Canvas</title>
+    <script type="text/javascript">
+
+  var canvas;
+  var context;
+  var input;
+
+  window.onload = function initCanvas() {
+    console.log("initCanvas()...");
+    input = document.getElementById("input");
+    feuille = document.getElementById("canvas");
+    context = feuille.getContext("2d");
+    simplon();
+  }
+
+  function trait(ax,ay,bx,by, color) {
+    context.strokeStyle = "black";
+    context.strokeStyle = color;
+    context.beginPath();
+    context.moveTo(ax,ay);
+    context.lineTo(bx,by);
+    context.closePath();
+    context.stroke();
+  }
+
+  function simplon(){
+    var angle = 0;
+    var angle2 = 0.1;
+    var intervalCercle = window.setInterval(function(){
+      context.beginPath();
+      context.setLineDash([4, 20]);
+      context.arc(300,300,260,angle,Math.PI*angle2, false);
+      angle = angle + 0.1;
+      angle2 = angle2 + 0.1;
+      context.strokeStyle = "red";
+      context.lineWidth = 60;
+      context.stroke();
+      context.closePath();
+      if (angle >= 4){
+        var x = 260;
+        window.clearInterval(intervalCercle);
+        angle = 0;
+        angle2 = 0;
+        var intervalRect1 = window.setInterval(function(){
+          context.setLineDash[0];
+          context.lineWidth = 80;
+          trait(x,220,x+1,220,"red");
+          x++;
+          if (x > 340){
+            window.clearInterval(intervalRect1);
+            x = 260;
+            var intervalRect2 = window.setInterval(function(){
+              trait(x,380,x+1,380,"red");
+              x++;
+              if (x > 340){
+                window.clearInterval(intervalRect2);
+                var intervalCleaner = window.setInterval(function(){
+                  context.beginPath();
+                  context.arc(300,300,260,angle,Math.PI*angle2, false);
+                  angle = angle + 0.1;
+                  angle2 = angle2 + 0.1;
+                  context.strokeStyle = "white";
+                  context.lineWidth = 500;
+                  context.stroke();
+                  context.closePath();
+                  if (angle >= 4){
+                    window.clearInterval(intervalCleaner);
+                    simplon();
+                  }
+                },100);
+              }
+            },20);
+          }
+        },20);
+      }
+    },80);
+  }
+
+
+    </script>
+  </head>
+  <body>
+    <div id="canvas_box">
+      <canvas id="canvas" width="600" height="600"></canvas>
+    </div>
+  </body>
+  <style>
+
+* {
+  margin: 0;
+  padding: 0;
+}
+
+canvas {
+  border: 1px solid black;
+  background: white;
+  margin-top: 50px;
+  margin-left: 50px;
+}
+
+  </style>
+
+</html>

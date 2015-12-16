@@ -1,0 +1,94 @@
+*{
+  margin:0;
+  padding:0;
+}
+html {
+  box-sizing: border-box;
+}
+*, *:before, *:after {
+  box-sizing: inherit;
+}
+body {
+  font-family: "Raleway";
+}
+
+/*NAVBAR -------------------------------------------*/
+
+header {
+  font-size: 1.7em;
+  position: fixed;
+  width: 100%;
+}
+a {
+  text-decoration: none;
+  color: white;
+}
+#navbar, #hiddenUl  {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  text-align: center;
+  background-color: #1A1717;
+}
+#navbar li, #hiddenUl li{
+  list-style-type: none;
+  width: 25%;
+  border: 1px solid rgba(237, 22, 81, 0.2);
+  padding: 10px;
+}
+
+#EnCours {
+background-color: #ED1651;
+color: white;
+}
+
+/*PARTIE CACHEE -----------------------------------------*/
+
+#hiddenUl li {
+  width: 100%;
+  background-color: white;
+  justify-content: center;
+  color: #1A1717;
+  font-size: 0.6em;
+}
+#hiddenLi1 {
+  display: none;
+}
+#hiddenLi2{
+  display: none;
+}
+#hiddenLi4 {
+  display: none;
+}
+#hiddenLi5 {
+  display: none;
+}
+
+/* BLOCS ATELIER*/
+
+article {
+  padding-top: 100px;
+  display: flex;
+  justify-content: space-around;
+}
+#pre_requis {
+  flex-direction: column;
+  text-align: center;
+}
+.explanations {
+  display: flex;
+  width: 40%;
+  border: 1px solid black;
+  flex-direction: column;
+  vertical-align: middle;
+}
+p {
+  font-size: 3vh;
+  margin: 20px;
+}
+.code {
+  width: 40%;
+}
+.code img {
+  width: 100%;
+}
