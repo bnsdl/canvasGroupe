@@ -125,21 +125,17 @@ div p{
 /*Container Droite--------------------------/*/
 
 #containerDroite{
-  /*position: absolute;*/
   float: right;
   height: 100vh;
   width: 60%;
-  /*background-color: blue;*/
   display: inline-block;
 }
 
 iframe {
   width:100%;
   height:100%;
-  /*height:600px;*/
 }
 
 h5{
-  /*margin-left: 500px;*/
   margin-top: 150px;
 }
