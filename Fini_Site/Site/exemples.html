@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title>Exemples</title>
+    <link rel="stylesheet" href="exemples.css" type="text/css" />
+    <link href='https://fonts.googleapis.com/css?family=Montserrat:400,700|Raleway:400,900,300' rel='stylesheet' type='text/css'>
+  </head>
+
+  <body>
+
+
+    <header>
+      <ul id="navbar">
+        <li onmouseover="info(1)"><a href="tuto.html">TUTORIEL</a></li>
+        <li onmouseover="info(2)"><a href="testeur.html">TESTEUR</a></li>
+        <li onmouseover="info(3)"><a href="atelier.html">ATELIER</a></li>
+        <li id="EnCours"><a href="#">EXEMPLES</a></li>
+        <li onmouseover="info(5)"><a href="#">RESSOURCES</a></li>
+      </ul>
+      <ul id="hiddenUl">
+        <li id="hiddenLi1">Les 1ers pas, les bases</li>
+        <li id="hiddenLi2">Testons ensemble les 1ers acquis</li>
+        <li id="hiddenLi3">Créons ensemble, un mini-jeu Canvas!</li>
+        <li id="hiddenLi5">Plus de documentation, plus de tutos, plus de waouh !</li>
+      </ul>
+    </header>
+
+    <div id="containerPrincipal">
+
+
+    <div id="containerGauche">
+      <p><span id="clique">Clique</span> sur les différents items et découvre divers exemples d'utilisation de &#60;Canvas&#62;..</p>
+
+
+        <li><h2 class="partieTitre">Exemple de dessin en Canvas:</h2></li>
+        <ul>
+          <li class="ref" onclick="affiche(0)"><a href="#">Pendu by Séverin</a></li>
+          <li class="ref" onclick="affiche(1)"><a href="#">Cloth experiment</a></li>
+          <li class="ref" onclick="affiche(2)"><a href="#">Canvas Nebula</a></li>
+          <li class="ref" onclick="affiche(3)"><a href="#">Blob</a></li>
+          <li class="ref" onclick="affiche(4)"><a href="#">Particules</a></li>
+        </ul>
+
+    </div>
+
+    <div id="containerDroite">
+      <iframe id="iframe" src="" frameborder="0"></iframe>
+      <!-- <p> D'après une idée originale d'Erick Ghaumez, Adeline, Amel, Benoit, Jimmy, Vincent et Yohan vous ont proposé de découvrir Canvas en vous apprenant à l'utiliser à travers des tutos ludiques.
+          Nous ésperons que cela portera ses fruits et que de beaux et ambitieux projets verront le jour sur la toile grâce à nos explications et votre imagination.
+          <br>Tout est possible, si nous y sommes parvenus, vous le pourrez aussi !<br>
+            <br>N'abandonnez jamais.
+          <br><br>"In Code We Trust"</p> -->
+    </div>
+
+  </div>
+
+
+
+
+
+
+    <script type="text/javascript" src="exemples.js"></script>
+  </body>
+</html>
