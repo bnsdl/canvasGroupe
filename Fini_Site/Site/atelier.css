@@ -23,6 +23,10 @@ a {
   text-decoration: none;
   color: white;
 }
+
+#click{
+  color: #ED1651;
+}
 #navbar, #hiddenUl  {
   display: flex;
   flex-direction: row;
@@ -30,7 +34,7 @@ a {
   text-align: center;
   background-color: #1A1717;
 }
-#navbar li, #hiddenUl li{
+#navbar .cellules, #hiddenUl .cellules{
   list-style-type: none;
   width: 25%;
   border: 1px solid rgba(237, 22, 81, 0.2);
@@ -42,9 +46,24 @@ background-color: #ED1651;
 color: white;
 }
 
+#logoHome{
+  /*background-image: url(home.png);
+  background-repeat: no-repeat;
+  background-size: 20%;
+  width: 20px;;
+*/
+  width: 10%;
+}
+
+#homeRose{
+  padding-top: 4px;
+  height: 50px;
+  width: 50px;
+}
+
 /*PARTIE CACHEE -----------------------------------------*/
 
-#hiddenUl li {
+#hiddenUl .cellules {
   width: 100%;
   background-color: white;
   justify-content: center;
