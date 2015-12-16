@@ -21,7 +21,6 @@
         <article>
           <img id="logoSimplon" src="Images/SIMPLON.png" alt="logo d'intro"/>
           <h1><span>&#60;</span> C A N V A S <span>&#62;</span></h1>
-          <!-- <h2> Avant de commencer ..</h2> -->
           <p>
               L’élément canvas est un composant de HTML5 que l’on peut rapprocher d’une feuille de dessin dans laquelle il est possible d’interagir dynamiquement à l’aide de fonctions JavaScript.
               Il s'agit d'un espace de pixels utilisé pour réaliser un bon nombre de fonctions graphiques, partant du simple tracé de courbe aux animations et jeux vidéo, en passant par les graphiques et la création d’images.
@@ -34,27 +33,18 @@
     <div id="containerDroite">
                   <div class="divTitre fade-inTitre" id="titre1" onclick= "toggleListeTuto()">
                       <h2><a href="#">T U T O R I E L</a></h2>
-
-                  </div>
                   <div id="listeTuto" class="fade-in">
-                    <div class="listeTutos" id="premiersPas"><h2><a href="#">Premiers pas</a></h2></div>
-                    <div class="listeTutos" id="testerLesFonctions"><h2><a href="#">Tester les fonctions</a></h2></div>
+                    <div class="listeTutos" id="premiersPas"><h2><a href="atelier.html">Premiers pas</a></h2></div>
+                    <div class="listeTutos" id="testerLesFonctions"><h2><a href="testeur.html">Tester les fonctions</a></h2></div>
                   </div>
 
-                  <div class="divTitre fade-inTitre" id="titre2"><h2><a href="#">A T E L I E R</a></h2></div>
-                  <div class="divTitre fade-inTitre" id="titre3"><h2><a href="#">E X E M P L E S</a></h2></div>
-                  <div class="divTitre fade-inTitre" id="titre4"><h2><a href="#">R E S S O U R C E S</a></h2></div>
+                  </div>
+
+                  <div class="divTitre fade-inTitre" id="titre2"><h2><a href="atelier.html">A T E L I E R</a></h2></div>
+                  <div class="divTitre fade-inTitre" id="titre3"><h2><a href="exemples.html">E X E M P L E S</a></h2></div>
+                  <div class="divTitre fade-inTitre" id="titre4"><h2><a href="ressource.html">R E S S O U R C E S</a></h2></div>
 
     </div>
-
-
-      <!-- <footer><p>Crédit: Sur une idée originale d'Erick Ghaumez, développée par Adeline, Amel, Benoit, Jimmy, Vincent et Yohan</p></footer>
- -->
-
-
-
-
-
     </div>
     <script type="text/javascript">
 
@@ -134,7 +124,7 @@
     var titre4 = document.getElementById('titre4');
 
 
-    if (e.style.display == "block"){
+    if (e.style.display == "flex"){
         e.style.display = "none";
         titre2.style.display = "block";
         titre2.classList.add('fade-in');
@@ -145,7 +135,7 @@
       }
 
     else{
-      e.style.display = "block";
+      e.style.display = "flex";
       titre2.style.display = "none";
       titre3.style.display = "none";
       titre4.style.display = "none";

@@ -4,10 +4,7 @@
 }
 
 body{
-  /*font-family: helvetica;*/
-  /*font-family: 'Montserrat', sans-serif;*/
   font-family: 'Raleway', sans-serif;
-
 }
 
 a{
@@ -43,9 +40,6 @@ a{
 #containerGauche{
   height: 100vh;
   width: 40%;
-  /*500px;*/
-  /*display: inline;*/
-
 }
 
 article{
@@ -60,7 +54,6 @@ article h1{
   margin-top: 40px;
   text-align: center;
   font-size: 2.9em;
-  /*text-decoration: underline;*/
   color: #ED1450;
 }
 span{
@@ -72,7 +65,6 @@ article h2{
   font-size: 2em;
   margin-top: 70px;
   color: #454647;
-  /*text-decoration: underline;*/
   font-weight: 400;
 }
 
@@ -99,13 +91,10 @@ article p{
   width:734px;
   background-color: white;
   flex: 1;
-  /*display: inline-block;*/
 }
 
 #canvas{
-  /*border: 1px solid black;*/
   margin-left: 10px;
-  /*z-index: -1;*/
   position: fixed;
   top: 25px;
   right: 70px;
@@ -117,33 +106,26 @@ article p{
   height: 100px;
   width: 500px;
   background-color: rgba(255, 255, 255, 0.6);
-  /*margin-top: 50px;*/
-  /*margin-left: 15%;*/
   position: absolute;
-  /*top: 0;*/
   z-index: 1;
 }
 
 #titre1{
-  /*margin-top: 50px;*/
   top: 50px;
   right: 120px;
 }
 
 #titre2{
-  /*margin-top: 50px;*/
   top: 200px;
   right: 120px;
 }
 
 #titre3{
-  /*margin-top: 50px;*/
   top: 350px;
   right: 120px;
 }
 
 #titre4{
-  /*margin-top: 50px;*/
   top: 500px;
   right: 120px;
 }
@@ -192,8 +174,10 @@ article p{
 #listeTuto{
   display: none;
   position: relative;
+  width: 500px;
   top: 25%;
-  left: 29%;
+  flex-direction: column;
+  align-items: center;
 }
 
 #premiersPas{
@@ -208,7 +192,6 @@ article p{
 }
 
 #premiersPas h2 a{
-  /*font-size: 25px;*/
   color: black;
   padding-top: 30px;
   font-weight: 400;
@@ -219,9 +202,7 @@ article p{
 }
 
 #testerLesFonctions h2 a{
-  /*font-size: 1em;*/
   color: black;
-  /*padding-top: 30px;*/
   font-weight: 400;
 }
 
@@ -255,29 +236,4 @@ footer{
   width: 100%;
   bottom: 0px;
   position: fixed;
-  /*display: inline-block;*/
-  /*margin-top: 10px;*/
 }
-/*footer p{
-  margin-left: 83px;
-  padding-top: 13px;
-  font-size: 0.8em;
-}*/
-
-
-
-
-
-/*img{
-  animation-name: afficher;
-  transition: 2s;
-  display: none;
-}
-@keyframes afficher{
-  from{
-    display: hidden;
-  }
-  to{
-    display: inline-block;
-  }
-}*/
