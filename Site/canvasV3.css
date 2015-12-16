@@ -184,12 +184,16 @@ article p{
   opacity: 0;
   animation: fadeIn 1s ease-in 1 forwards;
 }
+.fade-inTitre{
+  opacity: 0;
+  animation: fadeIn 2s ease-in 1 forwards;  
+}
 
 #listeTuto{
   display: none;
   position: relative;
   top: 25%;
-  left: 30%;
+  left: 29%;
 }
 
 #premiersPas{
