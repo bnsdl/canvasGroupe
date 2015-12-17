@@ -25,16 +25,12 @@ header {
 }
 
 #logoResponsive{
-    display: none;
+  display: none;
 }
 
 a {
   text-decoration: none;
   color: white;
-}
-
-#click{
-  color: #ED1651;
 }
 
 #navbar, #hiddenUl  {
@@ -163,20 +159,11 @@ h5{
     left: 10px;
 }
 
-  /*#logoResponsive:hover header{
-    display: block;
-  }*/
-
-
   header {
     position: absolute;
     font-size: 1em;
-    /*position: static;*/
     display:none;
-    /*visibility: hidden;*/
   }
-
-
 
   #navbar .cellules  {
     display:  block;
@@ -197,7 +184,6 @@ h5{
   #containerDroite{
     width: 100%;
     float: none;
-    /*height: 50%;*/
   }
 
   #texte{
@@ -205,12 +191,6 @@ h5{
     top: 0;
     margin-left: 30%;
   }
-
-  .partieTitre{
-  }
-
-  .ref{
-      }
 
   #hiddenUl {
     display: none;
@@ -223,4 +203,17 @@ h5{
   #logoHome{
     display: none;
   }
+}
+#logoResponsive:hover + header, header:hover{
+  display: block;
+}
+
+header {
+  width:210px;
+}
+
+@media  screen and (min-width: 1025px){
+#header {
+  width: 100%;
+}
 }

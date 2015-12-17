@@ -17,13 +17,3 @@ function info(i){
   }
 
   var header = document.getElementById("header");
-
-
-  function navbar(){
-    if (header.style.display == "block"){
-      header.style.display = "none";
-    }
-    else {
-      header.style.display = "block";
-    }
-  }
