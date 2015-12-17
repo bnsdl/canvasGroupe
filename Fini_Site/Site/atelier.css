@@ -93,10 +93,10 @@ article {
   border: none;
   padding-top: 150px;
 }
-#pre_requis li {
+.other_array li {
   list-style-type: circle;
 }
-#pre_requis ul {
+.other_array{
   padding : 20px;
 }
 .explanations {
@@ -105,9 +105,6 @@ article {
   flex-direction: column;
   vertical-align: middle;
 }
-/*p {
-  margin: 20px;
-}*/
 .code {
   width: 40%;
 }
@@ -121,6 +118,9 @@ article {
   border:1px solid #ED1651;
   width: 80%;
   margin: 5% 10%;
+}
+#rappel {
+  text-align: center;
 }
 footer {
   display: flex;
