@@ -189,7 +189,7 @@ h5{
   #texte{
     position: absolute;
     top: 0;
-    margin-left: 30%;
+    margin-left: 20%;
   }
 
   #hiddenUl {
@@ -209,6 +209,7 @@ h5{
 }
 
 header {
+  z-index: 1;
   width:210px;
 }
 

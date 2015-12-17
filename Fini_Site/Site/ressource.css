@@ -13,6 +13,9 @@ body{
 }
 
 /*NAVBAR -------------------------------------------*/
+#logoResponsive{
+  display:none;
+}
 
 header {
   font-size: 1.7em;
@@ -145,21 +148,14 @@ div p{
   width: 100%;
 }
 #text p{
-  /*background-color: blue;*/
   font-size: 1.2em;
   padding-top: 39.5%;
-  /*z-index: 1;*/
-  /*opacity: 0.5;*/
-  /*font-weight: 900;*/
   color:  #FED2D2;
 }
 
 
 #adele{
   height: 100%;
-  /*margin-left: 210px;
-  margin-right: 50px;*/
-  /*margin-top: 10px;*/
   z-index: -1;
 }
 
@@ -167,15 +163,85 @@ h5{
   margin-top: 150px;
 }
 
+@media  screen and (min-width: 1025px){
+ #header {
+   width: 100%;
+ }
+}
 
 @media screen and (min-width:640px )and (max-width:1024px){
+
+  #logoResponsive{
+    display: block;
+    position: absolute;
+    z-index: 1;
+    top: 10px;
+    left: 10px;
+  }
+
+
+  header {
+    position: absolute;
+    left: -10px;
+    font-size: 1em;
+    display:none;
+  }
+
+  #navbar .cellules  {
+    display:  block;
+    margin-left: 10px;
+    width: 200px;
+
+  }
+
+  #containerGauche{
+    width: 100%;
+    height: 300px;
+  }
+
+  #containerGauche p{
+    visibility: hidden;
+  }
+
+  #containerDroite{
+    width: 100%;
+    float: none;
+  }
+
+  #texte{
+    position: absolute;
+    top: 0;
+    margin-left: 30%;
+  }
+
+  #hiddenUl {
+    display: none;
+  }
+  #navbar {
+    display:inline-block;
+    margin-top: 50px;
+  }
+
+  #logoHome{
+    display: none;
+  }
+
+
+ #logoResponsive:hover + header, header:hover{
+   display: block;
+ }
+
+ header {
+   width:210px;
+ }
+
+
   /*Container Gauche------------------------------------*/
 
   #containerGauche{
     background-color:#1A1717 ;
     height: 400px;
     width: 100%  ;
-    /*display: inline-block;*/
   }
 
   #containerGauche p{
@@ -191,7 +257,7 @@ h5{
   #left {
     float:left ;
     width:50%;
-    margin-top:10%;
+    margin-top:40px;
   }
   #left ul {
     margin:0 5% 0 10% ;
@@ -199,7 +265,7 @@ h5{
   #right {
     float:right;
     width:50%;
-    margin-top:10%;
+    margin-top:40px;
   }
   #right ul {
     margin:0 10% 0 5% ;
@@ -208,7 +274,6 @@ h5{
   .ref{
     margin-left: 50px;
     list-style-type: none;
-    /*margin-top: 5px;*/
   }
 
   .ref:first-child{
@@ -285,7 +350,6 @@ h5{
     background-image: url(Images/adele.JPG);
     background-size: cover;
     background-position: 25%;
-    /*height: 50vh;*/
     width:100%;
     display: inline-block;
   }
@@ -296,26 +360,84 @@ h5{
     width: 100%;
   }
   #text p{
-    /*background-color: blue;*/
     font-size: 1em;
     padding-top:10%;
     text-align: justify;
-    /*z-index: 1;*/
-    /*opacity: 0.5;*/
-    /*font-weight: 900;*/
     color:  #FED2D2;
   }
 
 
   #adele{
     height: 100%;
-    /*margin-left: 210px;
-    margin-right: 50px;*/
-    /*margin-top: 10px;*/
     z-index: -1;
   }
 
   h5{
     margin-top: 150px;
   }
+  
+  #logoResponsive{
+    display: block;
+    position: absolute;
+    z-index: 1;
+    top: 10px;
+    left: 10px;
+  }
+
+
+  header {
+    position: absolute;
+    left: -10px;
+    font-size: 1em;
+    display:none;
+  }
+
+  #navbar .cellules  {
+    display:  block;
+    margin-left: 10px;
+    width: 200px;
+
+  }
+
+  #containerGauche{
+    width: 100%;
+    height: 300px;
+  }
+
+  #containerGauche p{
+    visibility: hidden;
+  }
+
+  #containerDroite{
+    width: 100%;
+    float: none;
+  }
+
+  #texte{
+    position: absolute;
+    top: 0;
+    margin-left: 30%;
+  }
+
+  #hiddenUl {
+    display: none;
+  }
+  #navbar {
+    display:inline-block;
+    margin-top: 50px;
+  }
+
+  #logoHome{
+    display: none;
+  }
+
+
+ #logoResponsive:hover + header, header:hover{
+   display: block;
+ }
+
+ header {
+   width:210px;
+ }
+
 }
