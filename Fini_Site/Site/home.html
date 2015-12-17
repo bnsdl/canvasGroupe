@@ -18,104 +18,119 @@
 
     <div id="containerGauche">
 
-        <article>
-          <img id="logoSimplon" src="Images/SIMPLON.png" alt="logo d'intro"/>
-          <h1><span>&#60;</span> C A N V A S <span>&#62;</span></h1>
-          <p>
-              L’élément canvas est un composant de HTML5 que l’on peut rapprocher d’une feuille de dessin dans laquelle il est possible d’interagir dynamiquement à l’aide de fonctions JavaScript.
-              Il s'agit d'un espace de pixels utilisé pour réaliser un bon nombre de fonctions graphiques, partant du simple tracé de courbe aux animations et jeux vidéo, en passant par les graphiques et la création d’images.
-              <br><br>Enjoy!
+      <article>
+        <img id="logoSimplon" src="Images/SIMPLON.png" alt="logo d'intro"/>
+        <!-- <div id="apparition"> -->
+          <h1 id="titreCanvas" class="fade-in"><span>&#60;</span> C A N V A S <span>&#62;</span></h1>
+          <p id="paragrapheCanvas" class="fade-in">
+            L’élément canvas est un composant de HTML5 que l’on peut rapprocher d’une feuille de dessin dans laquelle il est possible d’interagir dynamiquement à l’aide de fonctions JavaScript.
+            Il s'agit d'un espace de pixels utilisé pour réaliser un bon nombre de fonctions graphiques, partant du simple tracé de courbe aux animations et jeux vidéo, en passant par les graphiques et la création d’images.
+            <br><br>Enjoy!
           </p>
-        </article>
+        <!-- </div> -->
+      </article>
 
     </div>
 
     <div id="containerDroite">
-                  <div class="divTitre fade-inTitre" id="titre1" onclick= "toggleListeTuto()">
-                      <h2><a href="#">T U T O R I E L</a></h2>
-                  <div id="listeTuto" class="fade-in">
-                    <div class="listeTutos" id="premiersPas"><h2><a href="tuto.html">Premiers pas</a></h2></div>
-                    <div class="listeTutos" id="testerLesFonctions"><h2><a href="testeur.html">Appliquer les fonctions</a></h2></div>
-                  </div>
+      <div class="divTitre fade-inTitre" id="titre1" onclick= "toggleListeTuto()">
+        <h2><a href="#">T U T O R I E L</a></h2>
+        <div id="listeTuto" class="fade-in">
+          <div class="listeTutos" id="premiersPas"><h2><a href="tuto.html">Premiers pas</a></h2></div>
+          <div class="listeTutos" id="testerLesFonctions"><h2><a href="testeur.html">Appliquer les fonctions</a></h2></div>
+        </div>
 
-                  </div>
+      </div>
 
-                  <div class="divTitre fade-inTitre" id="titre2"><h2><a href="atelier.html">A T E L I E R</a></h2></div>
-                  <div class="divTitre fade-inTitre" id="titre3"><h2><a href="exemples.html">E X E M P L E S</a></h2></div>
-                  <div class="divTitre fade-inTitre" id="titre4"><h2><a href="ressource.html">R E S S O U R C E S</a></h2></div>
+      <div class="divTitre fade-inTitre" id="titre2"><h2><a href="atelier.html">A T E L I E R</a></h2></div>
+      <div class="divTitre fade-inTitre" id="titre3"><h2><a href="exemples.html">E X E M P L E S</a></h2></div>
+      <div class="divTitre fade-inTitre" id="titre4"><h2><a href="ressource.html">R E S S O U R C E S</a></h2></div>
 
     </div>
-    </div>
-    <script type="text/javascript">
+  </div>
+  <script type="text/javascript">
 
-    var context;
-    var intervalCercle;
-    var intervalRect;
+  function apparitionTexte() {
+    var apparition = document.getElementById('titreCanvas');
+    var apparitionPar = document.getElementById('paragrapheCanvas');
+    var timer = window.setTimeout(function (){
+      apparitionPar.style.display = "block";
+    }, 1590);
+    var timerCanvas = window.setTimeout(function (){
+      apparition.style.display = "block";
+    },800);
+  }
+
+
+  var context;
+  var intervalCercle;
+  var intervalRect;
 
   window.onload = function initCanvas() {
     var feuille = document.getElementById("canvas");
     context = feuille.getContext("2d");
     cercle(60,"#ED1450");
+    apparitionTexte();
   }
 
-    var angle = 0;
-    var angle2 = 0.1;
-    var x = 260;
+  var angle = 0;
+  var angle2 = 0.1;
+  var x = 260;
 
-    function trait(ax, ay, bx, by){
-      context.strokeStyle = "#ED1450";
+  function trait(ax, ay, bx, by){
+    context.strokeStyle = "#ED1450";
+    context.beginPath();
+    context.moveTo(ax, ay);
+    context.lineTo(bx, by);
+    context.closePath();
+    context.stroke();
+  }
+
+  function rectangle(y){
+    intervalRect = window.setInterval(function(){
+      context.setLineDash[0];
+      context.lineWidth = 80;
+      trait(x,y,x+1,y);
+      x++;
+      if (x > 340){
+        window.clearInterval(intervalRect);
+        x = 260;
+        if (y == 220){
+          rectangle(380);
+        }
+        else if (y == 380){
+          window.setTimeout(function() {
+            cercle(500,"white");
+          }, 2000);
+        }
+      }
+    },20);
+  }
+
+  function cercle(taille, color){
+    intervalCercle = window.setInterval(function(){
       context.beginPath();
-      context.moveTo(ax, ay);
-      context.lineTo(bx, by);
-      context.closePath();
+      context.setLineDash([4, 20]);
+      context.arc(300,300,260,angle,Math.PI*angle2, false);
+      angle = angle + 0.1;
+      angle2 = angle2 + 0.1;
+      context.strokeStyle = color;
+      context.lineWidth = taille;
       context.stroke();
-    }
-
-    function rectangle(y){
-      intervalRect = window.setInterval(function(){
-        context.setLineDash[0];
-        context.lineWidth = 80;
-        trait(x,y,x+1,y);
-        x++;
-        if (x > 340){
-          window.clearInterval(intervalRect);
-          x = 260;
-          if (y == 220){
-            rectangle(380);
-          }
-          else if (y == 380){
-            window.setTimeout(function() {
-              cercle(500,"white");
-            }, 2000);
-          }
+      context.closePath();
+      if (angle >= 5){
+        window.clearInterval(intervalCercle);
+        angle = 0;
+        angle2 = 0.1;
+        if (taille == 60) {
+          rectangle(220);
         }
-      },20);
-    }
-
-    function cercle(taille, color){
-      intervalCercle = window.setInterval(function(){
-        context.beginPath();
-        context.setLineDash([4, 20]);
-        context.arc(300,300,260,angle,Math.PI*angle2, false);
-        angle = angle + 0.1;
-        angle2 = angle2 + 0.1;
-        context.strokeStyle = color;
-        context.lineWidth = taille;
-        context.stroke();
-        context.closePath();
-        if (angle >= 5){
-          window.clearInterval(intervalCercle);
-          angle = 0;
-          angle2 = 0.1;
-          if (taille == 60) {
-            rectangle(220);
-          }
-          else if (taille == 500){
-            cercle(60,"#ED1450");
-          }
+        else if (taille == 500){
+          cercle(60,"#ED1450");
         }
-      },80)
-    }
+      }
+    },80)
+  }
 
   function toggleListeTuto(){
     var e = document.getElementById('listeTuto');
@@ -125,14 +140,14 @@
 
 
     if (e.style.display == "flex"){
-        e.style.display = "none";
-        titre2.style.display = "block";
-        titre2.classList.add('fade-in');
-        titre3.style.display = "block";
-        titre3.classList.add('fade-in');
-        titre4.style.display = "block";
-        titre4.classList.add('fade-in');
-      }
+      e.style.display = "none";
+      titre2.style.display = "block";
+      titre2.classList.add('fade-in');
+      titre3.style.display = "block";
+      titre3.classList.add('fade-in');
+      titre4.style.display = "block";
+      titre4.classList.add('fade-in');
+    }
 
     else{
       e.style.display = "flex";
@@ -143,6 +158,6 @@
   }
 
 
-    </script>
-  </body>
-  </html>
+  </script>
+</body>
+</html>
