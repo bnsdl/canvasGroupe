@@ -36,6 +36,9 @@ a{
     }
 }
 
+#apparition{
+  display: none;
+}
 
 
 #containerGauche{
@@ -51,11 +54,12 @@ article{
   display: inline;
 }
 
-article h1{
+#titreCanvas{
   margin-top: 70px;
   text-align: center;
   font-size: 2.9em;
   color: #ED1450;
+  display: none;
 }
 span{
   color: white;
@@ -69,12 +73,13 @@ article h2{
   font-weight: 400;
 }
 
-article p{
+#paragrapheCanvas{
   margin-top: 70px;
   text-align: justify;
   color: white;
   margin-left: 30px;
   margin-right: 30px;
+  display: none;
 }
 
 #opacity{
