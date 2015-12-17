@@ -25,4 +25,12 @@
      left: 20%;*/
      padding-left: 17%;
    }
+   .canvasBox{
+     display: block;
+     padding-left: 6%;
+   }
+   .tryIt{
+     position: relative;
+     top: 20%;
+   }
 }
