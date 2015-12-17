@@ -6,6 +6,9 @@ function info(i){
     hiddenLi.style.display = "none";
   }
 }
+
+var header = document.getElementById("header");
+
 var context;
 var context2;
 var context3;

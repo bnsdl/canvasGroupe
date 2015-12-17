@@ -4,10 +4,14 @@
   <meta charset="utf-8">
   <title>Tutoriel Canvas</title>
   <link rel="stylesheet" href="tuto.css" type="text/css" />
+  <link rel="stylesheet"  href="tuto_medium_screen.css" type="text/css" />
   <link href='https://fonts.googleapis.com/css?family=Montserrat:400,700|Raleway:400,900,300' rel='stylesheet' type='text/css'>
 </head>
 <body>
-  <header>
+  <div id="logoResponsive" onclick="">
+    <img src="Images/nav.png"/>
+  </div>
+  <header id="header">
     <ul id="navbar">
       <li id="logoHome">
         <a href="home.html"><img id="homeRose"src="Images/home.png"/></a>
@@ -96,7 +100,7 @@
       rect();
 
     </textarea>
-    <button type="button" name="button" onclick="recupRect()">Try it !</button>
+    <button class="tryIt"type="button" name="button" onclick="recupRect()">Try it !</button>
     <canvas id="canvas2" height="200" width="400"></canvas>
   </div>
   <!-- _______________________ -->
@@ -139,7 +143,7 @@
     trait2();
 
     </textarea>
-    <button type="button" name="button" onclick="recupTrait()">Try it !</button>
+    <button class="tryIt" type="button" name="button" onclick="recupTrait()">Try it !</button>
     <canvas id="canvas" height="200" width="400"></canvas>
   </div>
   <p> NB: Au premier passage du Try it, les traits rouge, vert et bleu sont fins, mais si vous appuyez une seconde fois sur Try it, ces derniers s'épaississent comme le "trait" rose.
@@ -184,7 +188,7 @@ les spécificités se situent au niveau des paramètres à renseigner pour notre
       cercle();
 
     </textarea>
-    <button type="button" name="button" onclick="recupCercle()">Try it !</button>
+    <button class="tryIt" type="button" name="button" onclick="recupCercle()">Try it !</button>
     <canvas id="canvas3" height="200" width="400"></canvas>
   </div>
   <div class="trait"></div>
@@ -228,7 +232,7 @@ Le couple <b>(x, y)</b> fait référence aux coordonnées du coin supérieur gau
 
 
     </textarea>
-    <button type="button" name="button" onclick="recupImage()">Try it !</button>
+    <button class="tryIt" type="button" name="button" onclick="recupImage()">Try it !</button>
     <canvas id="canvas4" height="200" width="400"></canvas>
   </div>
 <!-- _____________________________________________ -->
@@ -275,7 +279,7 @@ Le couple <b>(x, y)</b> fait référence aux coordonnées du coin supérieur gau
 
 
   </textarea>
-  <button type="button" name="button" onclick="recupTexte()">Try it !</button>
+  <button class="tryIt" type="button" name="button" onclick="recupTexte()">Try it !</button>
   <canvas id="canvas5" height="200" width="400"></canvas>
 </div>
 <!-- ________________________________________________________ -->
@@ -319,7 +323,7 @@ Ainsi <b>(0, 0, 300, 300)</b> donnerait un dégradé en diagonale et <b>(0, 0, 3
 
 
   </textarea>
-  <button type="button" name="button" onclick="recupDegrade()">Try it !</button>
+  <button class="tryIt" type="button" name="button" onclick="recupDegrade()">Try it !</button>
   <canvas id="canvas6" height="200" width="400"></canvas>
 </div>
 <div class="trait"></div>

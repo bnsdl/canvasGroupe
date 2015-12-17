@@ -15,3 +15,5 @@ function info(i){
     var iframe = document.getElementById("iframe");
     iframe.setAttribute('src', tableauDeSites[i]);
   }
+
+  var header = document.getElementById("header");
