@@ -15,3 +15,15 @@ function info(i){
     var iframe = document.getElementById("iframe");
     iframe.setAttribute('src', tableauDeSites[i]);
   }
+
+  var header = document.getElementById("header");
+
+
+  function navbar(){
+    if (header.style.display == "block"){
+      header.style.display = "none";
+    }
+    else {
+      header.style.display = "block";
+    }
+  }
