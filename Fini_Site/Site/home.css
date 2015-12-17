@@ -140,14 +140,14 @@ article h2{
 .divTitre h2{
   text-align: center;
   padding-top: 35px;
-  color: white;
+  /*color: white;*/
   font-weight: 400;
 }
 .divTitre:hover{
   background-color:#ED1450;
   border:2px solid black;
 }
-.divTitre:hover a{
+.divTitre:hover h2{
   color: white;
   font-weight: 400;
 }
@@ -160,8 +160,6 @@ article h2{
   border-radius: 5px;
   text-align: center;
 }
-
-
 @keyframes fadeIn {
   to {
     opacity: 1;
@@ -187,53 +185,40 @@ article h2{
 }
 
 #premiersPas{
-  margin-top: 43px;
   border-radius: 5px;
   border: 2px solid #1A1717;
   background-color: rgba(255, 255, 255, 0.6);
 }
-
 #premiersPas h2{
   padding-top: 15px;
-}
-
-#premiersPas h2 a{
   color: black;
-  padding-top: 30px;
   font-weight: 400;
 }
-
+#premiersPas:hover{
+  background-color:#ED1450;
+  border:2px solid black;
+  font-weight: 400;
+}
+#premiersPas:hover h2 {
+  color: white;
+}
 #testerLesFonctions h2{
   padding-top: 15px;
-}
-
-#testerLesFonctions h2 a{
   color: black;
   font-weight: 400;
 }
-
 #testerLesFonctions{
   border-radius: 5px;
   border: 2px solid #1A1717;
   background-color: rgba(255, 255, 255, 0.6);
 }
-
-#premiersPas:hover{
-  background-color:#ED1450;
-  border:2px solid black;
-}
-#premiersPas:hover a{
-  color: white;
-  font-weight: 400;
-}
-
 #testerLesFonctions:hover{
   background-color:#ED1450;
   border:2px solid black;
-}
-#testerLesFonctions:hover a{
-  color: white;
   font-weight: 400;
+}
+#testerLesFonctions:hover h2{
+  color: white;
 }
 
 footer{
