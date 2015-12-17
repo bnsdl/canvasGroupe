@@ -15,19 +15,23 @@
     padding-left: 9%;
    }
    img{
+     width: 378px;
       padding-top: 10px;
-      z-index: 0;
    }
    .image{
-     padding-left: 17%;
+     display: flex;
+     flex-direction: column;
+     align-items: center;
+     width: 100%;
    }
    .canvasBox{
-     display: block;
      padding-left: 6%;
+     display: flex;
+     flex-direction: column;
    }
+
    .tryIt{
-     position: relative;
-     top: 20%;
+     margin: 10px 0;
    }
 
    #logoResponsive{
