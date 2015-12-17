@@ -1,0 +1,28 @@
+@media  screen and (max-width: 1024px){
+  *{
+    margin: 0;
+    padding: 0;
+  }
+  body{
+    box-sizing: border-box;
+  }
+  article{
+    width: 100%;
+    display: block;
+  }
+  .text{
+    width: 90%;
+    /*color: pink;*/
+    padding-left: 9%;
+   }
+   img{
+      padding-top: 10px;
+      z-index: 0;
+   }
+   .image{
+     /*width: 90%;*/
+     /*position: relative;
+     left: 20%;*/
+     padding-left: 17%;
+   }
+}
