@@ -9,7 +9,7 @@ html {
   box-sizing: inherit;
 }
 body{
-    font-family: 'Raleway';
+  font-family: 'Raleway';
 }
 
 /*NAVBAR -------------------------------------------*/
@@ -37,8 +37,8 @@ a {
   padding: 10px;
 }
 #EnCours {
-background-color: #ED1651;
-color: white;
+  background-color: #ED1651;
+  color: white;
 }
 #logoHome{
   width: 10%;
@@ -76,16 +76,26 @@ color: white;
 /*Contenu ----------------------------------------------*/
 
 #containerPrincipal{
-  height: 100vh;
+  height:800px;
   width: 100%;
   display: inline-block;
 }
 
+#right ul li {
+  list-style-type: none;
+}
+
+#left ul li {
+  list-style-type: none;
+}
+
+
 /*Container Gauche------------------------------------*/
 
 #containerGauche{
+  float: left;
   background-color:#1A1717 ;
-  height: 100vh;
+  height: 100%;
   width: 40%  ;
   display: inline-block;
 }
@@ -105,13 +115,13 @@ div p{
 
 .ref{
   margin-left: 50px;
-  list-style: none;
+  list-style-type: none;
   margin-top: 5px;
 }
 
- .ref:first-child{
-   margin-top: 18px;
- }
+.ref:first-child{
+  margin-top: 18px;
+}
 
 #clique{
   font-weight: bold;
@@ -124,7 +134,7 @@ div p{
   background-size: cover;
   background-position: 25% 10px;
   float: right;
-  height: 100vh;
+  height: 100%;
   width: 60%;
   display: inline-block;
 }
@@ -138,7 +148,7 @@ div p{
   /*background-color: blue;*/
   font-size: 1.2em;
   padding-top: 39.5%;
-    /*z-index: 1;*/
+  /*z-index: 1;*/
   /*opacity: 0.5;*/
   /*font-weight: 900;*/
   color:  #FED2D2;
@@ -155,4 +165,157 @@ div p{
 
 h5{
   margin-top: 150px;
+}
+
+
+@media screen and (min-width:640px )and (max-width:1024px){
+  /*Container Gauche------------------------------------*/
+
+  #containerGauche{
+    background-color:#1A1717 ;
+    height: 400px;
+    width: 100%  ;
+    /*display: inline-block;*/
+  }
+
+  #containerGauche p{
+    display:none;
+  }
+  .partieTitre{
+    margin-left: 50px;
+    color: white;
+    margin-top: 60px;
+    color: #ED1450;
+  }
+
+  #left {
+    float:left ;
+    width:50%;
+    margin-top:10%;
+  }
+  #left ul {
+    margin:0 5% 0 10% ;
+  }
+  #right {
+    float:right;
+    width:50%;
+    margin-top:10%;
+  }
+  #right ul {
+    margin:0 10% 0 5% ;
+
+  }
+  .ref{
+    margin-left: 50px;
+    list-style-type: none;
+    /*margin-top: 5px;*/
+  }
+
+  .ref:first-child{
+    margin-top: 18px;
+  }
+
+  #clique{
+    font-weight: bold;
+  }
+  /*Container Droite--------------------------/*/
+
+  #containerDroite{
+    background-image: url(Images/adele.JPG);
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: 25%;
+    float: none;
+    width: 100%;
+  }
+
+  #opacity{
+    background-color: rgba(00, 00, 00, 0.6);
+    height: 100%;
+    width: 100%;
+  }
+
+  #text p{
+    font-size: 1.2em;
+    padding-top: 10%;
+    color:#FED2D2;;
+    text-align: justify;
+  }
+  #adele{
+    height: 100%;
+    z-index: -1;
+  }
+}
+@media screen and (max-width:640px ){
+  /*Container Gauche------------------------------------*/
+
+  #containerGauche{
+    background-color:#1A1717 ;
+    height: 70vh;
+    width:100%;
+    display: inline-block;
+  }
+  #containerGauche p{
+    display:none;
+  }
+  .partieTitre{
+    margin-left: 50px;
+    color: white;
+    margin-top: 60px;
+    color: #ED1450;
+  }
+
+  .ref{
+    margin-left: 50px;
+    list-style-type: none;
+    margin-top: 5px;
+  }
+
+  .ref:first-child{
+    margin-top: 18px;
+  }
+
+  #clique{
+    font-weight: bold;
+  }
+
+  /*Container Droite--------------------------*/
+
+  #containerDroite{
+    background-image: url(Images/adele.JPG);
+    background-size: cover;
+    background-position: 25%;
+    /*height: 50vh;*/
+    width:100%;
+    display: inline-block;
+  }
+
+  #opacity{
+    background-color: rgba(00, 00, 00, 0.6);
+    height: 100%;
+    width: 100%;
+  }
+  #text p{
+    /*background-color: blue;*/
+    font-size: 1em;
+    padding-top:10%;
+    text-align: justify;
+    /*z-index: 1;*/
+    /*opacity: 0.5;*/
+    /*font-weight: 900;*/
+    color:  #FED2D2;
+  }
+
+
+  #adele{
+    height: 100%;
+    /*margin-left: 210px;
+    margin-right: 50px;*/
+    /*margin-top: 10px;*/
+    z-index: -1;
+  }
+
+  h5{
+    margin-top: 150px;
+  }
 }

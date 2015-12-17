@@ -6,11 +6,11 @@
     <link rel="stylesheet" href="exemples.css" type="text/css" />
     <link href='https://fonts.googleapis.com/css?family=Montserrat:400,700|Raleway:400,900,300' rel='stylesheet' type='text/css'>
   </head>
-
   <body>
-
-
-    <header>
+    <div id="logoResponsive" onclick="navbar()">
+      <img src="Images/nav.png"/>
+    </div>
+    <header id="header">
       <ul id="navbar">
         <li id="logoHome">
           <a href="home.html"><img id="homeRose"src="Images/home.png"/></a>
@@ -35,8 +35,8 @@
     <div id="containerGauche">
       <p><span id="clique">Clique</span> sur les différents items et découvre divers exemples d'utilisation de &#60;Canvas&#62;..</p>
 
-
-        <li><h2 class="partieTitre">Exemple de dessin en Canvas:</h2></li>
+        <div id="texte">
+        <h2 class="partieTitre">Exemple de dessin en Canvas:</h2>
         <ul>
           <li class="ref" onclick="affiche(0)"><a href="#">Pendu by Séverin</a></li>
           <li class="ref" onclick="affiche(1)"><a href="#">Le Star Wars d'Adeline</a></li>
@@ -45,7 +45,7 @@
           <li class="ref" onclick="affiche(4)"><a href="#">Blob</a></li>
           <li class="ref" onclick="affiche(5)"><a href="#">Particules</a></li>
         </ul>
-
+      </div>
     </div>
 
     <div id="containerDroite">

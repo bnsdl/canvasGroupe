@@ -88,10 +88,13 @@ article {
   margin-right: 40px;
 }
 #pre_requis {
-  flex-direction: column;
-  margin-left: 180px;
-  border: none;
   padding-top: 150px;
+  flex-direction: column;
+  border: none;
+}
+#container {
+  display: flex;
+  justify-content: center;
 }
 .other_array li {
   list-style-type: circle;
@@ -130,4 +133,24 @@ footer {
   color: white;
   width: 100%;
   height: 50px;
+}
+
+/*RWD ---------------------------------*/
+
+@media screen and (max-width : 1000px){
+  article {
+    flex-direction: column;
+    align-items: center;
+  }
+  .code {
+    width: 80%;
+  }
+  .explanations {
+    width: 80%;
+    margin-bottom: 5%;
+  }
+  #rappel {
+    margin-left: 3%;
+    margin-right: 3%;
+  }
 }
