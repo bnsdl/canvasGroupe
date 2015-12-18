@@ -7,47 +7,41 @@
   <title>Simplon vous présente Canvas</title>
   <link type="text/css" rel="stylesheet" href="home.css"/>
   <link href='https://fonts.googleapis.com/css?family=Questrial' rel='stylesheet' type='text/css'>
-  <link rel="stylesheet" href="animate.min.css">
   <link href='https://fonts.googleapis.com/css?family=Montserrat:400,700|Raleway:400,900,300' rel='stylesheet' type='text/css'>
 </head>
 
 <body>
 
-  <div id="container">
-    <canvas id="canvas" width="600" height="600"></canvas>
 
     <div id="containerGauche">
 
       <article>
         <img id="logoSimplon" src="Images/SIMPLON.png" alt="logo d'intro"/>
-        <!-- <div id="apparition"> -->
           <h1 id="titreCanvas" class="fade-in"><span>&#60;</span> C A N V A S <span>&#62;</span></h1>
           <p id="paragrapheCanvas" class="fade-in">
             L’élément canvas est un composant de HTML5 que l’on peut rapprocher d’une feuille de dessin dans laquelle il est possible d’interagir dynamiquement à l’aide de fonctions JavaScript.
             Il s'agit d'un espace de pixels utilisé pour réaliser un bon nombre de fonctions graphiques, partant du simple tracé de courbe aux animations et jeux vidéo, en passant par les graphiques et la création d’images.
             <br><br>Enjoy!
           </p>
-        <!-- </div> -->
       </article>
 
     </div>
 
     <div id="containerDroite">
+      <canvas id="canvas" width="600" height="600"></canvas>
       <div class="divTitre fade-inTitre" id="titre1" onclick= "toggleListeTuto()">
         <h2>T U T O R I E L</h2>
         <div id="listeTuto" class="fade-in">
           <a href="tuto.html"><div class="listeTutos" id="premiersPas"><h2>Premiers pas</h2></div></a>
           <a href="testeur.html"><div class="listeTutos" id="testerLesFonctions"><h2>Appliquer les fonctions</h2></div></a>
         </div>
-
       </div>
-
       <a href="atelier.html"><div class="divTitre fade-inTitre" id="titre2"><h2>A T E L I E R</h2></div></a>
       <a href="exemples.html"><div class="divTitre fade-inTitre" id="titre3"><h2>E X E M P L E S</h2></div></a>
       <a href="ressource.html"><div class="divTitre fade-inTitre" id="titre4"><h2>R E S S O U R C E S</h2></div></a>
 
     </div>
-  </div>
+  <!-- </div> -->
   <script type="text/javascript">
 
   function apparitionTexte() {
