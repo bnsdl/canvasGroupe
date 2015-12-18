@@ -48,6 +48,31 @@ a {
   width: 25%;
 }
 
+.cellules:hover{
+  color: #ED1651;
+  animation-name: fondu;
+  animation-duration:0.1s;
+  font-weight: lighter;
+}
+
+
+@keyframes fondu{
+  0%{
+    opacity: 0;
+  }
+
+  50%{
+    opacity: 1;
+  }
+  100%{
+    opacity: 1;
+  }
+}
+
+.cellules:hover a{
+    color: #ED1651;
+}
+
 #EnCours {
 background-color: #ED1651;
 color: white;
@@ -55,7 +80,7 @@ color: white;
 
 #logoHome{
   width: 10%;
-  border-bottom:1px solid rgba(237, 22, 81, 0.2); 
+  border-bottom:1px solid rgba(237, 22, 81, 0.2);
 }
 
 #homeRose{
