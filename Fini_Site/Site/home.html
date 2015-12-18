@@ -24,24 +24,17 @@
             <br><br>Enjoy!
           </p>
       </article>
-
+      <canvas id="canvas" width="300" height="300"></canvas>
     </div>
 
     <div id="containerDroite">
-      <canvas id="canvas" width="600" height="600"></canvas>
-      <div class="divTitre fade-inTitre" id="titre1" onclick= "toggleListeTuto()">
-        <h2>T U T O R I E L</h2>
-        <div id="listeTuto" class="fade-in">
-          <a href="tuto.html"><div class="listeTutos" id="premiersPas"><h2>Premiers pas</h2></div></a>
-          <a href="testeur.html"><div class="listeTutos" id="testerLesFonctions"><h2>Appliquer les fonctions</h2></div></a>
-        </div>
-      </div>
-      <a href="atelier.html"><div class="divTitre fade-inTitre" id="titre2"><h2>A T E L I E R</h2></div></a>
-      <a href="exemples.html"><div class="divTitre fade-inTitre" id="titre3"><h2>E X E M P L E S</h2></div></a>
-      <a href="ressource.html"><div class="divTitre fade-inTitre" id="titre4"><h2>R E S S O U R C E S</h2></div></a>
+      <a href="tuto.html"><div class="divTitre fade-inTitre"><h2>T U T O R I E L</h2></div></a>
+      <a href="tester.html"><div class="divTitre fade-inTitre"><h2>A P P L I C A T I O N</h2></div></a>
+      <a href="atelier.html"><div class="divTitre fade-inTitre"><h2>A T E L I E R</h2></div></a>
+      <a href="exemples.html"><div class="divTitre fade-inTitre"><h2>E X E M P L E S</h2></div></a>
+      <a href="ressource.html"><div class="divTitre fade-inTitre"><h2>R E S S O U R C E S</h2></div></a>
 
     </div>
-  <!-- </div> -->
   <script type="text/javascript">
 
   function apparitionTexte() {
@@ -63,13 +56,15 @@
   window.onload = function initCanvas() {
     var feuille = document.getElementById("canvas");
     context = feuille.getContext("2d");
-    cercle(60,"#ED1450");
+    var timerDebut = window.setTimeout(function(){
+      cercle(20,"#ED1450");
+    }, 2000);
     apparitionTexte();
   }
 
   var angle = 0;
   var angle2 = 0.1;
-  var x = 260;
+  var x = 135;
 
   function trait(ax, ay, bx, by){
     context.strokeStyle = "#ED1450";
@@ -83,19 +78,14 @@
   function rectangle(y){
     intervalRect = window.setInterval(function(){
       context.setLineDash[0];
-      context.lineWidth = 80;
+      context.lineWidth = 30;
       trait(x,y,x+1,y);
       x++;
-      if (x > 340){
+      if (x > 165){
         window.clearInterval(intervalRect);
-        x = 260;
-        if (y == 220){
-          rectangle(380);
-        }
-        else if (y == 380){
-          window.setTimeout(function() {
-            cercle(500,"white");
-          }, 2000);
+        x = 135;
+        if (y == 120){
+          rectangle(180);
         }
       }
     },20);
@@ -105,7 +95,7 @@
     intervalCercle = window.setInterval(function(){
       context.beginPath();
       context.setLineDash([4, 20]);
-      context.arc(300,300,260,angle,Math.PI*angle2, false);
+      context.arc(150,150,100,angle,Math.PI*angle2, false);
       angle = angle + 0.1;
       angle2 = angle2 + 0.1;
       context.strokeStyle = color;
@@ -116,40 +106,14 @@
         window.clearInterval(intervalCercle);
         angle = 0;
         angle2 = 0.1;
-        if (taille == 60) {
-          rectangle(220);
-        }
-        else if (taille == 500){
-          cercle(60,"#ED1450");
+        if (taille == 20) {
+          rectangle(120);
         }
       }
     },80)
   }
 
-  function toggleListeTuto(){
-    var e = document.getElementById('listeTuto');
-    var titre2 = document.getElementById('titre2');
-    var titre3 = document.getElementById('titre3');
-    var titre4 = document.getElementById('titre4');
 
-
-    if (e.style.display == "flex"){
-      e.style.display = "none";
-      titre2.style.display = "block";
-      titre2.classList.add('fade-in');
-      titre3.style.display = "block";
-      titre3.classList.add('fade-in');
-      titre4.style.display = "block";
-      titre4.classList.add('fade-in');
-    }
-
-    else{
-      e.style.display = "flex";
-      titre2.style.display = "none";
-      titre3.style.display = "none";
-      titre4.style.display = "none";
-    }
-  }
 
 
   </script>

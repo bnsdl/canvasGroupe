@@ -34,28 +34,8 @@ a{
   animation-duration: 2s;
 }
 
-#titre1{
-  top: 100px;
-  right: 120px;
-}
-
-#titre2{
-  top: 250px;
-  right: 120px;
-}
-
-#titre3{
-  top: 400px;
-  right: 120px;
-}
-
-#titre4{
-  top: 550px;
-  right: 120px;
-}
 
 .fade-in {
-  visibility: hidden;
   opacity: 0;
   animation: fadeIn 1s ease-in 1 forwards;
 }
@@ -66,17 +46,19 @@ a{
 
 @keyframes fadeIn {
   to {
-    visibility: visible;
+    display: block;
     opacity: 1;
   }
 }
 
+#titreCanvas{
+  margin-top: 100px;
+}
 }
 
 
 #containerGauche{
   width: 40%;
-
 }
 
 article{
@@ -89,7 +71,6 @@ article{
 }
 
 #titreCanvas{
-  margin-top: 100px;
   text-align: center;
   font-size: 2.9em;
   color: #ED1450;
@@ -108,7 +89,7 @@ article h2{
 }
 
 #paragrapheCanvas{
-  margin-top: 100px;
+  margin-top: 50px;
   text-align: justify;
   color: white;
   margin-left: 30px;
@@ -127,98 +108,37 @@ article h2{
 /* * * * *PARTIE DROITE* * * * * */
 
 #containerDroite{
+  display: inline-block;
+  width: 60%;
   background-color: white;
-  flex: 1;
-  clear: left;
 }
 
 #canvas{
   position: absolute;
-  top: 75px;
-  right: 6%;
+  top: 400px;
+  left: 100px;
 }
 
 .divTitre{
   border-radius: 5px;
   border: 2px solid #1A1717;
-  height: 100px;
+  height: 80px;
   width: 500px;
   background-color: rgba(255, 255, 255, 0.6);
-  position: absolute;
-  z-index: 1;
+  margin: 50px auto;
 }
 
 
 .divTitre h2{
   text-align: center;
-  padding-top: 35px;
+  padding-top: 25px;
   font-weight: 400;
 }
 
 .divTitre:hover{
   background-color:#ED1450;
   border:2px solid black;
-}
-
-.divTitre:hover h2{
   color: white;
-  font-weight: 400;
-}
-
-.listeTutos{
-  height: 60px;
-  width:  350px;
-  background-color: rgba(255, 255, 255, 0.6);
-  margin-top: 50px;
-  border: 2px solid #1A1717;
-  border-radius: 5px;
-  text-align: center;
-}
-
-#testerLesFonctions h2{
-  padding-top: 15px;
-  color: black;
-  font-weight: 400;
-}
-
-#testerLesFonctions:hover{
-  background-color:#ED1450;
-  border:2px solid black;
-  font-weight: 400;
-}
-#testerLesFonctions:hover h2{
-  color: white;
-}
-
-#listeTuto{
-  display: none;
-  position: relative;
-  top: 30px;
-  flex-direction: column;
-  align-items: center;
-}
-
-#premiersPas h2{
-  padding-top: 15px;
-  color: black;
-  font-weight: 400;
-}
-#premiersPas:hover{
-  background-color:#ED1450;
-  border:2px solid black;
-  font-weight: 400;
-}
-#premiersPas:hover h2 {
-  color: white;
-}
-
-
-footer{
-  background-color: rgba(255, 0, 0, 0.5);
-  height: 40px;
-  width: 100%;
-  bottom: 0px;
-  position: fixed;
 }
 
 @media screen and (max-width: 1150px) {
@@ -231,39 +151,20 @@ footer{
   article {
     padding-bottom: 50px;
   }
+
   #containerDroite {
-    display: block;
-    width: 600px;
-    height: 600px;
-    margin: 0 auto;
-  }
-  #canvas {
-    position: inherit ;
     display: inline-block;
+    width: 100%;
+    /*height: 600px;*/
+  }
+
+  #canvas {
+    top: 100px;
+    left: 0px;
   }
 
   .divTitre {
-    position: relative;
-  }
-
-  #titre1{
-    bottom: 570px;
-    left: 50px;
-  }
-
-  #titre2{
-    bottom: 520px;
-    left: 50px;
-  }
-
-  #titre3{
-    bottom: 470px;
-    left: 50px;
-  }
-
-  #titre4{
-    bottom: 420px;
-    left: 50px;
+    width: 50%
   }
 
   #titreCanvas {
@@ -271,7 +172,18 @@ footer{
   }
 
   #paragrapheCanvas {
-    margin: 50px 10%;
+    margin: 50px 10% 50px 350px;
     display: block;
+  }
+}
+
+@media screen and (max-width: 640px) {
+  #canvas{
+    display: none;
+  }
+  #paragrapheCanvas {
+    width: 80%;
+    margin: 50px auto;
+
   }
 }
