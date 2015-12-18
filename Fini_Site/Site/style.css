@@ -2,14 +2,18 @@
   margin:0;
   padding: 0;
 }
+html{
+  box-sizing: border-box;
+}
 
 body{
+overflow: hidden;
   font-family: 'Raleway', sans-serif;
 }
 
 #bg{
   background-image: url(Images/classe_simplon.jpg);
-  height: 675px;
+  height: 710px;
   width: 100%;
   background-size: 100%;
 
@@ -34,6 +38,7 @@ body{
 
 #home{
   position: absolute;
+  z-index: 0;
   height: 80%;
   width: 80%;
   margin-left: 10%;
@@ -47,6 +52,7 @@ body{
 .titre{
   text-align: center;
   color:white;
+
 }
 
 .h1{
@@ -54,6 +60,7 @@ body{
   padding-top: 10%;
   animation-duration: 3s;
   animation-name: slideingauche;
+
 }
 
 @keyframes slideingauche {
@@ -73,6 +80,7 @@ body{
   font-size: 1.6em;
   animation-duration: 3s;
   animation-name: slideindroite;
+
 }
 
 @keyframes slideindroite {
@@ -89,6 +97,7 @@ body{
 
 
 #commencer{
+  position: relative;
   height:30px;
   width: 250px;
   text-align: center;
@@ -97,12 +106,12 @@ body{
   padding-top: 13px;
   border: 1px solid white;
   margin: 100px auto;
-
+  z-index: 1;
 }
 
 #commencer:hover{
   background-color: rgba(0,0,0,0.5);
-  border-radius: 5px;
+
 }
 
 #commencer:hover a{
@@ -111,7 +120,7 @@ body{
 
 a{
   text-decoration: none;
-  color: white;
+  color:white;
 }
 a:hover{
   color: rgba(255, 0, 0, 0.9);
