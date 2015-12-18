@@ -39,6 +39,32 @@ a {
   border: 1px solid rgba(237, 22, 81, 0.2);
   padding: 10px;
 }
+
+.cellules:hover{
+  color: #ED1651;
+  animation-name: fondu;
+  animation-duration:0.1s;
+  font-weight: lighter;
+}
+
+
+@keyframes fondu{
+  0%{
+    opacity: 0;
+  }
+
+  50%{
+    opacity: 1;
+  }
+  100%{
+    opacity: 1;
+  }
+}
+
+.cellules:hover a{
+    color: #ED1651;
+}
+
 #EnCours {
   background-color: #ED1651;
   color: white;
@@ -122,6 +148,9 @@ div p{
   margin-top: 5px;
 }
 
+.ref a{
+  color: #FED2D2;
+}
 .ref:first-child{
   margin-top: 18px;
 }
@@ -133,7 +162,7 @@ div p{
 /*Container Droite--------------------------/*/
 
 #containerDroite{
-  background-image: url(Images/adele.JPG);
+  background-image: url(Images/adele1.jpg);
   background-size: cover;
   background-position: 25% 10px;
   float: right;
@@ -147,7 +176,6 @@ div p{
   height: 100%;
   width: 100%;
 }
-
 #text p{
   font-size: 1.2em;
   padding-top: 39.5%;
@@ -348,10 +376,10 @@ h5{
   /*Container Droite--------------------------*/
 
   #containerDroite{
-    background-image: url(Images/adele.JPG);
+    background-image: url(Images/adele1.jpg);
     background-size: cover;
     background-position: 25%;
-    width:100%;
+    width:60%;
     display: inline-block;
   }
 
