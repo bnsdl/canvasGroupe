@@ -16,46 +16,80 @@ a{
   margin-left: 30px;
   margin-top: 30px;
 }
+@media screen and (min-width: 1151px) {
 
-#container{
-  height: 100vh;
-  width: 100%;
-  display: inline-flex;
-  animation-name:transition;
-  animation-duration: 2s;
-}
 
 @keyframes transition{
   from{
     width: 0;
-    height: 0;
+    height: 775px;
   }
   to{
-    width: 100%;
-    height: 800px;
+    width: 40%;
+    height: 775px;
     }
 }
+#containerGauche{
+  animation-name:transition;
+  animation-duration: 2s;
+}
 
-#apparition{
-  display: none;
+#titre1{
+  top: 100px;
+  right: 120px;
+}
+
+#titre2{
+  top: 250px;
+  right: 120px;
+}
+
+#titre3{
+  top: 400px;
+  right: 120px;
+}
+
+#titre4{
+  top: 550px;
+  right: 120px;
+}
+
+.fade-in {
+  visibility: hidden;
+  opacity: 0;
+  animation: fadeIn 1s ease-in 1 forwards;
+}
+.fade-inTitre{
+  opacity: 0;
+  animation: fadeIn 2s ease-in 1 forwards;
+}
+
+@keyframes fadeIn {
+  to {
+    visibility: visible;
+    opacity: 1;
+  }
+}
+
 }
 
 
 #containerGauche{
-  height: 100vh;
   width: 40%;
+
 }
 
 article{
   float: left;
   width: 100%;
-  height: 100vh;
+  height: 100%;
   background-color: #1A1717;
   display: inline;
+  padding-bottom: 60%;
 }
 
 #titreCanvas{
-  margin-top: 70px;
+  margin-top: 100px;
   text-align: center;
   font-size: 2.9em;
   color: #ED1450;
@@ -74,7 +108,7 @@ article h2{
 }
 
 #paragrapheCanvas{
-  margin-top: 70px;
+  margin-top: 100px;
   text-align: justify;
   color: white;
   margin-left: 30px;
@@ -93,17 +127,15 @@ article h2{
 /* * * * *PARTIE DROITE* * * * * */
 
 #containerDroite{
-  height: 100vh;
-  width:734px;
   background-color: white;
   flex: 1;
+  clear: left;
 }
 
 #canvas{
-  margin-left: 10px;
-  position: fixed;
-  top: 25px;
-  right: 70px;
+  position: absolute;
+  top: 75px;
+  right: 6%;
 }
 
 .divTitre{
@@ -116,37 +148,18 @@ article h2{
   z-index: 1;
 }
 
-#titre1{
-  top: 50px;
-  right: 120px;
-}
-
-#titre2{
-  top: 200px;
-  right: 120px;
-}
-
-#titre3{
-  top: 350px;
-  right: 120px;
-}
-
-#titre4{
-  top: 500px;
-  right: 120px;
-}
-
 
 .divTitre h2{
   text-align: center;
   padding-top: 35px;
-  /*color: white;*/
   font-weight: 400;
 }
+
 .divTitre:hover{
   background-color:#ED1450;
   border:2px solid black;
 }
+
 .divTitre:hover h2{
   color: white;
   font-weight: 400;
@@ -155,40 +168,36 @@ article h2{
 .listeTutos{
   height: 60px;
   width:  350px;
-  background-color: red;
-  margin-top: 25px;
+  background-color: rgba(255, 255, 255, 0.6);
+  margin-top: 50px;
+  border: 2px solid #1A1717;
   border-radius: 5px;
   text-align: center;
 }
-@keyframes fadeIn {
-  to {
-    opacity: 1;
-  }
+
+#testerLesFonctions h2{
+  padding-top: 15px;
+  color: black;
+  font-weight: 400;
 }
 
-.fade-in {
-  opacity: 0;
-  animation: fadeIn 1s ease-in 1 forwards;
+#testerLesFonctions:hover{
+  background-color:#ED1450;
+  border:2px solid black;
+  font-weight: 400;
 }
-.fade-inTitre{
-  opacity: 0;
-  animation: fadeIn 2s ease-in 1 forwards;
+#testerLesFonctions:hover h2{
+  color: white;
 }
 
 #listeTuto{
   display: none;
   position: relative;
-  width: 500px;
-  top: 25%;
+  top: 30px;
   flex-direction: column;
   align-items: center;
 }
 
-#premiersPas{
-  border-radius: 5px;
-  border: 2px solid #1A1717;
-  background-color: rgba(255, 255, 255, 0.6);
-}
 #premiersPas h2{
   padding-top: 15px;
   color: black;
@@ -202,24 +211,7 @@ article h2{
 #premiersPas:hover h2 {
   color: white;
 }
-#testerLesFonctions h2{
-  padding-top: 15px;
-  color: black;
-  font-weight: 400;
-}
-#testerLesFonctions{
-  border-radius: 5px;
-  border: 2px solid #1A1717;
-  background-color: rgba(255, 255, 255, 0.6);
-}
-#testerLesFonctions:hover{
-  background-color:#ED1450;
-  border:2px solid black;
-  font-weight: 400;
-}
-#testerLesFonctions:hover h2{
-  color: white;
-}
+
 
 footer{
   background-color: rgba(255, 0, 0, 0.5);
@@ -227,4 +219,59 @@ footer{
   width: 100%;
   bottom: 0px;
   position: fixed;
+}
+
+@media screen and (max-width: 1150px) {
+
+  #containerGauche {
+    width: 100%;
+    height: 100%;
+  }
+
+  article {
+    padding-bottom: 50px;
+  }
+  #containerDroite {
+    display: block;
+    width: 600px;
+    height: 600px;
+    margin: 0 auto;
+  }
+  #canvas {
+    position: inherit ;
+    display: inline-block;
+  }
+
+  .divTitre {
+    position: relative;
+  }
+
+  #titre1{
+    bottom: 570px;
+    left: 50px;
+  }
+
+  #titre2{
+    bottom: 520px;
+    left: 50px;
+  }
+
+  #titre3{
+    bottom: 470px;
+    left: 50px;
+  }
+
+  #titre4{
+    bottom: 420px;
+    left: 50px;
+  }
+
+  #titreCanvas {
+    display:block;
+  }
+
+  #paragrapheCanvas {
+    margin: 50px 10%;
+    display: block;
+  }
 }
