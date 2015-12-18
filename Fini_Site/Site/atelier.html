@@ -1,0 +1,192 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <title>Atelier Canvas!</title>
+  <link rel="stylesheet" href="atelier.css" type="text/css" />
+  <link href='https://fonts.googleapis.com/css?family=Montserrat:400,700|Raleway:400,900,300' rel='stylesheet' type='text/css'>
+</head>
+
+<body>
+  <div id="logoResponsive">
+    <img src="Images/nav.png"/>
+  </div>
+  <header>
+    <ul id="navbar">
+      <li id="logoHome">
+        <a href="home.html"><img id="homeRose"src="Images/home.png"/></a>
+      </li>
+        <a class="cellules" href="tuto.html"><li onmouseover="info(1)">TUTORIEL</li></a>
+        <a class="cellules" href="testeur.html"><li onmouseover="info(2)">APPLICATION</li></a>
+        <li class="cellules" id="EnCours">ATELIER</li>
+        <a class="cellules" href="exemples.html"><li onmouseover="info(4)">EXEMPLES</li></a>
+        <a class="cellules" href="ressource.html"><li onmouseover="info(5)">RESSOURCES</li></a>
+    </ul>
+    <ul id="hiddenUl">
+      <li class="cellules" id="hiddenLi1">Les 1ers pas, les bases</li>
+      <li class="cellules" id="hiddenLi2">Testons ensemble les 1ers acquis</li>
+      <li class="cellules" id="hiddenLi4">D'autres exemples d'applications par les simploniens</li>
+      <li class="cellules" id="hiddenLi5">Plus de documentation, plus de tutos, plus de waouh !</li>
+    </ul>
+  </header>
+  <div id="container">
+    <div id="pre_requis">Avant toute chose, créons ensemble un <strong>dossier</strong> dans lequel on trouvera :
+      <ul class="other_array">
+        <li>Un fichier HTML</li>
+        <li>Un fichier JavaScript que l'on rattachera au précedent</li>
+        <li>Nos images = le <strong>fond</strong>, le <strong>héros</strong> et le <strong>monstre</strong> ( <a class="other_link" href="image_atelier.html" target="_blank">Click !</a> )</li>
+      </ul>
+    </div>
+  </div>
+
+
+  <div class="trait"></div>
+
+  <article>
+    <div class="explanations">
+      <p>Contenu du fichier <strong>HTML</strong> qui ne bougera plus ensuite, un poil de style avec du <strong>CSS</strong>,
+        on finit en attachant notre fichier <strong>Javascript</strong>.</p>
+      </div>
+      <div class="code">
+        <img src="Images/html_atelier.png" alt="html" />
+      </div>
+
+    </article>
+
+    <div class="trait"></div>
+
+    <article>
+      <div class="explanations">
+        <p><strong>Récupération</strong> du canvas via le DOM</br>
+        Contextualisation en <strong>2d</strong>.</p>
+      </div>
+      <div class="code">
+        <img src="Images/1recupcanva_ctx.png" alt="Récupération Canvas" />
+      </div>
+    </article>
+
+    <div class="trait"></div>
+
+    <article>
+      <div class="explanations">
+        <p><strong>Variable bgReady</strong> de manière à ne charger l'image que lorsque le reste de la page est prête.</br>
+        Définition du fond d'écran comme étant une <strong>new Image()</strong> pour qu'il en récupère toutes les <strong>propriétés</strong>.</br>
+        Attribution de l'image choisie via la propriété .src</br>
+        De même pour le <strong>héros</strong> et le <strong>monstre</strong>.</p>
+      </div>
+      <div class="code">
+        <img src="Images/2definition_img.png" alt="" />
+      </div>
+    </article>
+
+    <div class="trait"></div>
+
+    <article>
+      <div class="explanations">
+        <p>Après avoir attribué les images, il faut les dessiner dans le canvas grâce à la propriété <strong>drawImage()</strong>
+          qui prend en paramètre : </br>
+          <ul class="other_array">
+            <li>la <strong>variable image</strong> définie précédemment</li>
+            <li>une <strong>position x</strong> sur le canvas </li>
+            <li>une <strong>position y</strong> sur le canvas </li>
+          </ul>
+          NB : if (bgReady) correspond à if (bgReady === true) </p>
+        </div>
+        <div class="code">
+          <img src="Images/3dessin.png" alt="" />
+        </div>
+    </article>
+
+    <div class="trait"></div>
+
+    <article>
+      <div class="explanations">
+        <p>Création d'un <strong>objet</strong> par personnage dans lequel on définit :
+          <ul class="other_array">
+            <li>une <strong>position x</strong> par défaut</li>
+            <li>une <strong>position y</strong> par défaut</li>
+            <li>une <strong>vitesse</strong> en pixels par secondes (uniquement pour les éléments qui bougeront)</li>
+          </ul>
+        </p>
+
+        </div>
+        <div class="code">
+          <img src="Images/4var_personnages.png" alt="" />
+        </div>
+    </article>
+
+    <div class="trait"></div>
+
+    <article>
+      <div class="explanations">
+        <p>Ajout des <strong>écouteurs d'évènements</strong> sur les touches du clavier.</br>
+        Quand une touche est appuyée, son <strong>keyCode</strong> est enregistré dans l'<strong>objet KeysDown</strong> défini précédemment.</br>
+        Une fois la touche lâchée (keyup), le nouvel objet est supprimé</br>
+        Ca permet un <strong>déplacement fluide</strong> du personnage ainsi qu'un facilité d'utilisation.
+        Le joueur n'a pas besoin d'appuyer x fois sur une touche pour faire avancer le héros.</p>
+        </div>
+        <div class="code">
+          <img src="Images/5ecouteurEvent.png" alt="" />
+        </div>
+    </article>
+
+    <div class="trait"></div>
+
+    <div id="rappel">Il est bon de rappeler ici que les images des personnages font <strong>32 pixels par 32 pixels</strong>, c'est important pour la suite de cet atelier.</div>
+
+    <div class="trait"></div>
+
+    <article>
+      <div class="explanations">
+        <p><strong>Fonction reset</strong> pour replacer les personnages dans le canvas après qu'un monstre soit touché.</br>
+        Le héros retourne au centre du canvas.</br>
+        Le monstre a une position aléatoire grâce à <strong>Math.random()</strong>. </br>
+        On enlève 64 pixels à la hauteur et la largeur du canvas pour éviter qu'il n'apparaisse <strong>en dehors</strong> du champs.</p>
+        </div>
+        <div class="code">
+          <img src="Images/6fonctionReset.png" alt="" />
+        </div>
+    </article>
+
+    <div class="trait"></div>
+
+    <article>
+      <div class="explanations">
+        <p><strong>Fonction</strong> pour définir ce qu'il se passe à chaque <strong>update</strong> de la page</br>
+        Toutes les touches du clavier sont définies par des <strong>keyCodes</strong>.
+        (<a class="other_link" href="http://www.cambiaresearch.com/articles/15/javascript-char-codes-key-codes" target="_blank">Click !</a>) </br>
+        Flèche du haut = 38. </br>
+        Si 38 est dans notre objet keysDown et que la <strong>position y</strong> de notre héros
+        est supérieure à 0 (il est toujours dans le canvas) alors la position y <strong>diminue</strong> de la vitesse par le temps que
+        la touche a été appuyée (<strong>paramètre modifier</strong> que l'on verra dans la fonction globale.) </br>
+        Répéter l'opération pour toutes les touches utilisées en fonction de la <strong>direction</strong> qu'on veut leur donner.</br>
+        Pour gérer si le héros a touché un monstre, il faut prendre en compte la <strong>taille des images</strong> de manière à
+        ce qu'un monstre soit considéré comme "touché" lorsque le héro est à côté.</br>
+        Appelle de la <strong>fonction reset()</strong> pour faire apparaitre le monstre à un autre endroit.</p>
+        </div>
+        <div class="code">
+          <img src="Images/7fonction_update.png" alt="" />
+        </div>
+    </article>
+
+    <div class="trait"></div>
+
+    <article>
+      <div class="explanations">
+        <p><strong>Fonction main</strong> qui va faire tourner le jeu.</br>
+          La variable <strong>now</strong> = le temps T quand la fonction est appelée (en millisecondes). </br>
+          La variable <strong>then</strong> = le temps T enregistré lors du dernier update. </br>
+          Le <strong>paramètre</strong> de update (modifier) devient <strong>delta/1000</strong> (le temps entre 2 update divisé par 1000 pour obtenir des secondes).
+          La fonction <strong>requestAnimationFrame</strong> est un équivalent de setTimeout mais moins énergie-vore et surtout, étant intégré au navigateur pour
+          soulager le processeur (pour approfondir :
+          <a href= "http://creativejs.com/resources/requestanimationframe/">Click !</a>)</p>
+        </div>
+        <div class="code">
+          <img src="Images/8fonctionPrincipale.png" alt="" />
+        </div>
+    </article>
+
+    <footer>Un peu plus de challenge ? Ajoute un compteur de monstres, démultiplie les à chaque fois que tu en touches un, ce n'est que le début !</footer>
+    <script type="text/javascript" src="atelier.js"></script>
+    </body>
+</html>
