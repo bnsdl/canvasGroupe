@@ -16,6 +16,7 @@ a{
   margin-left: 30px;
   margin-top: 30px;
 }
+
 @media screen and (min-width: 1151px) {
 
 
@@ -51,9 +52,7 @@ a{
   }
 }
 
-#titreCanvas{
-  margin-top: 100px;
-}
+
 }
 
 
@@ -159,7 +158,7 @@ article h2{
   }
 
   #canvas {
-    top: 100px;
+    top: 230px;
     left: 0px;
   }
 
