@@ -1,41 +1,38 @@
 <!DOCTYPE html>
 <html>
-  <head>
-    <meta charset="utf-8">
-    <title>Exemples</title>
-    <link rel="stylesheet" href="exemples.css" type="text/css" />
-    <link href='https://fonts.googleapis.com/css?family=Montserrat:400,700|Raleway:400,900,300' rel='stylesheet' type='text/css'>
-  </head>
-  <body>
-    <div id="logoResponsive" onclick="navbar()">
-      <img src="Images/nav.png"/>
-    </div>
-    <header id="header">
-      <ul id="navbar">
-        <li id="logoHome">
-          <a href="home.html"><img id="homeRose"src="Images/homeModerne2.png"/></a>
-        </li>
-        <a href="tuto.html" class="cellules"><li onmouseover="info(1)">TUTORIEL</li></a>
-        <a href="testeur.html" class="cellules"><li onmouseover="info(2)">APPLICATION</li></a>
-        <a href="atelier.html" class="cellules"><li onmouseover="info(3)">ATELIER</li></a>
-        <li class="cellules" id="EnCours">EXEMPLES</li>
-        <a href="ressource.html" class="cellules"><li onmouseover="info(5)">RESSOURCES</li></a>
-      </ul>
-      <ul id="hiddenUl">
-        <li class="cellules" id="hiddenLi1">Les 1ers pas, les bases</li>
-        <li class="cellules" id="hiddenLi2">Testons ensemble les 1ers acquis</li>
-        <li class="cellules" id="hiddenLi3">Créons ensemble, un mini-jeu Canvas !</li>
-        <li class="cellules" id="hiddenLi5">Plus de documentation, plus de tutos, plus de waouh !</li>
-      </ul>
-    </header>
+<head>
+  <meta charset="utf-8">
+  <title>Exemples</title>
+  <link rel="stylesheet" href="exemples.css" type="text/css" />
+  <link href='https://fonts.googleapis.com/css?family=Montserrat:400,700|Raleway:400,900,300' rel='stylesheet' type='text/css'>
+</head>
+<body>
+  <div id="logoResponsive" onclick="navbar()">
+    <img src="Images/nav.png"/>
+  </div>
+  <header id="header">
+    <ul id="navbar">
+      <li id="logoHome">
+        <a href="home.html"><img id="homeRose"src="Images/homeModerne2.png"/></a>
+      </li>
+      <a href="tuto.html" class="cellules"><li onmouseover="info(1)">TUTORIEL</li></a>
+      <a href="testeur.html" class="cellules"><li onmouseover="info(2)">APPLICATION</li></a>
+      <a href="atelier.html" class="cellules"><li onmouseover="info(3)">ATELIER</li></a>
+      <li class="cellules" id="EnCours">EXEMPLES</li>
+      <a href="ressource.html" class="cellules"><li onmouseover="info(5)">RESSOURCES</li></a>
+    </ul>
+    <ul id="hiddenUl">
+      <li class="cellules" id="hiddenLi1">Les 1ers pas, les bases</li>
+      <li class="cellules" id="hiddenLi2">Testons ensemble les 1ers acquis</li>
+      <li class="cellules" id="hiddenLi3">Créons ensemble, un mini-jeu Canvas !</li>
+      <li class="cellules" id="hiddenLi5">Plus de documentation, plus de tutos, plus de waouh !</li>
+    </ul>
+  </header>
 
-    <div id="containerPrincipal">
-
-
+  <div id="containerPrincipal">
     <div id="containerGauche">
       <p><span id="clique">Clique</span> sur les différents items et découvre divers exemples d'utilisation de &#60;Canvas&#62;..</p>
-
-        <div id="texte">
+      <div id="texte">
         <h2 class="partieTitre">Exemples de dessins en Canvas:</h2>
         <ul>
           <li class="ref" onclick="affiche(0)"><a href="#">Pendu by Séverin</a></li>
@@ -54,11 +51,6 @@
 
   </div>
 
-
-
-
-
-
-    <script type="text/javascript" src="exemples.js"></script>
-  </body>
+  <script type="text/javascript" src="exemples.js"></script>
+</body>
 </html>

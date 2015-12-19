@@ -20,13 +20,12 @@ header {
   position: fixed;
   width: 100%;
 }
+
 a {
   text-decoration: none;
   color: white;
 }
-/*#click{
-  color: #ED1651;
-}*/
+
 #navbar, #hiddenUl  {
   display: flex;
   flex-direction: row;
@@ -41,19 +40,17 @@ a {
   padding: 10px;
 }
 
-.cellules:hover{
-  color: #ED1651;;
+.cellules:hover:not(#EnCours){
+  color: #ED1651;
   animation-name: fondu;
   animation-duration:0.1s;
   font-weight: lighter;
 }
 
-
 @keyframes fondu{
   0%{
     opacity: 0;
   }
-
   50%{
     opacity: 1;
   }
@@ -62,13 +59,9 @@ a {
   }
 }
 
-.cellules:hover a{
-    color: #ED1651;
-}
-
 #EnCours {
-background-color: #ED1651;
-color: white;
+  background-color: #ED1651;
+  color: white;
 }
 
 #logoHome{
@@ -182,6 +175,7 @@ footer {
     margin-left: 3%;
     margin-right: 3%;
   }
+
   #logoResponsive{
     display: block;
     position: absolute;
@@ -201,7 +195,6 @@ footer {
     display:  block;
     margin-left: 10px;
     width: 200px;
-
   }
 
   #containerGauche{
@@ -236,18 +229,17 @@ footer {
     display: none;
   }
 
+  #logoResponsive:hover + header, header:hover{
+    display: block;
+  }
 
- #logoResponsive:hover + header, header:hover{
-   display: block;
- }
-
- header {
-   width:210px;
- }
- }
+  header {
+    width:210px;
+  }
+}
 
 @media  screen and (min-width: 1001px){
- #header {
-   width: 100%;
- }
+  #header {
+    width: 100%;
+  }
 }

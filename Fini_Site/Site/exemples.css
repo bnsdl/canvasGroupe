@@ -9,7 +9,7 @@ html {
   box-sizing: inherit;
 }
 body{
-    font-family: 'Raleway';
+  font-family: 'Raleway';
 }
 
 li{
@@ -48,7 +48,7 @@ a {
   width: 25%;
 }
 
-.cellules:hover{
+.cellules:hover:not(#EnCours){
   color: #ED1651;
   animation-name: fondu;
   animation-duration:0.1s;
@@ -69,13 +69,9 @@ a {
   }
 }
 
-.cellules:hover a{
-    color: #ED1651;
-}
-
 #EnCours {
-background-color: #ED1651;
-color: white;
+  background-color: #ED1651;
+  color: white;
 }
 
 #logoHome{
@@ -147,9 +143,9 @@ div p{
   margin-top: 5px;
 }
 
- .ref:first-child{
-   margin-top: 18px;
- }
+.ref:first-child{
+  margin-top: 18px;
+}
 
 #clique{
   font-weight: bold;
@@ -183,7 +179,7 @@ h5{
     z-index: 1;
     top: 10px;
     left: 10px;
-}
+  }
 
   header {
     position: absolute;
@@ -229,18 +225,18 @@ h5{
   #logoHome{
     display: none;
   }
-}
-#logoResponsive:hover + header, header:hover{
-  display: block;
-}
 
-header {
-  z-index: 1;
-  width:210px;
-}
+  #logoResponsive:hover + header, header:hover{
+    display: block;
+  }
 
+  header {
+    z-index: 1;
+    width:210px;
+  }
+}
 @media  screen and (min-width: 1025px){
-#header {
-  width: 100%;
-}
+  #header {
+    width: 100%;
+  }
 }

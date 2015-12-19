@@ -31,348 +31,348 @@
   </header>
   <h1>Bienvenue sur le tutoriel canvas made in Simplon.co !</h1>
   <p>Vous trouverez dans cette section comment initialiser son canvas, comment s'y repérer, et également, les fonctions primaires nécessaires à une bonne utilisation de ce puissant outil.
-  <br>À chaque étape, un module de test vous est proposé afin que vous puissiez essayer par vous même votre compréhension ainsi que le rendu des fonctions. Enjoy ! </p>
-  <!-- _______________________ -->
-  <h3> Initialisation du canvas dans la page HTML</h3>
-  <article>
-    <div class="text">
-      <p>Avant toute chose il est nécessaire de créer un espace pour le canvas grace à la balise <b>"canvas"</b> dans notre HTML, et plus précisément, dans la balise <b>"body"</b>, à laquelle on attribue une hauteur (height) et une largeur (width):</p>
-      <br><p>Il nous faut ensuite charger notre canvas ainsi que les différentes variables nécessaires à son exécution:</p>
+    <br>À chaque étape, un module de test vous est proposé afin que vous puissiez essayer par vous même votre compréhension ainsi que le rendu des fonctions. Enjoy ! </p>
+    <!-- _______________________ -->
+    <h3> Initialisation du canvas dans la page HTML</h3>
+    <article>
+      <div class="text">
+        <p>Avant toute chose il est nécessaire de créer un espace pour le canvas grace à la balise <b>"canvas"</b> dans notre HTML, et plus précisément, dans la balise <b>"body"</b>, à laquelle on attribue une hauteur (height) et une largeur (width):</p>
+        <br><p>Il nous faut ensuite charger notre canvas ainsi que les différentes variables nécessaires à son exécution:</p>
         <ul>
           <li>La <b>variable feuille</b> correspond à notre canvas, c’est la « feuille » sur laquelle nous allons dessiner.</li>
           <li>La <b>variable context</b> nous permet de définir le context dans lequel nous allons dessiner sur notre feuille: 2d ou 3d. Ici nous travaillerons exclusivement en 2d. Selon le context choisi, canvas aura accès à différentes fonctions et méthodes.</li>
           <li>La <b>variable input</b> est facultative, elle nous permet d’avoir un espace pour écrire nos fonctions qui seront à interpréter par canvas. Elle doit être liée à une balise <b>"input"</b>.</li>
         </ul>
         <br><p>Une fois le canvas initié, nous pouvons plonger dans les méthodes de dessin 2d.</p>
-  </div>
-    <div class="image">
-      <img src="Images/declare.png"/>
-      <img src="Images/init.png"/>
-    </div>
+      </div>
+      <div class="image">
+        <img src="Images/declare.png"/>
+        <img src="Images/init.png"/>
+      </div>
     </article>
-  <div class="trait"></div>
-  <!-- ________________________________ -->
-  <h3> Se repérer dans l'espace canvas</h3>
-  <article>
-    <div class="text">
-      <p>L’espace de dessin de canvas se définit comme un graphique en 2 dimensions ou <b>2 axes (X et Y)</b>, ou encore comme une grille de pixels, quadrillée, dont le point d’origine 0 se situe en haut à gauche et X étant toujours définit en premier lorsque l’on indique des coordonnées. </p>
-      <br><p>(exemple: (x = 100, y = 200) donc  x = 100 pixels sur la droite et y = 200 pixels vers le bas)</p>
-      <br><p>Passons maintenant aux formes de dessin basiques de canvas.</p>
-    </div>
-    <div class="image">
-      <img src="Images/echelle.png"/>
-    </div>
-  </article>
-  <div class="trait"></div>
-  <!-- _________________________ -->
-  <p>Il existe plusieurs formes géométriques proposées de bases par canvas, le trait, le rectangle et l’arc de cercle. Elles possèdent chacune leurs propres fonctions, méthodes et paramètres à renseigner et doivent être systématiquement appelées à partir de la <b>variable « context »</b> que nous avons définit au préalable.</p>
-  <h3>Les bases du dessins en canvas</h3>
-  <article>
-    <div class="text">
-      <h4>Le rectangle</h4>
-      <p>C’est la forme la plus simple d’utilisation. On distingue 2 méthodes: <b>stroke</b> ou <b>fill</b> soit respectivement l’intérieur vide ou l’intérieur plein.</p>
-      <br><p> Chaque forme possède ses propres méthodes autour de stroke et fill. Ici nous nous intéresserons principalement à « style » pour donner une couleur à nos traits puis « rect » pour dessiner notre rectangle.</p>
+    <div class="trait"></div>
+    <!-- ________________________________ -->
+    <h3> Se repérer dans l'espace canvas</h3>
+    <article>
+      <div class="text">
+        <p>L’espace de dessin de canvas se définit comme un graphique en 2 dimensions ou <b>2 axes (X et Y)</b>, ou encore comme une grille de pixels, quadrillée, dont le point d’origine 0 se situe en haut à gauche et X étant toujours définit en premier lorsque l’on indique des coordonnées. </p>
+        <br><p>(exemple: (x = 100, y = 200) donc  x = 100 pixels sur la droite et y = 200 pixels vers le bas)</p>
+        <br><p>Passons maintenant aux formes de dessin basiques de canvas.</p>
+      </div>
+      <div class="image">
+        <img src="Images/echelle.png"/>
+      </div>
+    </article>
+    <div class="trait"></div>
+    <!-- _________________________ -->
+    <p>Il existe plusieurs formes géométriques proposées de bases par canvas, le trait, le rectangle et l’arc de cercle. Elles possèdent chacune leurs propres fonctions, méthodes et paramètres à renseigner et doivent être systématiquement appelées à partir de la <b>variable « context »</b> que nous avons définit au préalable.</p>
+    <h3>Les bases du dessins en canvas</h3>
+    <article>
+      <div class="text">
+        <h4>Le rectangle</h4>
+        <p>C’est la forme la plus simple d’utilisation. On distingue 2 méthodes: <b>stroke</b> ou <b>fill</b> soit respectivement l’intérieur vide ou l’intérieur plein.</p>
+        <br><p> Chaque forme possède ses propres méthodes autour de stroke et fill. Ici nous nous intéresserons principalement à « style » pour donner une couleur à nos traits puis « rect » pour dessiner notre rectangle.</p>
         <ul>
           <li><b>context.strokeStyle</b> ou <b>context.fillStyle</b>, peuvent s’apparenter à une modification des propriétés CSS de notre rectangle, ici la couleur (NB: par défaut la valeur est « black »),</li>
           <li><b>context.strokeRect</b> ou <b>context.fillRect</b>, est la fonction qui effectue le tracé,</li>
           <li>le couple <b>(ax, ay)</b> correspond aux coordonnées d’origine du tracé,</li>
           <li>le couple <b>(bx, by)</b> correspond aux dimensions du tracé à partir du point d’origine.</li>
         </ul>
+      </div>
+      <div class="image imageDown">
+        <img src="Images/rect.png"/>
+        <img src="Images/rect1.png"/>
+      </div>
+    </article>
+    <div class="canvasBox">
+      <textarea id="tryRect" name="name" rows="15" cols="40">
+
+        rectVide(0,0,50,50);
+        rectPlein(350,0,400,50,"green");
+
+        <!-- version hors fonction, amusez vous ;) -->
+
+        function rect() {
+          context2.fillStyle = "pink";
+          context2.fillRect(200,150,400,200);
+        }
+
+        rect();
+
+      </textarea>
+      <button class="tryIt"type="button" name="button" onclick="recupRect()">Try it !</button>
+      <canvas id="canvas2" height="200" width="400"></canvas>
     </div>
-    <div class="image imageDown">
-      <img src="Images/rect.png"/>
-      <img src="Images/rect1.png"/>
-    </div>
-  </article>
-  <div class="canvasBox">
-    <textarea id="tryRect" name="name" rows="15" cols="40">
-
-      rectVide(0,0,50,50);
-      rectPlein(350,0,400,50,"green");
-
-      <!-- version hors fonction, amusez vous ;) -->
-
-      function rect() {
-        context2.fillStyle = "pink";
-        context2.fillRect(200,150,400,200);
-      }
-
-      rect();
-
-    </textarea>
-    <button class="tryIt"type="button" name="button" onclick="recupRect()">Try it !</button>
-    <canvas id="canvas2" height="200" width="400"></canvas>
-  </div>
-  <!-- _______________________ -->
-  <article>
-    <div class="text">
-      <h4>Le trait</h4>
-      <p>Un trait / tracé se déroule en plusieurs étapes: </p>
-      <br><p> initialisation, point de départ, point d'arrivée, clôture et affichage du contour et/ou du remplissage.</p>
+    <!-- _______________________ -->
+    <article>
+      <div class="text">
+        <h4>Le trait</h4>
+        <p>Un trait / tracé se déroule en plusieurs étapes: </p>
+        <br><p> initialisation, point de départ, point d'arrivée, clôture et affichage du contour et/ou du remplissage.</p>
         <ul>
           <li><b>context.beginPath()</b> et <b>context.closePath()</b> sont obligatoires dans le cas d’un trait, ils annoncent à canvas que nous démarrons puis arrêtons un tracé.</li>
           <li><b>context.moveTo(ax,ay)</b> indique le point de départ du trait aux coordonnées <b>(x,y)</b> renseignées en paramètre.</li>
           <li><b>context.lineTo(bx,by)</b> indique le point d’arrivée du tracé aux coordonnées <b>(x,y)</b> renseignées</li>
           <li><b>context.stroke()</b> est essentiel pour que le tracé ait lieu: c’est en quelque sorte l’encre nécessaire pour dessiner.</li>
         </ul>
+      </div>
+      <div class="image imageDown">
+        <img src="Images/trait.png"/>
+        <img src="Images/trait1.png"/>
+      </div>
+    </article>
+    <div class="canvasBox">
+      <textarea id="tryTrait" name="name" rows="15" cols="40">
+
+        trait(0, 0, 50, 50,"red");
+        trait(0,100,200,100,"green");
+        trait(400,0,50,150,"blue");
+
+        <!-- version hors fonction, amusez vous ;) -->
+
+        function trait2() {
+          context.strokeStyle = "pink";
+          context.lineWidth = 60;
+          context.beginPath();
+          context.moveTo(340, 150);
+          context.lineTo(400, 150);
+          context.closePath();
+          context.stroke();
+        }
+
+        trait2();
+
+      </textarea>
+      <button class="tryIt" type="button" name="button" onclick="recupTrait()">Try it !</button>
+      <canvas id="canvas" height="200" width="400"></canvas>
     </div>
-    <div class="image imageDown">
-      <img src="Images/trait.png"/>
-      <img src="Images/trait1.png"/>
-    </div>
-  </article>
-  <div class="canvasBox">
-    <textarea id="tryTrait" name="name" rows="15" cols="40">
+    <p> NB: Au premier passage du Try it, les traits rouge, vert et bleu sont fins, mais si vous appuyez une seconde fois sur Try it, ces derniers s'épaississent comme le "trait" rose.
+      <br> Cela est dû au fait que nous modifions <b>context.lineWidth</b> dans la fonction <b>trait2()</b> et que cela affecte l'ensemble du canvas tant que nous ne spécifions pas à nouveau que <b>context.lineWidth = 1</b>.</p>
+      <!-- ____________________________ -->
+      <article>
+        <div class="text">
+          <h4>Le cercle et l'arc de cercle</h4>
+          <p>Il n’existe pas vraiment de fonction directement prévue pour faire un cercle mais une fonction <b>arc()</b>.</p>
+          <br><p> Comme pour nos traits, il faut initialiser le début du dessin avec <b>context.beginPath()</b>, néanmoins, il n’est pas nécessaire de clôturer ce dernier avec <b>context.closePath()</b>.
+            les spécificités se situent au niveau des paramètres à renseigner pour notre fonction <b>context.arc()</b>:
+            <ul>
+              <li>le couple <b>(ax,ay)</b> correspond aux coordonnées <b>(x,y)</b> du centre du cercle que nous voulons tracer</li>
+              <li><b>rayon</b> correspond au rayon de notre cercle</li>
+              <li>les angles de début et de fin vont nous permettre de tracer de 1/8ième de cercle jusqu’à un cercle complet et sont exprimés en radians (on multiplie une <b>valeur comprise entre 0 et 2 par Math.PI</b>)</li>
+              <li><b>angleDébut</b> définit le point de départ et <b>angleFin</b>, le point final du tracé. Ainsi, un cercle complet aurait pour angleDébut <b>Math.PI*0</b> (soit 0) et pour angleFin <b>Math.PI*2</b>. Pour un demi cercle, on pourrait également faire, <b>Math.PI*0,5</b> en début et <b>Math.PI*1,5</b> en fin.</li>
+              <li><b>sensDuTracé</b> nous permet de choisir le sens du tracé à l’aide d’un booléen. <b>True</b> représentant le sens inverse des aiguilles d’une montre et <b>False</b> le sens des aiguilles d’une montre.</li>
+            </ul>
+            <br><p>A noter que dans le cas d’un cercle complet, true ou false n’ont pas d’importance. Il est également possible de réaliser un cercle plein en indiquant à la place des méthodes <b>stroke()</b> et <b>strokeStyle()</b>, <b>fill()</b> et <b>fillStyle()</b></p>
+          </div>
+          <div class="image imageDown">
+            <img src="Images/cercle.png"/>
+            <img src="Images/cercle1.png"/>
+            <img src="Images/cercle2.png"/>
+          </div>
+        </article>
+        <div class="canvasBox">
+          <textarea id="tryCercle" name="name" rows="15" cols="40">
 
-      trait(0, 0, 50, 50,"red");
-      trait(0,100,200,100,"green");
-      trait(400,0,50,150,"blue");
+            cerclePlein(100,100,50,"blue");
+            cercleVide(200,100,50,"purple");
 
-      <!-- version hors fonction, amusez vous ;) -->
+            <!-- version hors fonction, amusez vous ;) -->
 
-    function trait2() {
-      context.strokeStyle = "pink";
-      context.lineWidth = 60;
-      context.beginPath();
-      context.moveTo(340, 150);
-      context.lineTo(400, 150);
-      context.closePath();
-      context.stroke();
-    }
+            function cercle() {
+              context3.beginPath();
+              context3.arc(300, 100, 50, 0, Math.PI*1, false);
+              context3.fillStyle = "pink";
+              context3.fill();
+            }
 
-    trait2();
+            cercle();
 
-    </textarea>
-    <button class="tryIt" type="button" name="button" onclick="recupTrait()">Try it !</button>
-    <canvas id="canvas" height="200" width="400"></canvas>
-  </div>
-  <p> NB: Au premier passage du Try it, les traits rouge, vert et bleu sont fins, mais si vous appuyez une seconde fois sur Try it, ces derniers s'épaississent comme le "trait" rose.
-    <br> Cela est dû au fait que nous modifions <b>context.lineWidth</b> dans la fonction <b>trait2()</b> et que cela affecte l'ensemble du canvas tant que nous ne spécifions pas à nouveau que <b>context.lineWidth = 1</b>.</p>
-  <!-- ____________________________ -->
-  <article>
-    <div class="text">
-      <h4>Le cercle et l'arc de cercle</h4>
-      <p>Il n’existe pas vraiment de fonction directement prévue pour faire un cercle mais une fonction <b>arc()</b>.</p>
-      <br><p> Comme pour nos traits, il faut initialiser le début du dessin avec <b>context.beginPath()</b>, néanmoins, il n’est pas nécessaire de clôturer ce dernier avec <b>context.closePath()</b>.
-les spécificités se situent au niveau des paramètres à renseigner pour notre fonction <b>context.arc()</b>:
-        <ul>
-          <li>le couple <b>(ax,ay)</b> correspond aux coordonnées <b>(x,y)</b> du centre du cercle que nous voulons tracer</li>
-          <li><b>rayon</b> correspond au rayon de notre cercle</li>
-          <li>les angles de début et de fin vont nous permettre de tracer de 1/8ième de cercle jusqu’à un cercle complet et sont exprimés en radians (on multiplie une <b>valeur comprise entre 0 et 2 par Math.PI</b>)</li>
-          <li><b>angleDébut</b> définit le point de départ et <b>angleFin</b>, le point final du tracé. Ainsi, un cercle complet aurait pour angleDébut <b>Math.PI*0</b> (soit 0) et pour angleFin <b>Math.PI*2</b>. Pour un demi cercle, on pourrait également faire, <b>Math.PI*0,5</b> en début et <b>Math.PI*1,5</b> en fin.</li>
-          <li><b>sensDuTracé</b> nous permet de choisir le sens du tracé à l’aide d’un booléen. <b>True</b> représentant le sens inverse des aiguilles d’une montre et <b>False</b> le sens des aiguilles d’une montre.</li>
-        </ul>
-        <br><p>A noter que dans le cas d’un cercle complet, true ou false n’ont pas d’importance. Il est également possible de réaliser un cercle plein en indiquant à la place des méthodes <b>stroke()</b> et <b>strokeStyle()</b>, <b>fill()</b> et <b>fillStyle()</b></p>
-    </div>
-    <div class="image imageDown">
-      <img src="Images/cercle.png"/>
-      <img src="Images/cercle1.png"/>
-      <img src="Images/cercle2.png"/>
-    </div>
-  </article>
-  <div class="canvasBox">
-    <textarea id="tryCercle" name="name" rows="15" cols="40">
+          </textarea>
+          <button class="tryIt" type="button" name="button" onclick="recupCercle()">Try it !</button>
+          <canvas id="canvas3" height="200" width="400"></canvas>
+        </div>
+        <div class="trait"></div>
+        <!-- ___________________________________________ -->
+        <h3>Aller plus loin(vers l'infini et au-delà!)</h3>
+        <p>Canvas est capable de gérer plus que de simples tracés de formes, il gère également les images, le texte, des effets comme le dégradé et est capable de <b>modifier son point d’origine 0</b>.</p>
+        <article>
+          <div class="text">
+            <h4>Les images</h4>
+            <p>Avant de dessiner une image, il est tout d’abord nécessaire de la récupérer. Une fois celle-ci chargée par canvas, on pourra alors lui demander de l’afficher sur notre feuille.</p>
+            <ul>
+              <li><b>new Image()</b> indique à JavaScript que nous créons un nouvel objet de type image.</li>
+              <li><b>image.src</b> nous permet de récupérer une image à l’aide de son url.</li>
+              <li><b>image.onload</b> correspond à la fonction a effectuer une fois l’image chargée.</li>
+              <li><b>context.drawImage()</b> est la fonction permettant de dessiner ou afficher l’image dans canvas.
+                Le couple <b>(x, y)</b> fait référence aux coordonnées du coin supérieur gauche où l’on souhaite dessiner l’image.</li>
+              </ul>
+            </div>
+            <div class="image imageDown">
+              <img src="Images/image.png"/>
+              <img src="Images/image1.png"/>
+            </div>
+          </article>
+          <div class="canvasBox">
+            <textarea id="tryImage" name="name" rows="15" cols="40">
 
-      cerclePlein(100,100,50,"blue");
-      cercleVide(200,100,50,"purple");
+              dessineImage(0,0, "Images/vache.jpg");
 
-      <!-- version hors fonction, amusez vous ;) -->
+              <!-- version hors fonction, amusez vous ;) -->
 
-      function cercle() {
-        context3.beginPath();
-        context3.arc(300, 100, 50, 0, Math.PI*1, false);
-        context3.fillStyle = "pink";
-        context3.fill();
-      }
+              function dessineImage2(ax, ay, lien) {
+                var image = new Image();
+                image.src = lien;
+                image.onload = function() {
+                  context4.drawImage(this, ax, ay);
+                };
+              }
 
-      cercle();
-
-    </textarea>
-    <button class="tryIt" type="button" name="button" onclick="recupCercle()">Try it !</button>
-    <canvas id="canvas3" height="200" width="400"></canvas>
-  </div>
-  <div class="trait"></div>
-  <!-- ___________________________________________ -->
-  <h3>Aller plus loin(vers l'infini et au-delà!)</h3>
-  <p>Canvas est capable de gérer plus que de simples tracés de formes, il gère également les images, le texte, des effets comme le dégradé et est capable de <b>modifier son point d’origine 0</b>.</p>
-  <article>
-    <div class="text">
-      <h4>Les images</h4>
-      <p>Avant de dessiner une image, il est tout d’abord nécessaire de la récupérer. Une fois celle-ci chargée par canvas, on pourra alors lui demander de l’afficher sur notre feuille.</p>
-        <ul>
-          <li><b>new Image()</b> indique à JavaScript que nous créons un nouvel objet de type image.</li>
-          <li><b>image.src</b> nous permet de récupérer une image à l’aide de son url.</li>
-          <li><b>image.onload</b> correspond à la fonction a effectuer une fois l’image chargée.</li>
-          <li><b>context.drawImage()</b> est la fonction permettant de dessiner ou afficher l’image dans canvas.
-Le couple <b>(x, y)</b> fait référence aux coordonnées du coin supérieur gauche où l’on souhaite dessiner l’image.</li>
-        </ul>
-    </div>
-    <div class="image imageDown">
-      <img src="Images/image.png"/>
-      <img src="Images/image1.png"/>
-    </div>
-  </article>
-  <div class="canvasBox">
-    <textarea id="tryImage" name="name" rows="15" cols="40">
-
-      dessineImage(0,0, "Images/vache.jpg");
-
-      <!-- version hors fonction, amusez vous ;) -->
-
-      function dessineImage2(ax, ay, lien) {
-        var image = new Image();
-        image.src = lien;
-        image.onload = function() {
-          context4.drawImage(this, ax, ay);
-          };
-      }
-
-      dessineImage2();
+              dessineImage2();
 
 
 
-    </textarea>
-    <button class="tryIt" type="button" name="button" onclick="recupImage()">Try it !</button>
-    <canvas id="canvas4" height="200" width="400"></canvas>
-  </div>
-<!-- _____________________________________________ -->
-<article>
-  <div class="text">
-    <h4>Le texte</h4>
-    <p>Pour faire du texte avec canvas, il n’est pas nécessaire de tracer soit même ses lettres, trait par trait, lettre par lettre…</p>
-    <br><p>Heureusement, canvas a tout prévu et il existe deux fonctions capables de dessiner du texte:</p>
-      <ul>
-        <li><b>fillText</b> produira des lettres pleines (dont la couleur sera celle de fillStyle).</li>
-        <li><b>strokeText</b> produira uniquement le contour des lettres (dont la couleur sera celle définie au préalable par strokeStyle).</li>
-Le couple <b>(x, y)</b> fait référence aux coordonnées du coin supérieur gauche où l’on souhaite dessiner l’image.</li>
-      </ul>
-      <br><p>Il existe également plusieurs propriétés (très proches du CSS) permettant de choisir sa police, la taille de police, l’alignement...</p>
-      <ul>
-        <li><b>font</b> : police, avec une syntaxe semblable à celle rencontrée en CSS</li>
-        <li><b>textAlign</b> : alignement horizontal</li>
-        <li><b>baseline</b> : ligne de base (alignement vertical)</li>
-      </ul>
-  </div>
-  <div class="image imageDown">
-    <img src="Images/texte.png"/>
-    <img src="Images/texte1.png"/>
-    <img src="Images/texte2.png"/>
-  </div>
-</article>
-<div class="canvasBox">
-  <textarea id="tryTexte" name="name" rows="15" cols="40">
+            </textarea>
+            <button class="tryIt" type="button" name="button" onclick="recupImage()">Try it !</button>
+            <canvas id="canvas4" height="200" width="400"></canvas>
+          </div>
+          <!-- _____________________________________________ -->
+          <article>
+            <div class="text">
+              <h4>Le texte</h4>
+              <p>Pour faire du texte avec canvas, il n’est pas nécessaire de tracer soit même ses lettres, trait par trait, lettre par lettre…</p>
+              <br><p>Heureusement, canvas a tout prévu et il existe deux fonctions capables de dessiner du texte:</p>
+              <ul>
+                <li><b>fillText</b> produira des lettres pleines (dont la couleur sera celle de fillStyle).</li>
+                <li><b>strokeText</b> produira uniquement le contour des lettres (dont la couleur sera celle définie au préalable par strokeStyle).</li>
+                Le couple <b>(x, y)</b> fait référence aux coordonnées du coin supérieur gauche où l’on souhaite dessiner l’image.</li>
+              </ul>
+              <br><p>Il existe également plusieurs propriétés (très proches du CSS) permettant de choisir sa police, la taille de police, l’alignement...</p>
+              <ul>
+                <li><b>font</b> : police, avec une syntaxe semblable à celle rencontrée en CSS</li>
+                <li><b>textAlign</b> : alignement horizontal</li>
+                <li><b>baseline</b> : ligne de base (alignement vertical)</li>
+              </ul>
+            </div>
+            <div class="image imageDown">
+              <img src="Images/texte.png"/>
+              <img src="Images/texte1.png"/>
+              <img src="Images/texte2.png"/>
+            </div>
+          </article>
+          <div class="canvasBox">
+            <textarea id="tryTexte" name="name" rows="15" cols="40">
 
-    texte(200,100, "Hello Simplon !");
+              texte(200,100, "Hello Simplon !");
 
-    <!-- version hors fonction, amusez vous ;) -->
+              <!-- version hors fonction, amusez vous ;) -->
 
-    function texte2( ax, ay, content, font) {
-      context5.font = "20px Arial";
-      context5.font = font;
-      context5.textAlign = "center";
-      context5.fillStyle = "black";
-      context5.fillText(content, ax, ay);
-    }
+              function texte2( ax, ay, content, font) {
+                context5.font = "20px Arial";
+                context5.font = font;
+                context5.textAlign = "center";
+                context5.fillStyle = "black";
+                context5.fillText(content, ax, ay);
+              }
 
-    texte2();
-
-
-
-  </textarea>
-  <button class="tryIt" type="button" name="button" onclick="recupTexte()">Try it !</button>
-  <canvas id="canvas5" height="200" width="400"></canvas>
-</div>
-<!-- ________________________________________________________ -->
-<article>
-  <div class="text">
-    <h4>Le dégradé</h4>
-    <p>Il est possible de réaliser 2 types de dégradés, en ligne ou en cercle. Nous nous intéresserons principalement au dégradé linéaire dans cette partie.</p>
-    <br><p>Pour ce faire, il est essentiel de définir une couleur de départ et une d’arrivée. L’instruction ne fonctionnera pas avec moins de 2 couleurs. Pour cela, nous utilisons la méthode <b>addColorStop(p, couleur)</b>, p étant la position de la couleur dans le dégradé. </p>
-    <p>A noter que la position se situe entre 0(début) à 1(fin). Notre p devra donc être inclut dans cette tranche.
-Il est bien évidemment possible d’ajouter autant de couleur que souhaité.</p>
-      <ul>
-        <li>Avec <b>createLinearGradient(ax, ay, bx, by)</b> on définit l’origine et la fin du dégradé et donc son axe.
-Ainsi <b>(0, 0, 300, 300)</b> donnerait un dégradé en diagonale et <b>(0, 0, 300, 0)</b> donnerait un dégradé horizontal, tout deux, sur la moitié de notre canvas de 600px par 300px.</li>
-        <li>On utilise ensuite <b>context.fillStyle = linear</b> pour définir le style des formes pleines(fill) en y affectant le dégradé crée dans les instructions précédentes.</li>
-        <li>Enfin, <b>context.fillRect</b> dessine notre rectangle aux couleurs de notre dégradé.</li>
-      </ul>
-  </div>
-  <div class="image imageDown">
-    <img src="Images/degrade.png"/>
-    <img src="Images/degrade1.png"/>
-  </div>
-</article>
-<div class="canvasBox">
-  <textarea id="tryDegrade" name="name" rows="15" cols="40">
-
-    degrade("orange","yellow", "red");
-
-    <!-- version hors fonction, amusez vous ;) -->
-
-    function degrade2(color1, color2, color3){
-      var linear = context6.createLinearGradient(0,0,400,0);
-      linear.addColorStop(0, color1);
-      linear.addColorStop(0.5, color2);
-      linear.addColorStop(1, color3);
-      context6.fillStyle = linear;
-      context6.fillRect(0,0,400,200);
-    }
-
-    degrade2();
+              texte2();
 
 
 
-  </textarea>
-  <button class="tryIt" type="button" name="button" onclick="recupDegrade()">Try it !</button>
-  <canvas id="canvas6" height="200" width="400"></canvas>
-</div>
-<div class="trait"></div>
-<!-- _____________________________________________________ -->
-<h3>Modifier le point d'origine (0, 0)</h3>
-<p>En canvas, il est possible de changer le point d’origine (x = 0 et y = 0 par défaut) à l’aide des fonctions <b>translate()</b> et <b>rotate()</b>.<br>Pour ce faire, il est important d’étudier en premier lieu, les fonctions <b>save()</b> et <b>restore()</b>.</p>
-<article>
-  <div class="text">
-    <h4>Sauvegarde et restauration du point d'origine</h4>
-      <ul>
-        <li>La méthode <b>save()</b> a pour intérêt de sauvegarder les styles et le context que nous avons définit dans notre canvas.</li>
-        <li><b>restore()</b> permet ainsi de revenir à la dernière sauvegarde effectuée</li>
-      </ul>
-      <br><p>Par exemple, si vous décidez de modifier votre point d’origine (0, 0), avec la commande </b>translate()</b>, sans avoir sauvegarder (save()) au préalable, vous devrez réutiliser translate() pour le remettre à l’origine. Cela peut devenir très embêtant, notamment lorsque l’on a effectué de nombreux déplacements et rotations.</p>
-      <br><p> Entrons maintenant dans le vif du sujet.</p>
-  </div>
-  <div class="image imageDown">
-    <img src="Images/save_restore.png"/>
-  </div>
-</article>
-<!-- ____________________________________________________ -->
-<article>
-  <div class="text">
-    <h4>La méthode translate</h4>
-    <p><b>translate()</b> permet de modifier les coordonnées x et y par défaut de notre canvas. Ainsi, notre point d’origine ne sera plus le point (0,0) mais celui choisi par nos soins.</p>
-    <br><p>Rappel: pour plus de simplicité, n’oublier pas d’utiliser save() et ainsi conserver une sauvegarde de votre canvas d’origine ;).</p>
-  </div>
-  <div class="image imageDown">
-    <img src="Images/translate.png"/>
-  </div>
-</article>
-<!-- _________________________________________________ -->
-<article>
-  <div class="text">
-    <h4>La méthode rotate</h4>
-    <p><b>rotate()</b>, quant à elle, permet de modifier l’angle par défaut des axes de notre canvas. L’angle est indiqué par défaut en radiant, mais la conversion est possible avec un simple calcul: <b>(angle * (Math.PI / 180))</b>.</p>
-    <p>On utilise donc <b>context.rotate(angle *(Math.PI/180)</b> pour définir nos nouveaux axes de tracé.</p>
-    <br><p>Rappel: pour plus de simplicité, n’oublier pas d’utiliser save() et ainsi conserver une sauvegarde de votre canvas d’origine ;).</p>
-  </div>
-  <div class="image imageDown">
-    <img src="Images/rotate.png"/>
-  </div>
-</article>
-<div class="trait"></div>
-<p>A présent vous êtes fin prêt pour pratiquer sur le canvas !</p>
+            </textarea>
+            <button class="tryIt" type="button" name="button" onclick="recupTexte()">Try it !</button>
+            <canvas id="canvas5" height="200" width="400"></canvas>
+          </div>
+          <!-- ________________________________________________________ -->
+          <article>
+            <div class="text">
+              <h4>Le dégradé</h4>
+              <p>Il est possible de réaliser 2 types de dégradés, en ligne ou en cercle. Nous nous intéresserons principalement au dégradé linéaire dans cette partie.</p>
+              <br><p>Pour ce faire, il est essentiel de définir une couleur de départ et une d’arrivée. L’instruction ne fonctionnera pas avec moins de 2 couleurs. Pour cela, nous utilisons la méthode <b>addColorStop(p, couleur)</b>, p étant la position de la couleur dans le dégradé. </p>
+              <p>A noter que la position se situe entre 0(début) à 1(fin). Notre p devra donc être inclut dans cette tranche.
+                Il est bien évidemment possible d’ajouter autant de couleur que souhaité.</p>
+                <ul>
+                  <li>Avec <b>createLinearGradient(ax, ay, bx, by)</b> on définit l’origine et la fin du dégradé et donc son axe.
+                    Ainsi <b>(0, 0, 300, 300)</b> donnerait un dégradé en diagonale et <b>(0, 0, 300, 0)</b> donnerait un dégradé horizontal, tout deux, sur la moitié de notre canvas de 600px par 300px.</li>
+                    <li>On utilise ensuite <b>context.fillStyle = linear</b> pour définir le style des formes pleines(fill) en y affectant le dégradé crée dans les instructions précédentes.</li>
+                    <li>Enfin, <b>context.fillRect</b> dessine notre rectangle aux couleurs de notre dégradé.</li>
+                  </ul>
+                </div>
+                <div class="image imageDown">
+                  <img src="Images/degrade.png"/>
+                  <img src="Images/degrade1.png"/>
+                </div>
+              </article>
+              <div class="canvasBox">
+                <textarea id="tryDegrade" name="name" rows="15" cols="40">
+
+                  degrade("orange","yellow", "red");
+
+                  <!-- version hors fonction, amusez vous ;) -->
+
+                  function degrade2(color1, color2, color3){
+                    var linear = context6.createLinearGradient(0,0,400,0);
+                    linear.addColorStop(0, color1);
+                    linear.addColorStop(0.5, color2);
+                    linear.addColorStop(1, color3);
+                    context6.fillStyle = linear;
+                    context6.fillRect(0,0,400,200);
+                  }
+
+                  degrade2();
 
 
 
-  <!-- ___________________SCRIPT -->
-  <script type="text/javascript" src="tuto.js"></script>
-</body>
-</html>
+                </textarea>
+                <button class="tryIt" type="button" name="button" onclick="recupDegrade()">Try it !</button>
+                <canvas id="canvas6" height="200" width="400"></canvas>
+              </div>
+              <div class="trait"></div>
+              <!-- _____________________________________________________ -->
+              <h3>Modifier le point d'origine (0, 0)</h3>
+              <p>En canvas, il est possible de changer le point d’origine (x = 0 et y = 0 par défaut) à l’aide des fonctions <b>translate()</b> et <b>rotate()</b>.<br>Pour ce faire, il est important d’étudier en premier lieu, les fonctions <b>save()</b> et <b>restore()</b>.</p>
+              <article>
+                <div class="text">
+                  <h4>Sauvegarde et restauration du point d'origine</h4>
+                  <ul>
+                    <li>La méthode <b>save()</b> a pour intérêt de sauvegarder les styles et le context que nous avons définit dans notre canvas.</li>
+                    <li><b>restore()</b> permet ainsi de revenir à la dernière sauvegarde effectuée</li>
+                  </ul>
+                  <br><p>Par exemple, si vous décidez de modifier votre point d’origine (0, 0), avec la commande </b>translate()</b>, sans avoir sauvegarder (save()) au préalable, vous devrez réutiliser translate() pour le remettre à l’origine. Cela peut devenir très embêtant, notamment lorsque l’on a effectué de nombreux déplacements et rotations.</p>
+                  <br><p> Entrons maintenant dans le vif du sujet.</p>
+                </div>
+                <div class="image imageDown">
+                  <img src="Images/save_restore.png"/>
+                </div>
+              </article>
+              <!-- ____________________________________________________ -->
+              <article>
+                <div class="text">
+                  <h4>La méthode translate</h4>
+                  <p><b>translate()</b> permet de modifier les coordonnées x et y par défaut de notre canvas. Ainsi, notre point d’origine ne sera plus le point (0,0) mais celui choisi par nos soins.</p>
+                  <br><p>Rappel: pour plus de simplicité, n’oublier pas d’utiliser save() et ainsi conserver une sauvegarde de votre canvas d’origine ;).</p>
+                </div>
+                <div class="image imageDown">
+                  <img src="Images/translate.png"/>
+                </div>
+              </article>
+              <!-- _________________________________________________ -->
+              <article>
+                <div class="text">
+                  <h4>La méthode rotate</h4>
+                  <p><b>rotate()</b>, quant à elle, permet de modifier l’angle par défaut des axes de notre canvas. L’angle est indiqué par défaut en radiant, mais la conversion est possible avec un simple calcul: <b>(angle * (Math.PI / 180))</b>.</p>
+                  <p>On utilise donc <b>context.rotate(angle *(Math.PI/180)</b> pour définir nos nouveaux axes de tracé.</p>
+                  <br><p>Rappel: pour plus de simplicité, n’oublier pas d’utiliser save() et ainsi conserver une sauvegarde de votre canvas d’origine ;).</p>
+                </div>
+                <div class="image imageDown">
+                  <img src="Images/rotate.png"/>
+                </div>
+              </article>
+              <div class="trait"></div>
+              <p>A présent vous êtes fin prêt pour pratiquer sur le canvas !</p>
+
+
+
+              <!-- ___________________SCRIPT -->
+              <script type="text/javascript" src="tuto.js"></script>
+            </body>
+            </html>

@@ -2,10 +2,12 @@
   margin: 0;
   padding: 0;
 }
+
 body {
   background: lightgrey;
-  font-family: 'Raleway'
+  font-family: 'Raleway';
 }
+
 u {
   font-size: 1.5em;
 }
@@ -13,6 +15,7 @@ u {
 html {
   box-sizing: border-box;
 }
+
 *, *:before, *:after {
   box-sizing: inherit;
 }
@@ -24,10 +27,16 @@ header {
   position: fixed;
   width: 100%;
 }
+
+#logoResponsive {
+  display: none;
+}
+
 a {
   text-decoration: none;
   color: white;
 }
+
 #navbar, #hiddenUl  {
   display: flex;
   flex-direction: row;
@@ -35,6 +44,7 @@ a {
   text-align: center;
   background-color: #1A1717;
 }
+
 #navbar .cellules, #hiddenUl .cellules{
   list-style-type: none;
   width: 25%;
@@ -42,10 +52,15 @@ a {
   padding: 10px;
 }
 
-.cellules:hover{
+.cellules:hover:not(#EnCours){
   animation-name: fondu;
   animation-duration:0.1s;
   font-weight: lighter;
+  color: #ED1651;
+}
+
+#EnCours {
+  animation: none;
 }
 
 @keyframes fondu{
@@ -61,13 +76,9 @@ a {
   }
 }
 
-.cellules:hover{
-    color: #ED1651;
-}
-
 #EnCours {
-background-color: #ED1651;
-color: white;
+  background-color: #ED1651;
+  color: white;
 }
 
 #logoHome{
@@ -93,20 +104,23 @@ color: white;
 #hiddenLi1 {
   display: none;
 }
+
 #hiddenLi5{
   display: none;
 }
+
 #hiddenLi4 {
   display: none;
 }
+
 #hiddenLi3 {
   display: none;
 }
 
+/*---------canvas-----*/
 
 #canvas_box {
   padding-top: 100px;
-  height: 450px;
   background-color: lightgrey;
 }
 
@@ -116,6 +130,7 @@ color: white;
   left: 20px;
   width:50px;
 }
+
 #xSuite {
   position: absolute;
   top:120px;
@@ -139,16 +154,16 @@ color: white;
   left:5px;
 }
 
-
 #introduction{
   width: 45%;
   position: relative;
   left: 6%;
   margin-top: 20px;
+  text-align: justify;
 }
 
 span {
-  margin-left: 75px;
+  margin-left: 71px;
 }
 
 canvas {
@@ -167,14 +182,13 @@ input {
 h1 {
   margin: 40px 120px;
   font: 3em Sans-Serif;
-  /*font-style: italic;*/
 }
 
 #instructions {
   padding-top: 100px;
   width:400px;
   position:absolute;
-  top: 5px;
+  top: 0;
   left: 720px;
   line-height: 50px;
 }
@@ -188,7 +202,114 @@ button{
   border-top: 1px solid grey;
 }
 
+#fonctions {
+  margin-bottom: -30px;
+}
+
 #btnRaz {
-  margin-top:100px;
+  margin-top:10px;
   margin-left: 190px;
+}
+
+@media screen and (max-width: 1024px){
+
+  #introduction {
+    position: absolute;
+    width: 100%;
+    top: 50px;
+    left: 0;
+    padding: 0 20px;
+  }
+
+  #canvas, #input {
+    position: inherit;
+    display: block;
+    margin: 0 auto;
+  }
+
+  #canvas {
+    margin-top: 50px;
+  }
+
+  h1 {
+    display: none;
+    position: inherit;
+  }
+
+  #logoResponsive{
+    display: block;
+    position: absolute;
+    z-index: 1;
+    top: 10px;
+    left: 10px;
+  }
+
+  #instructions {
+    margin-top: 100px;
+    position: inherit;
+    width: 100%;
+    padding-top: 0;
+    line-height: 40px;
+  }
+
+  #instructions div {
+    display: inline-block;
+    width: 40%;
+    margin: 0 4%;
+    vertical-align: top;
+  }
+
+  #btnRaz {
+    display: block;
+    width: 318px;
+    margin: 0 auto;
+  }
+
+  #instructions #fonctions {
+    display: block;
+    text-align: center;
+  }
+
+  header {
+    position: absolute;
+    font-size: 1em;
+    display:none;
+  }
+
+  #x, #xSuite, #y100, #y200, #y300 {
+    display: none;
+  }
+
+  #navbar .cellules  {
+    display:  block;
+    width: 200px;
+  }
+
+  #hiddenUl {
+    display: none;
+  }
+
+  #navbar {
+    display:inline-block;
+    margin-top: 50px;
+  }
+
+  #logoHome{
+    display: none;
+  }
+
+  #logoResponsive:hover + header, header:hover{
+    display: block;
+  }
+
+  header {
+    z-index: 1;
+    width:210px;
+  }
+}
+
+@media screen and (max-width: 680px){
+  #canvas, #input {
+    width: 300px;
+  }
 }
