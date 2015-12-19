@@ -19,54 +19,50 @@ a{
 
 @media screen and (min-width: 1151px) {
 
-
-@keyframes transition{
-  from{
-    width: 0;
-    height: 775px;
-  }
-  to{
-    width: 40%;
-    height: 775px;
+  @keyframes transition{
+    from{
+      width: 0;
+      height: 800px;
     }
-}
-#containerGauche{
-  animation-name:transition;
-  animation-duration: 2s;
-}
+    to{
+      width: 40%;
+      height:800px;
+    }
+  }
 
+  #containerGauche{
+    animation-name:transition;
+    animation-duration: 2s;
+  }
 
-.fade-in {
-  opacity: 0;
-  animation: fadeIn 1s ease-in 1 forwards;
-}
-.fade-inTitre{
-  opacity: 0;
-  animation: fadeIn 2s ease-in 1 forwards;
-}
+  .fade-in {
+    opacity: 0;
+    animation: fadeIn 1s ease-in 1 forwards;
+  }
 
-@keyframes fadeIn {
-  to {
-    display: block;
-    opacity: 1;
+  .fade-inTitre{
+    opacity: 0;
+    animation: fadeIn 4s ease-in 1 forwards;
+  }
+
+  @keyframes fadeIn {
+    0% {
+      opacity: 0;
+    }
+    50% {
+      opacity: 0;
+    }
+    100% {
+      opacity: 1;
+    }
   }
 }
 
-
-}
-
-
 #containerGauche{
-  width: 40%;
-}
-
-article{
   float: left;
-  width: 100%;
-  height: 100%;
-  background-color: #1A1717;
-  display: inline;
-  padding-bottom: 60%;
+  height: 800px;
+  width: 40%;
+  background-color: black;
 }
 
 #titreCanvas{
@@ -75,16 +71,9 @@ article{
   color: #ED1450;
   display: none;
 }
+
 span{
   color: white;
-}
-
-article h2{
-  margin-left: 30px;
-  font-size: 2em;
-  margin-top: 70px;
-  color: #454647;
-  font-weight: 400;
 }
 
 #paragrapheCanvas{
@@ -96,17 +85,10 @@ article h2{
   display: none;
 }
 
-#opacity{
-  height: 310px;
-  width: 440px;
-  background-color: rgba(255, 0, 0, 0.5);
-}
-
-
-
 /* * * * *PARTIE DROITE* * * * * */
 
 #containerDroite{
+  float: right;
   display: inline-block;
   width: 60%;
   background-color: white;
@@ -123,10 +105,8 @@ article h2{
   border: 2px solid #1A1717;
   height: 80px;
   width: 500px;
-  background-color: rgba(255, 255, 255, 0.6);
   margin: 50px auto;
 }
-
 
 .divTitre h2{
   text-align: center;
@@ -136,7 +116,9 @@ article h2{
 
 .divTitre:hover{
   background-color:#ED1450;
-  border:2px solid black;
+}
+
+.divTitre:hover a {
   color: white;
 }
 
@@ -154,7 +136,6 @@ article h2{
   #containerDroite {
     display: inline-block;
     width: 100%;
-    /*height: 600px;*/
   }
 
   #canvas {
