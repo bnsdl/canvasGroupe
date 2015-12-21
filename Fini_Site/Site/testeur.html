@@ -1,11 +1,11 @@
 <!DOCTYPE html>
 <html>
-  <head>
-    <meta charset="utf-8">
-    <title>Initiation à Canvas</title>
-    <link type="text/css" rel="stylesheet" href="testeur.css">
-    <link href='https://fonts.googleapis.com/css?family=Montserrat:400,700|Raleway:400,900,300' rel='stylesheet' type='text/css'>
-    <script type="text/javascript">
+<head>
+  <meta charset="utf-8">
+  <title>Initiation à Canvas</title>
+  <link type="text/css" rel="stylesheet" href="testeur.css">
+  <link href='https://fonts.googleapis.com/css?family=Montserrat:400,700|Raleway:400,900,300' rel='stylesheet' type='text/css'>
+  <script type="text/javascript">
 
   var context;
   var input;
@@ -58,7 +58,7 @@
     context.stroke();
   }
 
-// On créer des fonctions permettant de dessiner, fonctions de bases du canvas
+  // On créer des fonctions permettant de dessiner, fonctions de bases du canvas
 
   function rectVide(ax, ay, bx, by, color) {
     console.log('rect() ', ax, ay, bx, by);
@@ -110,7 +110,7 @@
     image.src = lien;
     image.onload = function() {
       context.drawImage(this, ax, ay);
-      };
+    };
   }
 
   function razStyles() {
@@ -161,7 +161,7 @@
   }
 
 
-// Facultatif, fonction pour exécuter puis vider l'input après chaque saisie
+  // Facultatif, fonction pour exécuter puis vider l'input après chaque saisie
 
   function onKeyPressed(e) {
     var keycode = e.keyCode;
@@ -182,43 +182,43 @@
     input.value ="";
   }
 
-    </script>
+  </script>
 
-
-  </head>
-  <body>
-    <header>
-      <ul id="navbar">
-        <li id="logoHome">
-          <a href="home.html"><img id="homeRose"src="Images/homeModerne2.png"/></a>
-        </li>
-        <a class="cellules" href="tuto.html"><li onmouseover="info(1)">TUTORIEL</li></a>
-        <li class="cellules" id="EnCours" ><a href="testeur.html">APPLICATION</a></li>
-        <a class="cellules" href="atelier.html"><li onmouseover="info(3)">ATELIER</li></a>
-        <a class="cellules" href="exemples.html"><li onmouseover="info(4)">EXEMPLES</li></a>
-        <a class="cellules" href="ressource.html"><li onmouseover="info(5)">RESSOURCES</li></a>
-      </ul>
-      <ul id="hiddenUl">
-        <li class="cellules" id="hiddenLi1">Les 1ers pas, les bases</li>
-        <li class="cellules" id="hiddenLi3">Créons ensemble, un mini-jeu Canvas !</li>
-        <li class="cellules" id="hiddenLi4">D'autres exemples d'applications par les simploniens</li>
-        <li class="cellules" id="hiddenLi5">Plus de documentation, plus de tutos, plus de waouh !</li>
-      </ul>
-    </header>
-
-    <div id="canvas_box">
-      <div id="x">0</div> <div id="xSuite">100<span>200</span><span>300</span><span>400</span><span>500</span><span>600</span></div>
-      <p id="y100">100<p id="y200">200</p><p id="y300">300</p></p>
-      <canvas id="canvas" width="600" height="300"></canvas>
-      <input id="input" autofocus onkeyup="onKeyPressed(event)" placeholder="Saisissez commande, entrée pour exécuter..." />
-      <div id="instructions">
-        <b><u>Les fonctions:</u></b>
+</head>
+<body>
+  <div id="logoResponsive" onclick="navbar()">
+    <img src="Images/nav.png"/>
+  </div>
+  <header>
+    <ul id="navbar">
+      <li id="logoHome">
+        <a href="home.html"><img id="homeRose"src="Images/homeModerne2.png"/></a>
+      </li>
+      <a class="cellules" onmouseover="info(1)" href="tuto.html"><li>TUTORIEL</li></a>
+      <li class="cellules" id="EnCours" ><a href="testeur.html">APPLICATION</a></li>
+      <a class="cellules" onmouseover="info(3)" href="atelier.html"><li>ATELIER</li></a>
+      <a class="cellules" onmouseover="info(4)" href="exemples.html"><li>EXEMPLES</li></a>
+      <a class="cellules" onmouseover="info(5)" href="ressource.html"><li>RESSOURCES</li></a>
+    </ul>
+    <ul id="hiddenUl">
+      <li class="cellules" id="hiddenLi1">Les 1ers pas, les bases</li>
+      <li class="cellules" id="hiddenLi3">Créons ensemble, un mini-jeu Canvas !</li>
+      <li class="cellules" id="hiddenLi4">D'autres exemples d'applications par les simploniens</li>
+      <li class="cellules" id="hiddenLi5">Plus de documentation, plus de tutos, plus de waouh !</li>
+    </ul>
+  </header>
+  <div id="canvas_box">
+    <div id="instructions">
+      <b><u><p id="fonctions"> Les fonctions:</p></u></b><br>
+      <div>
         <p><b>trait</b>(débutX, débutY, finX, finY, couleur)</p>
         <p><b>rectVide</b>(débutX, débutY, tailleX, tailleY, couleur)</p>
         <p><b>rectPlein</b>(débutX, débutY, tailleX, tailleY, couleur)</p>
         <p><b>cercleVide</b>(centreX, centreY, rayon, couleur)</p>
         <p><b>cerclePlein</b>(centreX, centreY, rayon, couleur)</p>
         <p><b>efface</b>(débutX, débutY, tailleX, tailleY)</p>
+      </div>
+      <div>
         <p><b>dessineImage</b>(débutX, débutY, lien)</p>
         <p><b>texte</b>( débutX, débutY, phrase)</p>
         <p><b>degrade</b>(couleur1, couleur2, couleur3)</p>
@@ -228,16 +228,20 @@
         <button type="button" onclick="restore()">Restaurer la dernière sauvegarde</button>
       </div>
     </div>
-    <div id="btnRaz">
-      <button type="button" onclick="efface(0,0,600,300)">Réinitialiser le canvas</button>
-      <button type="button" onclick="razStyles()">Réinitialiser les styles</button>
-    </div>
-
-    <p id="introduction">En complément du tutoriel, nous avons choisit de vous intégrer un testeur vous permettant d'appliquer les fonctions précédemment expliquées.
-      Ces fonctions crées par nos soins ne sont pas génériques mais vous permettront une 1ère prise en main rapide et efficace pour découvrir l'outil canvas.</p>
+    <div id="x">0</div> <div id="xSuite">100<span>200</span><span>300</span><span>400</span><span>500</span><span>600</span></div>
+    <p id="y100">100<p id="y200">200</p><p id="y300">300</p></p>
+    <canvas id="canvas" width="600" height="300"></canvas>
+    <input id="input" autofocus onkeyup="onKeyPressed(event)" placeholder="Saisissez commande, entrée pour exécuter..." />
+  </div>
+  <div id="btnRaz">
+    <button type="button" onclick="efface(0,0,600,300)">Réinitialiser le canvas</button>
+    <button type="button" onclick="razStyles()">Réinitialiser les styles</button>
+  </div>
+  <p id="introduction">En complément du tutoriel, nous avons choisi de vous proposer un module de test vous permettant d'appliquer les fonctions précédemment expliquées.
+    <br>Ces dernières, créées par nos soins, ne sont pas génériques mais vous permettront une 1ère prise en main rapide et efficace pour découvrir l'outil canvas.</p>
     <h1>IN CODE WE TRUST</h1>
 
     <script type="text/javascript" src="testeur.js"></script>
   </body>
 
-</html>
+  </html>

@@ -40,13 +40,12 @@ a {
   padding: 10px;
 }
 
-.cellules:hover{
+.cellules:hover:not(#EnCours){
   color: #ED1651;
   animation-name: fondu;
   animation-duration:0.1s;
   font-weight: lighter;
 }
-
 
 @keyframes fondu{
   0%{
@@ -59,10 +58,6 @@ a {
   100%{
     opacity: 1;
   }
-}
-
-.cellules:hover a{
-    color: #ED1651;
 }
 
 #EnCours {
@@ -162,7 +157,7 @@ div p{
 /*Container Droite--------------------------/*/
 
 #containerDroite{
-  background-image: url(Images/adele1.jpg);
+  background-image: url(Images/adele1b.jpg);
   background-size: cover;
   background-position: 25% 10px;
   float: right;
@@ -193,9 +188,9 @@ h5{
 }
 
 @media  screen and (min-width: 1025px){
- #header {
-   width: 100%;
- }
+  #header {
+    width: 100%;
+  }
 }
 
 @media screen and (min-width:640px )and (max-width:1024px){
@@ -256,13 +251,13 @@ h5{
   }
 
 
- #logoResponsive:hover + header, header:hover{
-   display: block;
- }
+  #logoResponsive:hover + header, header:hover{
+    display: block;
+  }
 
- header {
-   width:210px;
- }
+  header {
+    width:210px;
+  }
 
 
   /*Container Gauche------------------------------------*/
@@ -315,7 +310,7 @@ h5{
   /*Container Droite--------------------------/*/
 
   #containerDroite{
-    background-image: url(Images/adele.JPG);
+    background-image: url(Images/adele1b.jpg);
     background-size: cover;
     background-repeat: no-repeat;
     background-position: 25%;
@@ -376,7 +371,7 @@ h5{
   /*Container Droite--------------------------*/
 
   #containerDroite{
-    background-image: url(Images/adele1.jpg);
+    background-image: url(Images/adele1b.jpg);
     background-size: cover;
     background-position: 25%;
     width:60%;
@@ -461,12 +456,12 @@ h5{
   }
 
 
- #logoResponsive:hover + header, header:hover{
-   display: block;
- }
+  #logoResponsive:hover + header, header:hover{
+    display: block;
+  }
 
- header {
-   width:210px;
- }
+  header {
+    width:210px;
+  }
 
 }

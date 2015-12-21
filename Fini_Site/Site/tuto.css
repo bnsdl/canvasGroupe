@@ -9,8 +9,8 @@ html {
   box-sizing: inherit;
 }
 body{
-    font-family: 'Raleway';
-    text-align: justify;
+  font-family: 'Raleway';
+  text-align: justify;
 }
 
 /*NAVBAR -------------------------------------------*/
@@ -22,7 +22,7 @@ header {
 }
 
 #logoResponsive{
-    display: none;
+  display: none;
 }
 
 a {
@@ -44,7 +44,7 @@ a {
   padding: 10px;
 }
 
-.cellules:hover{
+.cellules:hover:not(#EnCours){
   animation-name: fondu;
   animation-duration:0.1s;
   font-weight: lighter;
@@ -64,8 +64,8 @@ a {
 }
 
 #EnCours {
-background-color: #ED1651;
-color: white;
+  background-color: #ED1651;
+  color: white;
 }
 
 #logoHome{
@@ -79,7 +79,7 @@ color: white;
 }
 
 .cellules:hover{
-    color: #ED1651;
+  color: #ED1651;
 }
 /*PARTIE CACHEE -----------------------------------------*/
 
@@ -154,7 +154,7 @@ article {
 }
 
 .text ul{
-padding-left: 30px;
+  padding-left: 30px;
 }
 
 .trait {
