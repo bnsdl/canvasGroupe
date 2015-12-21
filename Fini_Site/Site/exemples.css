@@ -22,6 +22,7 @@ header {
   font-size: 1.7em;
   position: fixed;
   width: 100%;
+  z-index: 1;
 }
 
 #logoResponsive{
@@ -111,7 +112,8 @@ a {
 /*Contenu ----------------------------------------------*/
 
 #containerPrincipal{
-  height: 100vh;
+  position: absolute;
+  height: 100%;
   width: 100%;
   display: inline-block;
 }
@@ -142,6 +144,10 @@ div p{
   list-style: none;
   margin-top: 5px;
 }
+.ref a{
+  color: #FED2D2;
+}
+
 
 .ref:first-child{
   margin-top: 18px;
@@ -173,13 +179,19 @@ h5{
 
 @media screen and (max-width: 1024px){
 
-  #logoResponsive{
-    display: block;
-    position: absolute;
-    z-index: 1;
-    top: 10px;
-    left: 10px;
+  #logoResponsive img{
+    height: 150%;
+    width: 150%;
   }
+
+    #logoResponsive{
+      display: block;
+      position: absolute;
+      z-index: 1;
+      top: 10px;
+      left: 10px;
+    }
+
 
   header {
     position: absolute;
@@ -189,10 +201,20 @@ h5{
 
   #navbar .cellules  {
     display:  block;
-    margin-left: 10px;
-    width: 200px;
-
+    /*margin-left: 10px;*/
+    /*width: 200px;*/
+    width: 400px;;
+    height: 110px;
   }
+
+  #navbar li{
+    padding-top: 38px;
+  }
+
+  #navbar #EnCours{
+    padding-top: 50px;
+  }
+
 
   #containerGauche{
     width: 100%;
@@ -219,7 +241,7 @@ h5{
   }
   #navbar {
     display:inline-block;
-    margin-top: 50px;
+    /*margin-top: 50px;*/
   }
 
   #logoHome{

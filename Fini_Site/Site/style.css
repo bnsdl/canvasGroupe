@@ -7,15 +7,20 @@ html{
 }
 
 body{
-overflow: hidden;
+  overflow: hidden;
   font-family: 'Raleway', sans-serif;
+  background: url(Images/classe_simplon.jpg) no-repeat center fixed;
+  background-size: cover;
 }
 
 #bg{
-  background-image: url(Images/classe_simplon.jpg);
-  height: 710px;
+  position: absolute;
+  height: 100%;
   width: 100%;
-  background-size: 100%;
+  /*background: url(Images/classe_simplon.jpg) no-repeat center fixed;
+  background-size: cover;*/
+  /*width: 100%;*/
+  /*background-size: 100%;*/
 
 }
 
@@ -127,8 +132,9 @@ a:hover{
 }
 
 .prenom{
+  width: 30%;
   font-size: 0.8em;
-  margin-top: 100px;
-  margin-left: 610px;
+  margin-top: w100px;
+  margin-left: 60%;
 
 }

@@ -195,13 +195,18 @@ h5{
 
 @media screen and (min-width:640px )and (max-width:1024px){
 
-  #logoResponsive{
-    display: block;
-    position: absolute;
-    z-index: 1;
-    top: 10px;
-    left: 10px;
+  #logoResponsive img{
+    height: 150%;
+    width: 150%;
   }
+
+    #logoResponsive{
+      display: block;
+      position: absolute;
+      /*z-index: 1;*/
+      top: 10px;
+      left: 10px;
+    }
 
 
   header {
@@ -213,10 +218,20 @@ h5{
 
   #navbar .cellules  {
     display:  block;
-    margin-left: 10px;
-    width: 200px;
-
+    /*margin-left: 10px;*/
+    /*width: 200px;*/
+    width: 400px;;
+    height: 110px;
   }
+
+  #navbar li{
+    padding-top: 38px;
+  }
+
+  #navbar #EnCours{
+    padding-top: 50px;
+  }
+
 
   #containerGauche{
     width: 100%;
@@ -243,7 +258,7 @@ h5{
   }
   #navbar {
     display:inline-block;
-    margin-top: 50px;
+    /*margin-top: 50px;*/
   }
 
   #logoHome{
@@ -330,6 +345,11 @@ h5{
     color:#FED2D2;;
     text-align: justify;
   }
+
+  #text{
+    padding-top: 250px;
+  }
+
   #adele{
     height: 100%;
     z-index: -1;
@@ -400,13 +420,20 @@ h5{
     margin-top: 150px;
   }
 
-  #logoResponsive{
-    display: block;
-    position: absolute;
-    z-index: 1;
-    top: 10px;
-    left: 10px;
+  #logoResponsive img{
+    height: 150%;
+    width: 150%;
   }
+
+    #logoResponsive{
+      display: block;
+      position: absolute;
+      /*z-index: 1;*/
+      top: 10px;
+      left: 10px;
+    }
+
+
 
 
   header {
@@ -418,9 +445,18 @@ h5{
 
   #navbar .cellules  {
     display:  block;
-    margin-left: 10px;
-    width: 200px;
+    /*margin-left: 10px;*/
+    /*width: 200px;*/
+    width: 400px;;
+    height: 110px;
+  }
 
+  #navbar li{
+    padding-top: 38px;
+  }
+
+  #navbar #EnCours{
+    padding-top: 50px;
   }
 
   #containerGauche{
@@ -437,10 +473,9 @@ h5{
     float: none;
   }
 
-  #texte{
-    position: absolute;
-    top: 0;
-    margin-left: 30%;
+  #text{
+    padding-top: 250px;
+
   }
 
   #hiddenUl {
@@ -448,7 +483,7 @@ h5{
   }
   #navbar {
     display:inline-block;
-    margin-top: 50px;
+    /*margin-top: 50px;*/
   }
 
   #logoHome{

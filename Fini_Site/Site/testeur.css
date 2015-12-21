@@ -236,13 +236,18 @@ button{
     position: inherit;
   }
 
-  #logoResponsive{
-    display: block;
-    position: absolute;
-    z-index: 1;
-    top: 10px;
-    left: 10px;
+  #logoResponsive img{
+    height: 150%;
+    width: 150%;
   }
+
+    #logoResponsive{
+      display: block;
+      position: absolute;
+      z-index: 1;
+      top: 10px;
+      left: 10px;
+    }
 
   #instructions {
     margin-top: 100px;
@@ -282,7 +287,18 @@ button{
 
   #navbar .cellules  {
     display:  block;
-    width: 200px;
+    /*margin-left: 10px;*/
+    /*width: 200px;*/
+    width: 400px;;
+    height: 110px;
+  }
+
+  #navbar li{
+    padding-top: 38px;
+  }
+
+  #navbar #EnCours{
+    padding-top: 50px;
   }
 
   #hiddenUl {
@@ -291,7 +307,7 @@ button{
 
   #navbar {
     display:inline-block;
-    margin-top: 50px;
+    /*margin-top: 50px;*/
   }
 
   #logoHome{
