@@ -116,9 +116,6 @@ span{
 
 .divTitre:hover{
   background-color:#ED1450;
-}
-
-.divTitre:hover a {
   color: white;
 }
 
