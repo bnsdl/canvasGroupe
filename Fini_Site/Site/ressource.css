@@ -157,7 +157,7 @@ div p{
 /*Container Droite--------------------------/*/
 
 #containerDroite{
-  background-image: url(Images/adele1b.jpg);
+  background-image: url(Images/adele1c.jpg);
   background-size: cover;
   background-position: 25% 10px;
   float: right;
@@ -218,8 +218,6 @@ h5{
 
   #navbar .cellules  {
     display:  block;
-    /*margin-left: 10px;*/
-    /*width: 200px;*/
     width: 400px;;
     height: 110px;
   }
@@ -258,7 +256,6 @@ h5{
   }
   #navbar {
     display:inline-block;
-    /*margin-top: 50px;*/
   }
 
   #logoHome{
@@ -325,7 +322,7 @@ h5{
   /*Container Droite--------------------------/*/
 
   #containerDroite{
-    background-image: url(Images/adele1b.jpg);
+    background-image: url(Images/adele1c.jpg);
     background-size: cover;
     background-repeat: no-repeat;
     background-position: 25%;
@@ -391,7 +388,7 @@ h5{
   /*Container Droite--------------------------*/
 
   #containerDroite{
-    background-image: url(Images/adele1b.jpg);
+    background-image: url(Images/adele1c.jpg);
     background-size: cover;
     background-position: 25%;
     width:60%;
