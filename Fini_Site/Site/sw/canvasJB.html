@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <title>Jeu Star Wars</title>
+  <style>
+
+  * {
+    margin: 0;
+    padding: 0;
+  }
+
+  body {
+    padding-top: 50px;
+  }
+
+  #canvas {
+    margin: 10px 0 0 10px;  
+  }
+
+  #boutons {
+    text-align: center;
+    display: inline-block;
+    vertical-align: top;
+  }
+
+  button {
+    width: 100px;
+    height: 40px;
+  }
+  li {
+    list-style-type: none;
+  }
+  #instructions {
+    display: inline-block;
+    border: 1px solid black;
+    width : 50%;
+    text-align: center;
+    margin-left: 10px;
+  }
+  #timer, #score {
+    width : 50%;
+    border: 1px solid black;
+    text-align: center;
+    font-size: 2em;
+    margin-left: 10px;
+  }
+  </style>
+
+</head>
+<body>
+  <canvas id="canvas" width="600" height="400"></canvas>
+
+  <div id="instructions">
+    <ul>
+      <li>Utilise les touches <b>i j k l</b> pour te déplacer et <b>a</b> pour tirer:</li>
+      <li> <b>i</b>: en haut </li>
+      <li> <b>l</b>: à droite </li>
+      <li> <b>k</b>: en bas </li>
+      <li> <b>j</b>: gauche </li>
+    </ul>
+  </div>
+  <div id = "boutons">
+  <button type = "button" id = "start" onclick = "go()">START</button>
+  <button type = "button" id = "stop" onclick = "arret()">STOP</button>
+  </div>
+  <div id="timer"></div>
+  <div id="score">bliblinloa</div>
+
+
+  <script type="text/javascript" src="canvasJB.js">
+  </script>
+</body>
+</html>
