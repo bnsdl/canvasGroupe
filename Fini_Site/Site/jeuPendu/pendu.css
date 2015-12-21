@@ -1,0 +1,43 @@
+  body {
+    padding-top: 50px;
+  }
+  #pendu{
+    display:none;
+    border: solid black 1px;
+    border-radius: 8px;
+    box-shadow: gray 3px 3px;
+  }
+  #cleaner{
+    clear:both;
+    display: inline-block;
+  }
+  .devine{
+    display:inline-block;
+    margin-left: 3%;
+    font-size: 2em;
+    font-family: sans-serif;
+  }
+  #idDiv{
+    margin-top: 5%;
+    margin-bottom: 5%;
+  }
+  #resultat{
+    height:70px;
+    border-radius: 6px;
+    text-align: center;
+    color: white;
+    font-family: sans-serif;
+    display: none;
+    padding-top: 0.2%;
+    margin-bottom: 2%;
+  }
+
+  .hiddenAtFirst{
+    display:none;
+    margin-bottom: 3%;
+    margin-top: 3%;
+  }
+  #hiddenAtTheEnd{
+    margin-bottom: 3%;
+    margin-top: 20%;
+  }

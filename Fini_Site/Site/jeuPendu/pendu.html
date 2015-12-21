@@ -1,0 +1,221 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<title>Pendu</title>
+<link rel="stylesheet" href="pendu.css">
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css" integrity="sha384-1q8mTJOASx8j1Au+a5WDVnPi2lkFfwwEAa8hDDdjZlpLegxhjVME1fgjWPGmkzs7" crossorigin="anonymous">
+</head>
+
+<body>
+
+<div class="container">
+
+  <div class="row hiddenAtFirst">
+    <div class="col-md-3 col-md-offset-4">
+  <button class="btn btn-success btn-block" type="button" onclick="motAleatoire()">Changer de mot</button>
+    </div>
+ </div>
+
+  <div class="row" id="hiddenAtTheEnd">
+    <div class="col-md-4 col-md-offset-4">
+<button class="btn btn-success btn-block btn-lg" type="button" onclick="motAleatoire()" id="boutonJouer">Commencer un pendu!</button>
+   </div>
+  </div>
+
+
+  <div class="row hiddenAtFirst">
+    <div class="col-md-3 col-md-offset-4">
+<input id="entreeUtilisateur" autofocus onkeyup="onKeyPressed(event)" type="texte" placeholder="choisir une lettre"></input>
+<button class="btn btn-primary" type="button" onclick="verification()">Valider</button>
+    </div>
+  </div>
+
+
+  <div class="row hiddenAtFirst">
+    <div class="col-md-6 col-md-offset-4">
+<div id="idDiv">
+</div>
+  </div>
+  </div>
+
+  <div class="row">
+    <div class="col-md-3 col-md-offset-4">
+<div id="resultat"><h1 id='h1'></h1></div>
+    </div>
+  </div>
+
+
+  <div class="row">
+    <div class="col-md-3 col-md-offset-4">
+<canvas id="pendu" width="300px" height="300px">
+</canvas>
+  </div>
+  </div>
+</div>
+
+
+
+
+
+<script type="text/javascript">
+
+var c = document.getElementById("pendu");
+var ctx = c.getContext("2d");
+var tabCanvasCoordinees = [{ax:50,ay:250,bx:150,by:250},{ax:100,ay:50,bx:100,by:250},{ax:100,ay:50,bx:225,by:50},{ax:100,ay:100,bx:150,by:50},{ax:225,ay:50,bx:225,by:75},
+  {ax:225,ay:105,bx:225,by:140},{ax:225,ay:115,bx:250,by:120},{ax:225,ay:115,bx:200,by:120},{ax:225,ay:140,bx:210,by:165},{ax:225,ay:140,bx:240,by:165}];
+  var mot;
+  var tabMot;
+  var tabMot2;
+  var compteur = 0;
+  var score;
+  var text;
+  var xhttp = new XMLHttpRequest();
+  var regEx = /[\n]/gi;
+
+  function motAleatoire(){
+    ctx.clearRect(0,0,300,300);
+    document.getElementById('hiddenAtTheEnd').style.display = 'none';
+    document.getElementById('pendu').style.display = 'block';
+    document.getElementsByClassName('hiddenAtFirst')[0].style.display = 'block';
+    document.getElementsByClassName('hiddenAtFirst')[1].style.display = 'block';
+    document.getElementsByClassName('hiddenAtFirst')[2].style.display = 'block';
+    document.getElementById('idDiv').innerHTML = '';
+    document.getElementById('resultat').style.display= 'none';
+
+
+    xhttp.onreadystatechange =  function() {
+      if (xhttp.readyState == 4 && xhttp.status == 200) {
+        text  = xhttp.responseText;
+        text = text.replace(regEx," ");
+        text = text.split(" ");
+        text = text.filter(filtrer);
+        console.log(text);
+        mot = text[Math.floor(Math.random()*text.length)];
+        console.log(mot);
+        tabMot = mot.split('');
+        tabMot2 = mot.split('');
+        compteur = 0;
+        function separateurMots(){
+          for(i=0;i<tabMot.length;i++){
+            var trait = document.createElement("div");
+            trait.classList.add('devine');
+            trait.id= "div"+i;
+            var traitTexte = document.createTextNode("_");
+            trait.appendChild(traitTexte);
+            document.getElementById('idDiv').appendChild(trait);
+          }
+        }
+
+        separateurMots();
+      }
+    };
+    xhttp.open("GET", "motEnFrancais.txt", true);
+    xhttp.send();
+  }
+
+
+  function verification(element){
+    var entreeU = document.getElementById("entreeUtilisateur").value;
+    if(entreeU === mot|| element === mot){
+      motEntier();
+    }
+    else if(entreeU !== mot || element !== mot){
+      if(entreeU != undefined &&tabMot.indexOf(entreeU)===-1||element != undefined && tabMot.indexOf(element)===-1){
+        compteur ++
+        if(compteur === 11){
+          perdu();
+        }
+        dessin(compteur);
+        document.getElementById('pendu').textContent = compteur;
+        console.log(score);
+      }
+      else if(tabMot.indexOf(entreeU)!==-1||tabMot.indexOf(element)!==-1){
+        if(tabMot.indexOf(entreeU)!==-1){
+          while(tabMot.indexOf(entreeU)!=-1){
+            document.getElementById('div'+ tabMot.indexOf(entreeU)).textContent = entreeU;
+            tabMot.splice(tabMot.indexOf(entreeU),1,"");
+            console.log(tabMot);
+          }
+        }
+        if(tabMot.indexOf(element)!==-1){
+          while(tabMot.indexOf(element)!=-1){
+            document.getElementById('div'+ tabMot.indexOf(element)).textContent = element;
+            tabMot.splice(tabMot.indexOf(element),1,"");
+            console.log(tabMot);
+          }
+        }
+      }
+    }
+
+    if(tabMot.join('').length === 0){
+      motEntier();
+    }
+  }
+
+  function perdu(){
+    console.log('gagné');
+    document.getElementById('resultat').style.backgroundColor= "red";
+    document.getElementById('h1').textContent = 'Perdu!!!'
+    document.getElementById('resultat').style.display= "block";
+    for(i=0;i<tabMot.length;i++){
+      document.getElementById('div'+i).textContent = tabMot2[i];
+    }
+  }
+  function motEntier(){
+    console.log('gagné');
+    document.getElementById('resultat').style.backgroundColor= "green";
+    document.getElementById('h1').textContent = 'Gagné!!!'
+    document.getElementById('resultat').style.display= "block";
+    score++;
+    for(i=0;i<tabMot.length;i++){
+      document.getElementById('div'+i).textContent = tabMot2[i];
+    }
+  }
+  function filtrer(element){
+    var regExp = /[A-Z,\W]/g;
+    return element.search(regExp) === -1;
+  }
+
+  function onKeyPressed(e) {
+    var element = document.getElementById('entreeUtilisateur');
+    var keycode = e.keyCode;
+    console.log('onKeyPressed...', keycode);
+    if (keycode === 13){
+      if(element.value === ''){
+        alert("veillez proposer une lettre!")
+        return;
+      }
+      else{
+       verification(element.value);
+       element.value = '';
+      }
+    }
+  }
+
+  function dessin(a){
+    if(a === 6){
+      ctx.beginPath();
+      ctx.arc(225,90,15,0,Math.PI*2,false);
+      ctx.closePath();
+      ctx.stroke();
+    }
+    else if(a < 6){
+      ctx.beginPath();
+      ctx.moveTo(tabCanvasCoordinees[a-1].ax,tabCanvasCoordinees[a-1].ay);
+      ctx.lineTo(tabCanvasCoordinees[a-1].bx,tabCanvasCoordinees[a-1].by);
+      ctx.closePath();
+      ctx.stroke();
+    }
+    else if(a > 6){
+      ctx.beginPath();
+      ctx.moveTo(tabCanvasCoordinees[a-2].ax,tabCanvasCoordinees[a-2].ay);
+      ctx.lineTo(tabCanvasCoordinees[a-2].bx,tabCanvasCoordinees[a-2].by);
+      ctx.closePath();
+      ctx.stroke();
+    }
+  }
+  </script>
+
+</body>
+</html>
