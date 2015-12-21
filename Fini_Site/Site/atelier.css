@@ -46,22 +46,8 @@ a {
   animation-duration:0.1s;
   font-weight: lighter;
 }
-<<<<<<< HEAD
 .cellules:hover a{
     color: #ED1651;
-=======
-
-@keyframes fondu{
-  0%{
-    opacity: 0;
-  }
-  50%{
-    opacity: 1;
-  }
-  100%{
-    opacity: 1;
-  }
->>>>>>> a9c9ed44a2fbaf90f27d8c4ee9a7f620a81eb788
 }
 
 #EnCours {
