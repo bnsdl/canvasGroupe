@@ -189,13 +189,13 @@ h5{
     width: 150%;
   }
 
-    #logoResponsive{
-      display: block;
-      position: absolute;
-      z-index: 1;
-      top: 10px;
-      left: 10px;
-    }
+  #logoResponsive{
+    display: block;
+    position: absolute;
+    z-index: 1;
+    top: 10px;
+    left: 10px;
+  }
 
 
   header {

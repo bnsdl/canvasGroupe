@@ -15,11 +15,13 @@ body{
 /*NAVBAR -------------------------------------------*/
 #logoResponsive{
   display:none;
+  z-index: 1;
 }
 
 header {
   font-size: 1.7em;
   position: fixed;
+  z-index: 1;
   width: 100%;
 }
 a {
@@ -100,7 +102,8 @@ a {
 /*Contenu ----------------------------------------------*/
 
 #containerPrincipal{
-  height:800px;
+  position: absolute;
+  height:100%;
   width: 100%;
   display: inline-block;
 }
@@ -200,13 +203,13 @@ h5{
     width: 150%;
   }
 
-    #logoResponsive{
-      display: block;
-      position: absolute;
-      /*z-index: 1;*/
-      top: 10px;
-      left: 10px;
-    }
+  #logoResponsive{
+    display: block;
+    position: absolute;
+    /*z-index: 1;*/
+    top: 10px;
+    left: 10px;
+  }
 
 
   header {
@@ -422,13 +425,13 @@ h5{
     width: 150%;
   }
 
-    #logoResponsive{
-      display: block;
-      position: absolute;
-      /*z-index: 1;*/
-      top: 10px;
-      left: 10px;
-    }
+  #logoResponsive{
+    display: block;
+    position: absolute;
+    /*z-index: 1;*/
+    top: 10px;
+    left: 10px;
+  }
 
 
 

@@ -5,8 +5,6 @@
 
 body{
   font-family: 'Raleway', sans-serif;
-
-
 }
 
 a{
@@ -24,11 +22,9 @@ a{
   @keyframes transition{
     from{
       width: 0;
-      height: 900px;
     }
     to{
       width: 40%;
-      height:900px;
     }
   }
 
@@ -61,16 +57,15 @@ a{
 }
 #containerPrincipal{
   position: absolute;
-  min-height: 100vh;
+  height:100%;
   width: 100%;
-
 }
 
 #containerGauche{
   position: absolute;
   top: 0;
   left: 0;
-
+  height: 100%;
   width: 40%;
   background-color: black;
 }
@@ -98,10 +93,9 @@ span{
 /* * * * *PARTIE DROITE* * * * * */
 
 #containerDroite{
-  position: absolute;
-  right: 0;
-  top: 0;
-  /*float: right;*/
+  /*right: 0;
+  top: 0;*/
+  float: right;
   display: inline-block;
 
   width: 60%;
@@ -109,10 +103,10 @@ span{
 }
 
 #canvas{
-padding-bottom: 50px;
-width: 240px;
-margin: 0 auto;
-display: block;
+  padding-bottom: 50px;
+  width: 240px;
+  margin: 0 auto;
+  display: block;
 }
 
 .divTitre{
@@ -137,10 +131,14 @@ display: block;
 
 @media screen and (max-width: 1150px) {
 
+  #containerPrincipal{
+    position: inherit;
+  }
+
   #containerGauche {
-    position: static;
+    position: inherit;
     width: 100%;
-    height: 100%;
+    /*height: 100%;*/
     display: inline-block;
   }
 
@@ -149,7 +147,7 @@ display: block;
   }
 
   #containerDroite {
-    position:static;
+    position:inherit;
     display: inline-block;
     width: 100%;
   }
