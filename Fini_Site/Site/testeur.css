@@ -120,6 +120,7 @@ a {
 /*---------canvas-----*/
 
 #canvas_box {
+  width:800px;
   padding-top: 100px;
   background-color: lightgrey;
 }
