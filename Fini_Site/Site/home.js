@@ -6,7 +6,7 @@ window.onload = function initCanvas() {
 var feuille = document.getElementById("canvas");
 context = feuille.getContext("2d");
 cercle(60,"#ED1450");
-}
+};
 
 var angle = 0;
 var angle2 = 0.1;
@@ -23,7 +23,7 @@ function trait(ax, ay, bx, by){
 
 function rectangle(y){
   intervalRect = window.setInterval(function(){
-    context.setLineDash[0];
+    context.setLineDash(0);
     context.lineWidth = 80;
     trait(x,y,x+1,y);
     x++;
@@ -64,7 +64,7 @@ function cercle(taille, color){
         cercle(60,"#ED1450");
       }
     }
-  },100)
+  },100);
 }
 
 function toggleListeTuto(){

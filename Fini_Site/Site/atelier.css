@@ -21,7 +21,7 @@ header {
   width: 100%;
 }
 
-a {
+a:not(.black) {
   text-decoration: none;
   color: white;
 }

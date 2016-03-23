@@ -119,6 +119,11 @@ a {
 
 /*---------canvas-----*/
 
+#containerFlex {
+    display:flex;
+    
+}
+
 #canvas_box {
   width:800px;
   padding-top: 100px;
@@ -156,12 +161,16 @@ a {
 }
 
 #introduction{
-  width: 45%;
-  position: relative;
-  left: 6%;
-  margin-top: 20px;
+  width: 70%;
+  /*position: relative;*/
+  /*left: 6%;*/
+  margin: 20px 10% 0 8%;
   text-align: justify;
 }
+
+ #introductionMin {
+     display: none;
+ }
 
 span {
   margin-left: 71px;
@@ -188,7 +197,7 @@ h1 {
 #instructions {
   padding-top: 100px;
   width:400px;
-  position:absolute;
+  /*position:absolute;*/
   top: 0;
   left: 720px;
   line-height: 50px;
@@ -214,24 +223,22 @@ button{
 
 @media screen and (max-width: 1024px){
 
-  #introduction {
-    position: absolute;
-    width: 100%;
-    top: 50px;
-    left: 0;
-    padding: 0 20px;
+  
+  #containerFlex {
+    flex-direction: column;
   }
 
   #canvas, #input {
     position: inherit;
     display: block;
-    margin: 0 auto;
+    margin: 0 10%;
   }
-
-  #canvas {
-    margin-top: 50px;
+  
+  #introduction {
+      margin: 0 12%;
+      margin-top: 10px;
   }
-
+  
   h1 {
     display: none;
     position: inherit;
@@ -242,16 +249,16 @@ button{
     width: 150%;
   }
 
-    #logoResponsive{
-      display: block;
-      position: absolute;
-      z-index: 1;
-      top: 10px;
-      left: 10px;
-    }
+  #logoResponsive{
+    display: block;
+    position: absolute;
+    z-index: 1;
+    top: 10px;
+    left: 10px;
+  }
 
   #instructions {
-    margin-top: 100px;
+    margin-top: 50px;
     position: inherit;
     width: 100%;
     padding-top: 0;
@@ -290,7 +297,7 @@ button{
     display:  block;
     /*margin-left: 10px;*/
     /*width: 200px;*/
-    width: 400px;;
+    width: 400px;
     height: 110px;
   }
 
@@ -323,10 +330,17 @@ button{
     z-index: 1;
     width:210px;
   }
+  
 }
 
 @media screen and (max-width: 680px){
-  #canvas, #input {
-    width: 300px;
+  #canvas, #input, #btnRaz, button, #introduction {
+    display:none;
+  }
+  
+  #introductionMin {
+      display: block;
+      width: 100vh;
+      margin: 0 5%;
   }
 }
